@@ -14,11 +14,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Guest Routes
+Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('login', 'LoginController@login')->name('postLogin');
+//    Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
+//    Route::post('register', 'RegisterController@register')->name('do.register');
+});
+
+// Auth Routes
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('dashboard', 'DashboardController@dashboardMain')->name('dashboard');
+//    Route::get('change-password', 'Auth\AuthController@showChangePasswordForm')->name('change-password');
+//    Route::post('update-password', 'Auth\AuthController@updatePassword')->name('update-password');
+
+
+//    // Blog CRUD Routes
+//    Route::get('blogs', 'BlogController@index')->name('blog.index');
+//    Route::get('blog/create', 'BlogController@create')->name('blog.create');
+//    Route::post('blog/store', 'BlogController@store')->name('blog.store');
+//    Route::get('blog/{id}/show', 'BlogController@show')->name('blog.show');
+//    Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
+//    Route::put('blog/{id}/update', 'BlogController@update')->name('blog.update');
+//    Route::delete('blog/{id}/delete', 'BlogController@delete')->name('blog.delete');
+
+});
+
 
 require __DIR__.'/auth.php';
