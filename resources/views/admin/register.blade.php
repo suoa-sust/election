@@ -10,7 +10,7 @@
                     <!-- /.card-header -->
 {{--                    <p class="login-box-msg">Register </p>--}}
                     <!-- form start -->
-                    <form class="form-horizontal" _lpchecked="1" action="{{ url('register') }}" method="post">
+                    <form class="form-horizontal" _lpchecked="1" action="{{ route('postRegister') }}" method="post">
                         @csrf
                         <div class="card-body">
 
