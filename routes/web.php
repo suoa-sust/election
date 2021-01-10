@@ -28,8 +28,8 @@ Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('dashboard', 'DashboardController@dashboardMain')->name('dashboard');
-    Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'RegisterController@register')->name('postRegister');
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'Auth\RegisterController@register')->name('postRegister');
 //    Route::get('change-password', 'Auth\AuthController@showChangePasswordForm')->name('change-password');
 //    Route::post('update-password', 'Auth\AuthController@updatePassword')->name('update-password');
 
