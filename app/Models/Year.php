@@ -9,6 +9,8 @@ class Year extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function election()
     {
         return $this->hasMany(Candidate::class);
