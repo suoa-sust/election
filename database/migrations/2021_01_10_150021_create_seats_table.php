@@ -18,6 +18,7 @@ class CreateSeatsTable extends Migration
             $table->string('name')->nullable();
             $table->integer('priority')->unsigned()->default(10);
             $table->string('status')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

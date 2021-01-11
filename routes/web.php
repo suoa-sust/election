@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return view('welcome');
 });
+
+Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
@@ -34,15 +36,15 @@ Route::group(['middleware' => ['auth']], function () {
 //    Route::post('update-password', 'Auth\AuthController@updatePassword')->name('update-password');
 
 
-//    // Blog CRUD Routes
-//    Route::get('blogs', 'BlogController@index')->name('blog.index');
-////    Route::get('blog/create', 'BlogController@create')->name('blog.create');
-////    Route::post('blog/store', 'BlogController@store')->name('blog.store');
-////    Route::get('blog/{id}/show', 'BlogController@show')->name('blog.show');
-////    Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
-////    Route::put('blog/{id}/update', 'BlogController@update')->name('blog.update');
-////    Route::delete('blog/{id}/delete', 'BlogController@delete')->name('blog.delete');
-///
+    // Candidate CRUD Routes
+    Route::get('candidate', 'CandidateController@index')->name('candidate.index');
+    Route::get('candidate/create', 'CandidateController@create')->name('candidate.create');
+    Route::post('candidate/store', 'CandidateController@store')->name('candidate.store');
+    Route::get('candidate/{id}/show', 'CandidateController@show')->name('candidate.show');
+    Route::get('candidate/{id}/edit', 'CandidateController@edit')->name('candidate.edit');
+    Route::put('candidate/{id}/update', 'CandidateController@update')->name('candidate.update');
+    Route::delete('candidate/{id}/delete', 'CandidateController@delete')->name('candidate.delete');
+
 
     Route::get('year', 'YearController@showYearForm')->name('yearInput');
     Route::post('year', 'RegisterController@register')->name('postYear');

@@ -18,10 +18,10 @@ class CreateYearsTable extends Migration
             $table->string('name')->nullable();
             $table->date('start')->nullable();
             $table->date('end')->nullable();
-            $table->integer('priority')->unsigned()->default(10);
             $table->enum('status',
-                ['FREEZE', 'COMPLETED', 'RUNNING', 'INACTIVE', 'ACTIVE']
+                ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE']
             )->default('ACTIVE');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
