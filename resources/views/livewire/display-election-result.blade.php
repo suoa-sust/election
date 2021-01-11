@@ -1,6 +1,5 @@
-@extends('layouts.front')
-@section('content')
-    <br><br>
+<div :candidates="$candidates">
+
     <div class="container">
         <div class="row">
             <h2>শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন ২০২১</h2>
@@ -29,5 +28,4 @@
     </div>
 
 
-
-@endsection()
+</div>
