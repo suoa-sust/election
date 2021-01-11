@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
+Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('result');
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
@@ -47,6 +47,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 
+
+    Route::get('vote', 'VoteController@voteCountPage')->name('vote.count');
 });
 
 
