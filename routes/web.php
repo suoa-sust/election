@@ -44,6 +44,9 @@ Route::group(['middleware' => ['auth']], function () {
 ////    Route::delete('blog/{id}/delete', 'BlogController@delete')->name('blog.delete');
 ///
 
+    Route::get('year', 'YearController@showYearForm')->name('yearInput');
+    Route::post('year', 'RegisterController@register')->name('postYear');
+
 
 });
 

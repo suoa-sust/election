@@ -50,6 +50,18 @@
                 </li>
 
 
+
+                <li class="nav-item">
+                    <a href="{{ route('yearInput') }}" class="nav-link {{ $currentUrl == route('yearInput') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-male"></i>
+                        <p>
+                            Add New Year
+{{--                            <span class="right badge badge-danger">New</span>--}}
+                        </p>
+                    </a>
+                </li>
+
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
