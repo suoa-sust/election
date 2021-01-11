@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return view('welcome');
 });
+
+Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
