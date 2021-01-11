@@ -17,7 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('result');
+
+Route::get('/year', 'YearController@index');
+Route::post('/year', 'YearController@store');
+Route::get('/year/show', 'YearController@show');
+
+Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
+
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
@@ -33,7 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register')->name('postRegister');
 //    Route::get('change-password', 'Auth\AuthController@showChangePasswordForm')->name('change-password');
-//    Route::post('update-password', 'Auth\AuthController@updatePassword')->name('update-password');
+//    Route::post('update-passwordti', 'Auth\AuthController@updatePassword')->name('update-password');
 
 
     // Candidate CRUD Routes
