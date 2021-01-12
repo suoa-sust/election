@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('year/{id}/update', 'YearController@update')->name('year.update');
     Route::delete('year/{id}/delete', 'YearController@destroy')->name('year.delete');
 
-    // Post CRUD Routes
+    // Seat CRUD Routes
     Route::get('seat', 'SeatController@index')->name('seat.index');
     Route::get('seat/create', 'SeatController@create')->name('seat.create');
     Route::post('seat/store', 'SeatController@store')->name('seat.store');
@@ -67,7 +67,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
 
-
+    //Search Routes
+    Route::get('seat/search', 'SeatController@search')->name('seat.search');
 
 
 

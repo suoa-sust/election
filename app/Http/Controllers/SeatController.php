@@ -66,6 +66,15 @@ class SeatController extends Controller
             return redirect()->route('seat.index')->with('error', 'Something went wrong.'.$exception->getMessage());
         }
     }
+
+    public function search()
+    {
+        return view('admin.seat.search');
+
+
+    }
+
+
 }
 
 
