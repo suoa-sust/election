@@ -31,6 +31,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
+                                <th>Action</th>
                                 <th>Seat</th>
                                 <th>Votes</th>
                                 <th>Designation</th>
@@ -45,7 +46,8 @@
                                     <td>{{ $counter++ }}</td>
                                     <td>
                                         {{ $candidate->name }}
-
+                                    </td>
+                                    <td>
                                         <a class="btn btn-warning btn-xs voteAdd5" href="{{ route('candidate.edit', $candidate->id) }}">+5</a>
                                         <a class="btn btn-primary btn-xs voteAdd1" href="{{ route('candidate.edit', $candidate->id) }}">+1</a>
                                         <a class="btn btn-success btn-xs voteMinus1" href="{{ route('candidate.edit', $candidate->id) }}">-1</a>
