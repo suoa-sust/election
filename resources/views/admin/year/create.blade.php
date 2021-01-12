@@ -10,9 +10,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Year</a></li>
-                        <li class="breadcrumb-item active">New Year</li>
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('year.index') }}">Year</a></li>
+                        <li class="breadcrumb-item active">Add New Year</li>
                     </ol>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Election Year</label>
                                 <div class="col-sm-10">
-                                    <input type="number" name="name" class="form-control" placeholder="2021" required>
+                                    <input type="number" name="name" class="form-control" placeholder="For Example: 2021" required>
                                 </div>
                             </div>
 
@@ -71,3 +71,10 @@
 
 @endsection
 
+
+@section('scripts')
+    $(".picker").on("change", function() {
+    var date = $(this).val();
+    $(".date").val(date);
+    })
+@endsection
