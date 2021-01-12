@@ -10,6 +10,8 @@ class Year extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $guarded = ['id'];
+
     public function election()
     {
         return $this->hasMany(Candidate::class);
