@@ -49,6 +49,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('vote.count') }}" class="nav-link {{ $currentUrl == route('vote.count') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-plus-circle"></i>
+                        <p>Vote Count</p>
+                    </a>
+                </li>
+
 
 
 

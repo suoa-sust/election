@@ -1,14 +1,34 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+
+    <h3>Welcome to Dashboard</h3>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-chair"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Election Seat</span>
+                    <span class="info-box-number">
+                  {{ $number_of_seat }}
+{{--                  <small>%</small>--}}
+                </span>
                 </div>
             </div>
         </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Unique Candidates so far</span>
+                    <span class="info-box-number">{{ $number_of_unique_candidate }}</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    @endsection
+
+
+@endsection
 
