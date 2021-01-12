@@ -53,6 +53,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('candidate/{id}/update', 'CandidateController@update')->name('candidate.update');
     Route::delete('candidate/{id}/delete', 'CandidateController@delete')->name('candidate.delete');
 
+    // Year CRUD Routes
+    Route::get('year', 'YearController@index')->name('year.index');
+    Route::get('year/create', 'YearController@create')->name('year.create');
+    Route::post('year/store', 'YearController@store')->name('year.store');
+//    Route::get('year/{id}/show', 'YearController@show')->name('year.show');
+    Route::get('year/{id}/edit', 'YearController@edit')->name('year.edit');
+    Route::put('year/{id}/update', 'YearController@update')->name('year.update');
+    Route::delete('year/{id}/delete', 'YearController@destroy')->name('year.delete');
 
     // Post CRUD Routes
     Route::get('seat', 'SeatController@index')->name('seat.index');
