@@ -29,7 +29,7 @@ class CandidateController extends Controller
     {
         try {
             $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id');
-            $candidate = Candidate::create($data);
+            Candidate::create($data);
             return redirect()->route('candidate.index')->with('success', 'Candidate Added Successfully');
         } catch (\Exception $exception) {
             return redirect()->route('candidate.index')->with('error', 'Something went wrong');

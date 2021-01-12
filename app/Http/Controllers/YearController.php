@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\YearRequest;
 use App\Models\Year;
-use Illuminate\Http\Request;
+
 
 class YearController extends Controller
 {
     public function index()
     {
-        $years = Year::all();
-        return view('admin.year.index')
-            ->with('years', $years);
+        return view('year');
     }
+
 
     public function create()
     {
@@ -22,7 +21,6 @@ class YearController extends Controller
 
     public function store(YearRequest $yearRequest)
     {
-//        dd($yearRequest->only('name', 'start', 'end'));
 
         try {
             $data = $yearRequest->only('name', 'start', 'end');

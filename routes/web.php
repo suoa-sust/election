@@ -14,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 });
 
-Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
+Route::view('counter','livewire.counter');
+
+Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('result');
+
+Route::get('/year', 'YearController@index');
+Route::post('/year', 'YearController@store');
+Route::get('/year/show', 'YearController@show');
+
+
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
@@ -33,7 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register')->name('postRegister');
 //    Route::get('change-password', 'Auth\AuthController@showChangePasswordForm')->name('change-password');
-//    Route::post('update-password', 'Auth\AuthController@updatePassword')->name('update-password');
+//    Route::post('update-passwordti', 'Auth\AuthController@updatePassword')->name('update-password');
 
 
     // Candidate CRUD Routes
@@ -54,8 +62,26 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('year/{id}/update', 'YearController@update')->name('year.update');
     Route::delete('year/{id}/delete', 'YearController@destroy')->name('year.delete');
 
+    // Post CRUD Routes
+    Route::get('seat', 'SeatController@index')->name('seat.index');
+    Route::get('seat/create', 'SeatController@create')->name('seat.create');
+    Route::post('seat/store', 'SeatController@store')->name('seat.store');
+    Route::get('seat/{id}/show', 'SeatController@show')->name('seat.show');
+    Route::get('seat/{id}/edit', 'SeatController@edit')->name('seat.edit');
+    Route::put('seat/{id}/update', 'SeatController@update')->name('seat.update');
+    Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
+
+
+
+
+
+    Route::get('vote', 'VoteController@voteCountPage')->name('vote.count');
 });
+
+
+
+
 
 
 require __DIR__.'/auth.php';

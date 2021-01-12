@@ -9,8 +9,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Candidates</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('candidate.index') }}">Candidates</a></li>
                         <li class="breadcrumb-item active">Edit Candidate</li>
                     </ol>
                 </div>
@@ -30,7 +30,7 @@
                     </div>
 
 
-                    <form class="form-horizontal" action="{{ route('candidate.update', $candidate->id) }}" method="post">
+                    <form class="form-horizontal" action="{{ route('candidate.update', $candidate->id) }}" method="POST">
                         @method('put')
                         @csrf
                         <div class="card-body">
@@ -55,7 +55,7 @@
                                     <select class="form-control" name="seat_id">
                                         <option value="">Please Select a Seat</option>
                                         @foreach($seats as $id => $name)
-                                            <option value="{{ $id }}">{{ $name }}</option>
+                                            <option {{ $id == $candidate->seat_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -67,7 +67,7 @@
                                     <select class="form-control" name="year_id">
                                         <option value="">Please Select Election Year</option>
                                         @foreach($years as $id => $name)
-                                            <option value="{{ $id }}">{{ $name }}</option>
+                                            <option {{ $id == $candidate->year_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -79,7 +79,7 @@
                                     <select class="form-control" name="status">
                                         <option value="">Please Select Status</option>
                                         @foreach($statuses as $status)
-                                            <option value="{{ $status }}">{{ $status }}</option>
+                                            <option {{ $status == $candidate->status ? 'selected' : '' }} value="{{ $status }}">{{ $status }}</option>
                                         @endforeach
                                     </select>
                                 </div>

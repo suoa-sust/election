@@ -2,11 +2,11 @@
 <html lang="en">
 @include('partials.head')
 
-<body class="">
+<body class="hold-transition layout-top-nav">
 
 <div class="wrapper">
 
-
+    @include('partials.navbar')
 {{--    <div class="content-wrapper">--}}
 
         <section class="content">
