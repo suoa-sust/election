@@ -14,12 +14,6 @@ class VoteController extends Controller
             ->with('candidates', $candidates);
     }
 
-    public function voteCountPage()
-    {
-//        $candidates = Candidate::all();
-        return view('counter')
-            ->with('candidates', $candidates);
-    }
 
 
 }

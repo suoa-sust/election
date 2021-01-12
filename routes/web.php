@@ -25,7 +25,6 @@ Route::get('/year', 'YearController@index');
 Route::post('/year', 'YearController@store');
 Route::get('/year/show', 'YearController@show');
 
-Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('public.results');
 
 
 // Guest Routes
