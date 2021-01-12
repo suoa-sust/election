@@ -6,7 +6,6 @@ use App\Http\Requests\CandidateRequest;
 use App\Models\Candidate;
 use App\Models\Seat;
 use App\Models\Year;
-use Illuminate\Http\Request;
 
 class CandidateController extends Controller
 {

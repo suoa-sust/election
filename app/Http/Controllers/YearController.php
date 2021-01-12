@@ -10,7 +10,9 @@ class YearController extends Controller
 {
     public function index()
     {
-        return view('year');
+        $years = Year::all();
+        return view('admin.year.index')
+            ->with('years', $years);
     }
 
 
@@ -35,18 +37,23 @@ class YearController extends Controller
     public function edit($id)
     {
         $year = Year::findOrFail($id);
+//        dd($year->status);
+
+        $statuses = ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE'];
         return view('admin.year.edit')
+            ->with('statuses', $statuses)
             ->with('year', $year);
     }
 
     public function update(YearRequest $yearRequest, $id)
     {
         try {
-            $data = $yearRequest->only('name', 'start', 'end');
+            $data = $yearRequest->only('name', 'start', 'end', 'status');
             $year = Year::findOrFail($id);
             $year->name = $data['name'];
             $year->start = $data['start'];
             $year->end = $data['end'];
+            $year->status = $data['status'];
             $year->save();
             return redirect()->route('year.index')->with('success', 'Year Updated Successfully');
         } catch (\Exception $exception) {

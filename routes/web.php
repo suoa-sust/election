@@ -19,19 +19,14 @@ Route::get('/', function () {
 
 Route::view('counter','livewire.counter');
 
+
 Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('result');
-
-Route::get('/year', 'YearController@index');
-Route::post('/year', 'YearController@store');
-Route::get('/year/show', 'YearController@show');
-
 
 
 // Guest Routes
 Route::group(['namespace' => 'Auth', 'middleware' => ['guest']], function () {
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login')->name('postLogin');
-
 });
 
 // Auth Routes
