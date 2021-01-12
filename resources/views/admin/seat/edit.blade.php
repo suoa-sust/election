@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'Add New Candidate' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'Edit Seat' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('candidate.index') }}">Candidates</a></li>
-                        <li class="breadcrumb-item active">New Candidate</li>
+                        <li class="breadcrumb-item"><a href="{{ route('seat.index') }}">Candidates</a></li>
+                        <li class="breadcrumb-item active">Edit Seat</li>
                     </ol>
                 </div>
             </div>
@@ -30,47 +30,33 @@
                     </div>
 
 
-                    <form class="form-horizontal" action="{{ route('candidate.store') }}" method="post">
+                    <form class="form-horizontal" action="{{ route('seat.update', $seat->id) }}" method="POST">
+                        @method('put')
                         @csrf
                         <div class="card-body">
 
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Name*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control" placeholder="Jack Doe" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Jack Doe" required value="{{ $seat->name }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="designation" class="col-sm-2 col-form-label">Designation*</label>
+                                <label for="priority" class="col-sm-2 col-form-label">Priority*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="designation" class="form-control" placeholder="Deputy Registrar" required>
+                                    <input type="text" name="priority" class="form-control" placeholder="priority" value="{{ $seat->priority }}" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="seat" class="col-sm-2 col-form-label">Seat*</label>
+                                <label for="status" class="col-sm-2 col-form-label">Status*</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="seat_id">
-                                        <option value="">Please Select a Seat</option>
-                                        @foreach($seats as $id => $name)
-                                            <option value="{{ $id }}">{{ $name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" name="status" class="form-control" placeholder="status" value="{{ $seat->status }}" required>
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="seat" class="col-sm-2 col-form-label">Year*</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="year_id">
-                                        <option value="">Please Select Election Year</option>
-                                        @foreach($years as $id => $name)
-                                            <option value="{{ $id }}">{{ $name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+
 
 
                         </div>

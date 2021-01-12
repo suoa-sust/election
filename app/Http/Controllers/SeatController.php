@@ -13,6 +13,7 @@ class SeatController extends Controller
         $seats = Seat::all();
         return view('admin.seat.index')
             ->with('seats', $seats);
+
     }
 
     public function create()
@@ -32,6 +33,40 @@ class SeatController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $seat = Seat::findOrFail($id);
+        return view('admin.seat.edit')
+            ->with('seat', $seat);
+    }
 
+
+    public function update(SeatRequest $seatRequest, $id)
+    {
+        try {
+            $data = $seatRequest->only('name', 'priority', 'status');
+            $seat = Seat::findOrFail($id);
+            $seat->name = $data['name'];
+            $seat->priority = $data['priority'];
+            $seat->status = $data['status'];
+            $seat->save();
+            return redirect()->route('seat.index')->with('success', 'Candidate Updated Successfully');
+        } catch (\Exception $exception) {
+            return redirect()->route('seat.index')->with('error', 'Something went wrong. '.$exception->getMessage());
+        }
+    }
+
+
+    public function destroy($id)
+    {
+        try {
+            Seat::delete($id);
+            return redirect()->route('seat.index')->with('success', 'Candidate Deleted Successfully');
+        } catch (\Exception $exception) {
+            return redirect()->route('seat.index')->with('error', 'Something went wrong');
+        }
+    }
 }
+
+
 

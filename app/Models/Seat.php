@@ -9,6 +9,8 @@ class Seat extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function candidate()
     {
         return $this->hasMany(Candidate::class);

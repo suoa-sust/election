@@ -46,8 +46,24 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('candidate/{id}/delete', 'CandidateController@delete')->name('candidate.delete');
 
 
+    // Post CRUD Routes
+    Route::get('seat', 'SeatController@index')->name('seat.index');
+    Route::get('seat/create', 'SeatController@create')->name('seat.create');
+    Route::post('seat/store', 'SeatController@store')->name('seat.store');
+    Route::get('seat/{id}/show', 'SeatController@show')->name('seat.show');
+    Route::get('seat/{id}/edit', 'SeatController@edit')->name('seat.edit');
+    Route::put('seat/{id}/update', 'SeatController@update')->name('seat.update');
+    Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
+
+
+
+
 
 });
+
+
+
+
 
 
 require __DIR__.'/auth.php';

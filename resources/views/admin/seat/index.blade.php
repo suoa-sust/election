@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'All Candidates' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'All Seat' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Candidates</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Seat</a></li>
 
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New Candidate</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('seat.create') }}">Add New Seat</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -32,29 +32,25 @@
                             <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Name</th>
-                                <th>Designation</th>
                                 <th>Seat</th>
-                                <th>Year</th>
-                                <th>Votes</th>
-                                <th>Action</th>
+                                <th>Priority</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
                             @php
                             $counter = 1;
                             @endphp
-                            @foreach($candidates as $candidate)
+                            @foreach($seats as $seat)
                             <tr>
                                 <td>{{ $counter++ }}</td>
-                                <td>{{ $candidate->name }}</td>
-                                <td>{{ $candidate->designation }}</td>
-                                <td>{{ $candidate->seat->name }}</td>
-                                <td>{{ $candidate->year->name }}</td>
-                                <td>{{ $candidate->number_of_votes }}</td>
+                                <td>{{ $seat->name }}</td>
+                                <td>{{ $seat->priority }}</td>
+                                <td>{{ $seat->status }}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
+                                    <a class="btn btn-primary btn-xs" href="{{ route('seat.edit', $seat->id) }}">Edit</a>
+                                    <a class="btn btn-danger btn-xs" href="{{ route('seat.delete', $seat->id) }}">Delete</a>
+                                   {{-- <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('seat.delete', $seat->id) }}">Delete</a>--}}
                                 </td>
                             </tr>
                             @endforeach
@@ -136,6 +132,7 @@
 
                 console.log(deleteUrl);
             });
+
         });
     </script>
 

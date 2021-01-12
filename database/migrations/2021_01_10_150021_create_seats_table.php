@@ -15,7 +15,7 @@ class CreateSeatsTable extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name');
             $table->integer('priority')->unsigned()->default(10);
             $table->string('status')->nullable();
             $table->softDeletes();

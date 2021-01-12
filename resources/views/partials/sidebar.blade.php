@@ -108,6 +108,62 @@
 {{--                        </li>--}}
                     </ul>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Seat
+                            <i class="fas fa-angle-left right"></i>
+                            {{--                            <span class="badge badge-info right">6</span>--}}
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('seat.create') }}" class="nav-link {{ $currentUrl == route('seat.create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Seat</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('seat.index') }}" class="nav-link {{ $currentUrl == route('seat.index') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Seats</p>
+                            </a>
+                        </li>
+
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="pages/layout/boxed.html" class="nav-link">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>Boxed</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="pages/layout/fixed-sidebar.html" class="nav-link">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>Fixed Sidebar</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="pages/layout/fixed-topnav.html" class="nav-link">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>Fixed Navbar</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="pages/layout/fixed-footer.html" class="nav-link">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>Fixed Footer</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="pages/layout/collapsed-sidebar.html" class="nav-link">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>Collapsed Sidebar</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                    </ul>
+                </li>
 {{--                <li class="nav-item has-treeview">--}}
 {{--                    <a href="#" class="nav-link">--}}
 {{--                        <i class="nav-icon fas fa-chart-pie"></i>--}}
