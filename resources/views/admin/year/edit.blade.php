@@ -10,9 +10,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Year</a></li>
-                        <li class="breadcrumb-item active">New Year</li>
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('year.index') }}">Year</a></li>
+                        <li class="breadcrumb-item active">Edit Year</li>
                     </ol>
                 </div>
             </div>
@@ -52,6 +52,18 @@
                                 <label for="end" class="col-sm-2 col-form-label">End Date</label>
                                 <div class="col-sm-10">
                                     <input type="date" name="end" class="form-control"required value="{{$year->end}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="status" class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="status">
+                                        <option value="">Please Select Status</option>
+                                        @foreach($statuses as $status)
+                                            <option {{ $status == $year->status ? 'selected' : '' }} value="{{ $status }}">{{ $status }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
