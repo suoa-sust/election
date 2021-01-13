@@ -4,7 +4,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AdminLTE 3 | Dashboard 2</title>
+    <title>{{ isset($title) ? $title.' -' : '' }} Vote Counting System</title>
 
     @include('partials.styles')
 </head>

@@ -40,7 +40,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     // Candidate CRUD Routes
-    Route::get('candidate', 'CandidateController@index')->name('candidate.index');
+    Route::get('candidates', 'CandidateController@index')->name('candidate.index');
+    Route::get('candidate', 'CandidateController@indexByYearBySeat')->name('candidate.search');
     Route::get('candidate/create', 'CandidateController@create')->name('candidate.create');
     Route::post('candidate/store', 'CandidateController@store')->name('candidate.store');
     Route::get('candidate/{id}/show', 'CandidateController@show')->name('candidate.show');

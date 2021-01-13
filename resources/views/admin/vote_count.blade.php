@@ -44,9 +44,8 @@
                             @foreach($candidates as $candidate)
                                 <tr>
                                     <td>{{ $counter++ }}</td>
-                                    <td>
-                                        {{ $candidate->name }}
-
+                                    <td>{{ $candidate->name }}</td>
+                                    <td class="text-center">
                                         <a class="btn btn-warning btn-xs voteAdd5" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'+5']) }}">+5</a>
                                         <a class="btn btn-primary btn-xs voteAdd1" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'+1']) }}">+1</a>
                                         <a class="btn btn-success btn-xs voteMinus1" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'-1']) }}">-1</a>

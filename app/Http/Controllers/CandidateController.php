@@ -6,6 +6,7 @@ use App\Http\Requests\CandidateRequest;
 use App\Models\Candidate;
 use App\Models\Seat;
 use App\Models\Year;
+use Illuminate\Http\Request;
 
 class CandidateController extends Controller
 {
@@ -16,6 +17,32 @@ class CandidateController extends Controller
         return view('admin.candidate.index')
             ->with('candidates', $candidates)
             ->with('seats', $seats);
+
+    }
+
+    public function indexByYearBySeat(Request $request)
+    {
+        $seatId = $request->seat_id;
+        $yearId = $request->year_id;
+        $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
+        $years = Year::pluck('name', 'id');
+
+        if(isset($seatId) && isset($yearId)) {
+            $candidates = Candidate::where('seat_id', $seatId)->where('year_id', $yearId)->get();
+        } elseif (isset($seatId)) {
+            $candidates = Candidate::where('seat_id', $seatId)->get();
+        } elseif (isset($yearId)) {
+            $candidates = Candidate::where('year_id', $yearId)->get();
+        } else {
+            $candidates = Candidate::all();
+        }
+
+        return view('admin.candidate.search_index')
+            ->with('candidates', $candidates)
+            ->with('seats', $seats)
+            ->with('years', $years)
+            ->with('seat_id', $seatId)
+            ->with('year_id', $yearId);
 
     }
 
