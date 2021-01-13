@@ -14,6 +14,16 @@ class VoteController extends Controller
             ->with('candidates', $candidates);
     }
 
+    public function voteUpdate(Request $request,$id)
+    {
+        $vote = $request->vote;
+        $candidate = Candidate::findOrFail($id);
+        $candidate->number_of_votes = $candidate->number_of_votes + $vote;
+        $candidate->save();
+        $msg = $vote . " added to ".$candidate->name. " Successfully";
+        return redirect()->route('vote.count')->with('success', $msg);
+    }
+
 
 
 }
