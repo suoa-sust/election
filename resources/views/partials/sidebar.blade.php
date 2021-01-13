@@ -58,8 +58,8 @@
                 </li>
 
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item has-treeview {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'active' : '' }}">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
                             Year
@@ -67,7 +67,7 @@
                             {{--                            <span class="badge badge-info right">6</span>--}}
                         </p>
                     </a>
-                    <ul class="nav nav-treeview {{ $currentUrl == (route('year.create')||route('year.index')) ? 'active' : '' }}">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('year.create') }}" class="nav-link {{ $currentUrl == route('year.create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -196,6 +196,13 @@
                         {{--                            </a>--}}
                         {{--                        </li>--}}
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('year.search') }}" class="nav-link {{ ($currentUrl == route('year.search')||($currentUrl == route('details.year.search'))) ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-search"></i>
+                        <p>Year-wise Search</p>
+                    </a>
                 </li>
 {{--                <li class="nav-item has-treeview">--}}
 {{--                    <a href="#" class="nav-link">--}}

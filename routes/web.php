@@ -52,10 +52,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('year', 'YearController@index')->name('year.index');
     Route::get('year/create', 'YearController@create')->name('year.create');
     Route::post('year/store', 'YearController@store')->name('year.store');
-//    Route::get('year/{id}/show', 'YearController@show')->name('year.show');
     Route::get('year/{id}/edit', 'YearController@edit')->name('year.edit');
     Route::put('year/{id}/update', 'YearController@update')->name('year.update');
     Route::delete('year/{id}/delete', 'YearController@destroy')->name('year.delete');
+    Route::get('year/search', 'YearController@search')->name('year.search');
+    Route::post('search/year', 'YearController@searchYear')->name('details.year.search');
+//    Route::get('year/search/result', 'YearController@searchResult')->name('year.search.result');
+//    Route::get('year/{id}/show', 'YearController@show')->name('year.show');
+
 
     // Post CRUD Routes
     Route::get('seat', 'SeatController@index')->name('seat.index');

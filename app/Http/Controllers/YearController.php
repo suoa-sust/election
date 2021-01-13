@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\YearRequest;
 use App\Models\Year;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\DocBlock\Description;
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
 
 
 class YearController extends Controller
@@ -70,4 +74,40 @@ class YearController extends Controller
             return redirect()->route('year.index')->with('error', 'Something went wrong');
         }
     }
+
+    public function search()
+    {
+        return view('admin.year.search');
+    }
+
+    public function searchYear(YearRequest $request)
+    {
+//        dd($request->name);
+        $inputYear = $request->name;
+        $yearDetails = DB::table('years')->where('name', '=', $inputYear)->get();
+        if (count( $yearDetails)>0){
+//             dd($yearDetails);
+            return view('admin.year.search_result')
+                ->with('yearDetails', $yearDetails)
+                ->with('inputYear', $inputYear);
+        }
+        else {
+            $yearDetails = null;
+            return view('admin.year.search_result')
+                ->with('yearDetails', $yearDetails)
+                ->with('inputYear', $inputYear);
+        }
+//             dd( 'No Details found. Try to search again !' );
+//        return view('admin.year.search_result');
+    }
+
+    public function searchResult()
+    {
+
+    }
+
+//    public function show(Request $request)
+//    {
+//        dd($request);
+//    }
 }
