@@ -31,6 +31,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
+                                <th>Action</th>
                                 <th>Seat</th>
                                 <th>Votes</th>
                                 <th>Designation</th>

@@ -24,6 +24,7 @@
                 <div class="card">
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
+
                         <a class="card-tools btn btn-info btn-sm" href="{{ route('seat.create') }}">Add New Seat</a>
                     </div>
                     <!-- /.card-header -->
@@ -35,6 +36,7 @@
                                 <th>Seat</th>
                                 <th>Priority</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -50,6 +52,7 @@
                                 <td>
                                     <a class="btn btn-primary btn-xs" href="{{ route('seat.edit', $seat->id) }}">Edit</a>
                                     <a class="btn btn-danger btn-xs" href="{{ route('seat.delete', $seat->id) }}">Delete</a>
+                                    <a class="btn btn-secondary btn-xs" href="{{ route('seat.find', $seat->name) }}">Candidates</a>
                                    {{-- <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('seat.delete', $seat->id) }}">Delete</a>--}}
                                 </td>
                             </tr>

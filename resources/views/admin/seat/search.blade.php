@@ -24,19 +24,6 @@
                 <div class="card">
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-<!-- Example single danger button -->
-    <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Find By Seat
-        </button>
-        <div class="dropdown-menu">
-            @foreach($seats as $id => $name)
-                <a class="dropdown-item" href="{{ route('seat.find', $name) }}">{{ $name }}</a>
-            @endforeach
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('seat.create') }}">Add Seat</a>
-        </div>
-    </div>
                         <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New Candidate</a>
                     </div>
                     <!-- /.card-header -->
