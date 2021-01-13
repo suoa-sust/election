@@ -19,20 +19,90 @@
     </div>
 
     <div class="container-fluid">
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Example select</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+{{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New Candidate</a>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="datatable" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Seat</th>
+                                <th>Year</th>
+                                <th>Votes</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @php
+                            $counter = 1;
+                            @endphp
+                            @foreach($candidates as $candidate)
+                            <tr>
+                                <td>{{ $counter++ }}</td>
+                                <td>{{ $candidate->name }}</td>
+                                <td>{{ $candidate->designation }}</td>
+                                <td>{{ $candidate->seat->name }}</td>
+                                <td>{{ $candidate->year->name }}</td>
+                                <td>{{ $candidate->number_of_votes }}</td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
+                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+{{--                            <tfoot>--}}
+{{--                            <tr>--}}
+{{--                                <th>Rendering engine</th>--}}
+{{--                                <th>Browser</th>--}}
+{{--                                <th>Platform(s)</th>--}}
+{{--                                <th>Engine version</th>--}}
+{{--                                <th>CSS grade</th>--}}
+{{--                            </tr>--}}
+{{--                            </tfoot>--}}
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
             </div>
+            <!-- /.col -->
         </div>
-    </form>
+        <!-- /.row -->
+    </div>
 
+{{--    Modal Area --}}
+
+    <div class="modal fade" id="delete-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure to delete ?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+{{--                    <p>One fine body&hellip;</p>--}}
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Yes, Confirm</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 @endsection
 
 @section('styles')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeatRequest;
+use App\Models\Candidate;
 use App\Models\Seat;
 use Illuminate\Http\Request;
 
@@ -67,11 +68,16 @@ class SeatController extends Controller
         }
     }
 
-    public function search()
+    public function findBySeat($seat_name)
     {
-        return view('admin.seat.search');
-
-
+        try {
+        $seat_id = Seat::where('name', $seat_name)->pluck('id');
+        $candidates = Candidate::where('seat_id','=', $seat_id)->get();
+        return view('admin.seat.search')
+            ->with('candidates', $candidates);
+        } catch (\Exception $exception) {
+            return redirect()->route('seat.index')->with('error', 'Does not exist.');
+        }
     }
 
 

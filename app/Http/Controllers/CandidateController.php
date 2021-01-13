@@ -11,9 +11,12 @@ class CandidateController extends Controller
 {
     public function index()
     {
+        $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $candidates = Candidate::all();
         return view('admin.candidate.index')
-            ->with('candidates', $candidates);
+            ->with('candidates', $candidates)
+            ->with('seats', $seats);
+
     }
 
     public function create()
@@ -76,4 +79,10 @@ class CandidateController extends Controller
             return redirect()->route('candidate.index')->with('error', 'Something went wrong');
         }
     }
+
+
+
+
+
+
 }
