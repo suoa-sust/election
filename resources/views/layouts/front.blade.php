@@ -6,7 +6,7 @@
 
 <div class="wrapper">
 
-    @include('partials.navbar')
+{{--    @include('partials.navbar')--}}
 {{--    <div class="content-wrapper">--}}
 
         <section class="content">
@@ -17,7 +17,7 @@
 
 
 </div>
-@include('partials.footer')
-@include('partials.scripts')
+{{--@include('partials.footer')--}}
+{{--@include('partials.scripts')--}}
 </body>
 </html>
