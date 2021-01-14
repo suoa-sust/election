@@ -87,7 +87,9 @@
                                 <td>{{ $candidate->number_of_votes }}</td>
                                 <td>
                                     <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
+                                    @unless($candidate->year->status == 'COMPLETED')
                                     <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
+                                    @endunless
                                 </td>
                             </tr>
                             @endforeach

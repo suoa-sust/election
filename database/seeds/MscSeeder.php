@@ -16,35 +16,269 @@ class MscSeeder extends Seeder
      */
     public function run()
     {
-        $year = Year::create([
-            'name' => '2021',
-            'start' => '2019-01-26',
-            'end' => '2020-01-25',
-            'status' => 'COMPLETED'
-        ]);
 
         $year2019 = Year::create([
             'name' => '2019',
-            'start' => '2019-01-26',
-            'end' => '2020-01-25',
+            'start' => '2018-01-26',
+            'end' => '2019-01-30',
+            'election_date' => '2019-01-31',
             'status' => 'COMPLETED'
         ]);
 
-        $seat = Seat::create(['name' => 'Software Engineer', 'priority' => 1, 'status' => 'ACTIVE']);
-        $p2019 = Seat::create(['name' => 'সভাপতি', 'priority' => 1, 'status' => 'ACTIVE']);
-        $vp2019 = Seat::create(['name' => 'সহ-সভাপতি', 'priority' => 2, 'status' => 'ACTIVE']);
-        $gs2019 = Seat::create(['name' => 'সাধারণ সম্পাদক', 'priority' => 3, 'status' => 'ACTIVE']);
-        $ags2019 = Seat::create(['name' => 'সহ-সাধারণ সম্পাদক', 'priority' => 4, 'status' => 'ACTIVE']);
-        $treasurer2019 = Seat::create(['name' => 'কোষাধ্যক্ষ', 'priority' => 5, 'status' => 'ACTIVE']);
-        $member2019 = Seat::create(['name' => 'কার্যনির্বাহী সদস্য', 'priority' => 6, 'status' => 'ACTIVE']);
+        $year = Year::create([
+            'name' => '2025',
+            'start' => '2024-01-26',
+            'end' => '2025-01-25',
+            'election_date' => null,
+            'status' => 'ACTIVE'
+        ]);
+
+        $year2 = Year::create([
+            'name' => '2020',
+            'start' => '2019-01-01',
+            'end' => '2020-01-28',
+            'election_date' => '2020-01-29',
+            'status' => 'COMPLETED'
+        ]);
+
+        $seat = Seat::create(['name' => 'Software Engineer', 'priority' => 20, 'status' => 'ACTIVE']);
+        $president = Seat::create(['name' => 'সভাপতি', 'priority' => 1, 'status' => 'ACTIVE']);
+        $vp = Seat::create(['name' => 'সহ-সভাপতি', 'priority' => 2, 'status' => 'ACTIVE']);
+        $gs = Seat::create(['name' => 'সাধারণ সম্পাদক', 'priority' => 3, 'status' => 'ACTIVE']);
+        $ags = Seat::create(['name' => 'সহ-সাধারণ সম্পাদক', 'priority' => 4, 'status' => 'ACTIVE']);
+        $treasurer = Seat::create(['name' => 'কোষাধ্যক্ষ', 'priority' => 5, 'status' => 'ACTIVE']);
+        $exicutive_member = Seat::create(['name' => 'কার্যনির্বাহী সদস্য', 'priority' => 6, 'status' => 'ACTIVE']);
 
         Candidate::create([
             'name' => 'John Doe',
             'designation' => 'Software Engineer',
             'seat_id' => $seat->id,
-            'year_id' => $year->id,
-            'status' => 'ACTIVE',
             'panel' => 'Admin',
+            'year_id' => $year->id,
+            'number_of_votes' => '1',
+            'status' => 'ACTIVE',
+            'priority' => '100'
+        ]);
+
+        Candidate::create([
+             'name' => 'মোহাম্মাদ মুর্শেদ আহমদ',
+             'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
+             'seat_id' => $president->id,
+             'year_id' => $year2->id,
+             'number_of_votes' => '130',
+             'status' => 'ACTIVE',
+             'panel' => '1',
+             'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'আ.ন.ম জয়নাল আবেদীন',
+            'designation' => 'হিসাব পরিচালক',
+            'seat_id' => $president->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '114',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'এমরান আহমদ চৌধুরী',
+            'designation' => 'নির্বাহী পরিবহন প্রকৌশলী',
+            'seat_id' => $vp->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '129',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোঃ ছালেহ আহমদ',
+            'designation' => 'প্রিন্সিপাল ইন্সট্রুমেন্ট ইঞ্জিনিয়ার',
+            'seat_id' => $vp->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '114',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার',
+            'designation' => 'সহকারী পরিচালক',
+            'seat_id' => $gs->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '135',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+
+        Candidate::create([
+            'name' => 'মোঃ সিরাজুল ইসলাম',
+            'designation' => 'প্রশাসনিক কর্মকর্তা',
+            'seat_id' => $gs->id,
+             'year_id' => $year2->id,
+            'number_of_votes' => '110',
+             'status' => 'ACTIVE',
+             'panel' => '2',
+             'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোঃ ফারুক আহমদ',
+            'designation' => 'প্রশাসনিক কর্মকর্তা',
+            'seat_id' => $ags->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '107',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোহাম্মদ আবুল কালাম চৌধুরী',
+            'designation' => 'একাউন্টস অফিসার',
+            'seat_id' => $ags->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '128',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোঃ নাজমুল হক',
+            'designation' => 'সহকারী রেজিস্ট্রার',
+            'seat_id' => $treasurer->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '129',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোহাম্মদ মঈনুল হক',
+            'designation' => 'প্রশাসনিক কর্মকর্তা',
+            'seat_id' => $treasurer->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '109',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
+            'designation' => 'তত্ত্বাবধায়ক প্রকৌশলী',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '134',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
+            'designation' => 'অতিরিক্ত রেজিস্ট্রার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '133',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'আহমদ মাহবুব ফেরদৌসী',
+            'designation' => 'উপ রেজিস্ট্রার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '142',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'আ ফ ম মিফতাউল হক',
+            'designation' => 'উপ রেজিস্ট্রার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '146',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মখলিছুর রহমান',
+            'designation' => 'সহকারী পরীক্ষা নিয়ন্ত্রক',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '127',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'শাহ আলম',
+            'designation' => 'সহকারী রেজিস্ট্রার (স্টোর)',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '81',
+            'status' => 'ACTIVE',
+            'panel' => '1',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'মুজিবুর রহমান',
+            'designation' => 'পরীক্ষা নিয়ন্ত্রক',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '136',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'সৈয়দ হাবিবুর রহমান',
+            'designation' => 'প্রধান প্রকৌশলী',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '115',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'ড. খন্দকার মোঃ মমিনুল হক',
+            'designation' => 'প্রিন্সিপাল ইন্সট্রুমেন্ট ইঞ্জিনিয়ার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '112',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'সৈয়দ আহমেদ',
+            'designation' => 'প্রোগ্রামার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '91',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'ডাঃ হাবিবুল ইসলাম',
+            'designation' => 'মেডিকেল অফিসার',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '82',
+            'status' => 'ACTIVE',
+            'panel' => '2',
+            'priority' => '10'
+        ]);
+        Candidate::create([
+            'name' => 'নুরজাহান ফাতেমা',
+            'designation' => 'প্রশাসনিক কর্মকর্তা',
+            'seat_id' => $exicutive_member->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '119',
+            'status' => 'ACTIVE',
+            'panel' => '2',
             'priority' => '10'
         ]);
 
@@ -52,7 +286,7 @@ class MscSeeder extends Seeder
             [
                 'name' => 'ড. খন্দকার মোঃ মমিনুল হক',
                 'designation' => 'প্রিন্সিপাল ইস্নট্রুমেন্ট ইঞ্জিনিয়ার',
-                'seat_id' => $p2019->id,
+                'seat_id' => $president->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '91',
                 'status' => 'ACTIVE',
@@ -62,7 +296,7 @@ class MscSeeder extends Seeder
             [
                 'name' => 'মোহাম্মদ মুর্শেদ আহমদ',
                 'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
-                'seat_id' => $p2019->id,
+                'seat_id' => $president->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '139',
                 'status' => 'ELECTED',
@@ -72,202 +306,182 @@ class MscSeeder extends Seeder
             [
                 'name' => 'জাকারিয়া বিশ্বাস',
                 'designation' => 'উপ গ্রন্থাগারিক',
-                'seat_id' => $vp2019->id,
+                'seat_id' => $vp->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '97',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'আবু জাফর মোঃ তামরিনুল হাঁসান',
                 'designation' => 'সহকারী রেজিস্ট্রার',
-                'seat_id' => $vp2019->id,
+                'seat_id' => $vp->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মোঃ ফখর উদ্দিন',
                 'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
-                'seat_id' => $gs2019->id,
+                'seat_id' => $gs->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার' ,
                 'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
-                'seat_id' => $gs2019->id,
+                'seat_id' => $gs->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মোঃ সিরাজুল ইসলাম',
                 'designation' => 'সহকারী প্রশাসনিক কর্মকর্তা',
-                'seat_id' => $ags2019->id,
+                'seat_id' => $ags->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'মোঃ মাহফুজুর রহমান',
                 'designation' => 'প্রশাসনিক কর্মকর্তা',
-                'seat_id' => $ags2019->id,
+                'seat_id' => $ags->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মোঃ রবিউল ইসলাম',
                 'designation' => 'প্রশাসনিক কর্মকর্তা',
-                'seat_id' => $treasurer2019->id,
+                'seat_id' => $treasurer->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '128',
                 'status' => 'ELECTED',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'আবুল বাশার মোঃ এনায়েত হোসেন',
                 'designation' => 'স্টোর অফিসার',
-                'seat_id' => $treasurer2019->id,
+                'seat_id' => $treasurer->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '101',
                 'status' => 'ACTIVE',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'আ.ন.ম. জয়নাল আবেদীন',
                 'designation' => 'হিসাব পরিচালক',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '131',
                 'status' => 'ELECTED',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'সৈয়দ হাবিবুর রহমান',
                 'designation' => 'প্রধান প্রকৌশলী',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '98',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'এ.এস.এম. খয়রুল আক্তার চৌধুরী',
                 'designation' => 'আই টি ম্যানেজার',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '117',
                 'status' => 'ELECTED',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'শাহীন আহম্মদ চৌধুরী',
                 'designation' => 'উপ রেজিস্ট্রার',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '114',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'সেবিকা সুলতানা',
                 'designation' => 'উপ গ্রন্থাগারিক',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '91',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'মোঃ জয়নাল আবেদীন',
                 'designation' => 'সহকারী রেজিস্ট্রার (স্টোর)',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '95',
                 'status' => 'ACTIVE',
-                'panel' => '2',
-                'priority' => ''
+                'panel' => '2'
                 ],
             [
                 'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
                 'designation' => 'তত্তাবধায়ক প্রকৌশলী',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মোঃ নঈমুল হক চৌধুরী',
                 'designation' => 'অতিরিক্ত হিসাব পরিচালক',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '93',
                 'status' => 'ACTIVE',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
                 'designation' => 'অতিরিক্ত রেজিস্ট্রার',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '121',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'আহমদ মাহবুব ফেরদৌসী',
                 'designation' => 'উপ রেজিস্ট্রার',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '123',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মখলিছুর রহমান',
                 'designation' => 'সহকারী পরীক্ষা নিয়ন্ত্রক',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ],
             [
                 'name' => 'মোঃ জয়নুল ইসলাম চৌধুরী',
                 'designation' => 'সহকারী টেকনিক্যাল অফিসার',
-                'seat_id' => $member2019->id,
+                'seat_id' => $exicutive_member->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '75',
                 'status' => 'ACTIVE',
-                'panel' => '1',
-                'priority' => ''
+                'panel' => '1'
                 ]
         ];
 
