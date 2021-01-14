@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('candidate/{id}/show', 'CandidateController@show')->name('candidate.show');
     Route::get('candidate/{id}/edit', 'CandidateController@edit')->name('candidate.edit');
     Route::put('candidate/{id}/update', 'CandidateController@update')->name('candidate.update');
-    Route::delete('candidate/{id}/delete', 'CandidateController@delete')->name('candidate.delete');
+    Route::delete('candidate/{id}/delete', 'CandidateController@destroy')->name('candidate.delete');
 
     // Year CRUD Routes
     Route::get('year', 'YearController@index')->name('year.index');

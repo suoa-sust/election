@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row">
             <h2>শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন ২০২১</h2>
+{{--            <p> </p>--}}
 
             <table  class="table  table-hover table-responsive-sm table-striped">
                 <thead>
