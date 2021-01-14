@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeatRequest;
+use App\Models\Candidate;
 use App\Models\Seat;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class SeatController extends Controller
 
     public function create()
     {
-                return view('admin.seat.create');
+        return view('admin.seat.create');
     }
 
     public function store(SeatRequest $seatRequest)
@@ -60,12 +61,26 @@ class SeatController extends Controller
     public function destroy($id)
     {
         try {
-            Seat::delete($id);
+            Seat::destroy($id);
             return redirect()->route('seat.index')->with('success', 'Candidate Deleted Successfully');
         } catch (\Exception $exception) {
-            return redirect()->route('seat.index')->with('error', 'Something went wrong');
+            return redirect()->route('seat.index')->with('error', 'Something went wrong.'.$exception->getMessage());
         }
     }
+
+    public function findBySeat($seat_name)
+    {
+        try {
+        $seat_id = Seat::where('name', $seat_name)->pluck('id');
+        $candidates = Candidate::where('seat_id','=', $seat_id)->get();
+        return view('admin.seat.search')
+            ->with('candidates', $candidates);
+        } catch (\Exception $exception) {
+            return redirect()->route('seat.index')->with('error', 'Does not exist.');
+        }
+    }
+
+
 }
 
 

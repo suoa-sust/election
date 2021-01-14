@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'All Candidates' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'Filter Candidates' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,18 +25,38 @@
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
 <!-- Example single danger button -->
-    <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Find By Seat
-        </button>
-        <div class="dropdown-menu">
-            @foreach($seats as $id => $name)
-                <a class="dropdown-item" href="{{ route('seat.find', $name) }}">{{ $name }}</a>
-            @endforeach
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('seat.create') }}">Add Seat</a>
-        </div>
-    </div>
+                        <div>
+                            <form action="{{ route('candidate.search') }}" method="GET">
+                                <div class="form-inline">
+                                    <label for="seat" class="col-sm-1 col-form-label">Seat*</label>
+{{--                                    <div class="col-sm-4">--}}
+                                        <select class="form-control-sm" name="seat_id">
+                                            <option value="">All</option>
+                                            @foreach($seats as $id => $name)
+                                                <option {{ $id == $seat_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
+                                            @endforeach
+                                        </select>
+{{--                                    </div>--}}
+
+                                    <label for="seat" class="col-sm-1 col-form-label">Year*</label>
+{{--                                    <div class="col-sm-4">--}}
+                                        <select class="form-control-sm" name="year_id">
+                                            <option value="">All</option>
+                                            @foreach($years as $id => $name)
+                                                <option {{ $id == $year_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
+                                            @endforeach
+                                        </select>
+{{--                                    </div>--}}
+                                    <div style="padding-left: 15px;">
+                                        <button type="submit" class="btn btn-sm btn-info">Submit</button>
+                                    </div>
+
+                                </div>
+
+
+
+                            </form>
+                        </div>
                         <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New Candidate</a>
                     </div>
                     <!-- /.card-header -->

@@ -20,7 +20,8 @@ Route::get('/', function () {
 Route::view('counter','livewire.counter');
 
 
-Route::get('result', 'ResultController@voteCountingPublicDisplay')->name('result');
+Route::get('live', 'ResultController@voteCountingPublicDisplay')->name('result');
+Route::get('result', 'ResultController@voteResults')->name('past.result');
 
 
 // Guest Routes
@@ -40,7 +41,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     // Candidate CRUD Routes
-    Route::get('candidate', 'CandidateController@index')->name('candidate.index');
+    Route::get('candidates', 'CandidateController@index')->name('candidate.index');
+    Route::get('candidate', 'CandidateController@indexByYearBySeat')->name('candidate.search');
     Route::get('candidate/create', 'CandidateController@create')->name('candidate.create');
     Route::post('candidate/store', 'CandidateController@store')->name('candidate.store');
     Route::get('candidate/{id}/show', 'CandidateController@show')->name('candidate.show');
@@ -61,7 +63,7 @@ Route::group(['middleware' => ['auth']], function () {
 //    Route::get('year/{id}/show', 'YearController@show')->name('year.show');
 
 
-    // Post CRUD Routes
+    // Seat CRUD Routes
     Route::get('seat', 'SeatController@index')->name('seat.index');
     Route::get('seat/create', 'SeatController@create')->name('seat.create');
     Route::post('seat/store', 'SeatController@store')->name('seat.store');
@@ -71,11 +73,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
 
-
+    //Search Routes
+    Route::get('seat/find/{seat_name}', 'SeatController@findBySeat')->name('seat.find');
 
 
 
     Route::get('vote', 'VoteController@voteCountPage')->name('vote.count');
+    Route::get('vote/{id}/update', 'VoteController@voteUpdate')->name('vote.update');
 });
 
 

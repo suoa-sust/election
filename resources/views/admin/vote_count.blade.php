@@ -31,6 +31,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
+                                <th>Action</th>
                                 <th>Seat</th>
                                 <th>Votes</th>
                                 <th>Designation</th>
@@ -43,16 +44,14 @@
                             @foreach($candidates as $candidate)
                                 <tr>
                                     <td>{{ $counter++ }}</td>
-                                    <td>
-                                        {{ $candidate->name }}
-
-                                        <a class="btn btn-warning btn-xs voteAdd5" href="{{ route('candidate.edit', $candidate->id) }}">+5</a>
-                                        <a class="btn btn-primary btn-xs voteAdd1" href="{{ route('candidate.edit', $candidate->id) }}">+1</a>
-                                        <a class="btn btn-success btn-xs voteMinus1" href="{{ route('candidate.edit', $candidate->id) }}">-1</a>
+                                    <td>{{ $candidate->name }}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-warning btn-xs voteAdd5" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'+5']) }}">+5</a>
+                                        <a class="btn btn-primary btn-xs voteAdd1" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'+1']) }}">+1</a>
+                                        <a class="btn btn-success btn-xs voteMinus1" href="{{ route('vote.update', ['id' => $candidate->id, 'vote'=>'-1']) }}">-1</a>
                                     </td>
                                     <td>{{ $candidate->seat->name }}</td>
                                     <td>{{ $candidate->number_of_votes }}</td>
-
                                     <td>{{ $candidate->designation }}</td>
                                 </tr>
                             @endforeach

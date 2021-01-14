@@ -16,4 +16,5 @@ class Year extends Model
     {
         return $this->hasMany(Candidate::class);
     }
+
 }
