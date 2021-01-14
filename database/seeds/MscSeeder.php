@@ -81,7 +81,7 @@ class MscSeeder extends Seeder
         ]);
         Candidate::create([
             'name' => 'মোঃ ছালেহ আহমদ',
-            'designation' => 'Software Engineer',
+            'designation' => 'প্রিন্সিপাল ইন্সট্রুমেন্ট ইঞ্জিনিয়ার',
             'seat_id' => $vp->id,
             'year_id' => $year2->id,
             'number_of_votes' => '114',
