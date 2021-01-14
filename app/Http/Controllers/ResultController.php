@@ -9,7 +9,7 @@ class ResultController extends Controller
 {
     public function voteCountingPublicDisplay()
     {
-        $candidates = Candidate::all();
+        $candidates = Candidate::orderBy('number_of_votes', 'DESC')->get();
         return view('live_election')
             ->with('candidates', $candidates);
     }

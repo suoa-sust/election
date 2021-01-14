@@ -129,7 +129,11 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Yes, Confirm</button>
+                    <form id="deleteCandidateForm" action="#" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">Yes, Confirm</button>
+                    </form>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -166,7 +170,7 @@
             });
             $(".deleteBtn").on("click", function () {
                 let deleteUrl = $(this).attr('deleteUrl');
-
+                $('#deleteCandidateForm').attr('action', deleteUrl);
                 console.log(deleteUrl);
             });
         });

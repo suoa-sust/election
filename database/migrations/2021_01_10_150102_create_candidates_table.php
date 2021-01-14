@@ -24,6 +24,8 @@ class CreateCandidatesTable extends Migration
             $table->foreign('year_id')->references('id')->on('years');
             $table->unsignedInteger('number_of_votes')->default('0');
             $table->string('status')->nullable();
+            $table->string('panel')->nullable();
+            $table->string('priority')->default(10);
             $table->softDeletes();
             $table->timestamps();
         });
