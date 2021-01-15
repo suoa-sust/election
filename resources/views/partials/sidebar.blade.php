@@ -143,7 +143,7 @@
                 <li class="nav-header">System Options</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link ">
+                    <a href="{{ route('user.index') }}" class="nav-link {{ ($currentUrl == route('user.index')) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>List of Users</p>
                     </a>

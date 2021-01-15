@@ -59,8 +59,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('year/{id}/delete', 'YearController@destroy')->name('year.delete');
     Route::get('year/search', 'YearController@search')->name('year.search');
     Route::post('search/year', 'YearController@searchYear')->name('details.year.search');
-//    Route::get('year/search/result', 'YearController@searchResult')->name('year.search.result');
-//    Route::get('year/{id}/show', 'YearController@show')->name('year.show');
+    //Route::get('year/search/result', 'YearController@searchResult')->name('year.search.result');
+    //Route::get('year/{id}/show', 'YearController@show')->name('year.show');
+
+    // User CRUD
+    Route::get('user', 'UserController@index')->name('user.index');
+
 
 
     // Seat CRUD Routes

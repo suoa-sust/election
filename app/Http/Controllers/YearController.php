@@ -31,7 +31,7 @@ class YearController extends Controller
         try {
             $data = $yearRequest->only('name', 'start', 'end');
             Year::create($data);
-            return redirect()->route('year.create')->with('success', 'Year Added Successfully');
+            return redirect()->route('year.index')->with('success', 'Year Added Successfully');
         } catch (\Exception $exception) {
             return redirect()->route('year.create')->with('error', 'Something went wrong');
         }

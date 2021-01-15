@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'All Election Years' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'All Users' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Year</li>
+                        <li class="breadcrumb-item active">Users</li>
 
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('year.create') }}">Add New Year</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('register') }}">Add New User</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -33,8 +33,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>Email</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -43,16 +42,15 @@
                             @php
                               $counter = 1;
                             @endphp
-                            @foreach($years as $year)
+                            @foreach($users as $user)
                             <tr>
                                 <td>{{ $counter++ }}</td>
-                                <td>{{ $year->name }}</td>
-                                <td>{{ $year->start }}</td>
-                                <td>{{ $year->end }}</td>
-                                <td>{{ $year->status }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->status }}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-xs" href="{{ route('year.edit', $year->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('year.delete', $year->id) }}">Delete</a>
+                                    <a class="btn btn-primary btn-xs" href="#">Cahnge Password</a>
+                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="#">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
