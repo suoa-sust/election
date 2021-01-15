@@ -15,9 +15,10 @@ class CreateYearsTable extends Migration
     {
         Schema::create('years', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name')->unique();
             $table->date('start')->nullable();
             $table->date('end')->nullable();
+            $table->timestamp('election_date')->nullable();
             $table->enum('status',
                 ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE']
             )->default('ACTIVE');

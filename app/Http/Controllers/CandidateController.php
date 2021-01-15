@@ -14,7 +14,7 @@ class CandidateController extends Controller
     {
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $candidates = Candidate::all();
-        return view('admin.candidate.index')
+        return view('admin.candidate.search_index')
             ->with('candidates', $candidates)
             ->with('seats', $seats);
 
@@ -50,6 +50,7 @@ class CandidateController extends Controller
     {
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $years = Year::pluck('name', 'id');
+        $statuses = [ 'INACTIVE', 'ACTIVE'];
         return view('admin.candidate.create')
             ->with('seats', $seats)
             ->with('years', $years);
@@ -71,7 +72,7 @@ class CandidateController extends Controller
     {
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $years = Year::pluck('name', 'id');
-        $statuses = ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE'];
+        $statuses = [ 'INACTIVE', 'ACTIVE'];
         $candidate = Candidate::findOrFail($id);
         return view('admin.candidate.edit')
             ->with('seats', $seats)

@@ -18,6 +18,9 @@ class VoteController extends Controller
     {
         $vote = $request->vote;
         $candidate = Candidate::findOrFail($id);
+        if($candidate->year->status == 'COMPLETED') {
+            return redirect()->back()->with('warning', 'Cannot modify vote of Completed election');
+        }
         $candidate->number_of_votes = $candidate->number_of_votes + $vote;
         $candidate->save();
         $msg = $vote . " added to ".$candidate->name. " Successfully";
