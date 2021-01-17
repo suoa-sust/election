@@ -2,9 +2,8 @@
 
     <div class="container">
         <div class="row">
-            <h2>শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন ২০২১</h2>
 
-            <table  class="table  table-hover table-responsive-sm table-striped">
+            <table  class="table  table-hover table-responsive-sm table-striped" >
                 <thead>
                 <tr>
                     <th>Candidate</th>
@@ -13,7 +12,7 @@
                     <th>Votes</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody >
                 @foreach($candidates as $candidate)
                     <tr>
                         <td>{{ $candidate->name }}</td>

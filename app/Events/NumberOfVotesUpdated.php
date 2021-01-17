@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Candidate;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -19,9 +20,11 @@ class NumberOfVotesUpdated implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public $candidate;
+
+    public function __construct($candidate)
     {
-        //
+        $this->candidate = $candidate;
     }
 
     /**
@@ -31,6 +34,6 @@ class NumberOfVotesUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('candidates');
+        return new Channel('candidate');
     }
 }

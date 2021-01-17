@@ -12,6 +12,8 @@ class CandidateController extends Controller
 {
     public function index()
     {
+        return redirect()->route('candidate.search');
+
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $candidates = Candidate::all();
         return view('admin.candidate.search_index')
@@ -59,7 +61,7 @@ class CandidateController extends Controller
     public function store(CandidateRequest $candidateRequest)
     {
         try {
-            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id');
+            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id', '');
             Candidate::create($data);
             return redirect()->route('candidate.index')->with('success', 'Candidate Added Successfully');
         } catch (\Exception $exception) {

@@ -33,6 +33,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
+                                <th>Election Date</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Status</th>
@@ -47,6 +48,7 @@
                             <tr>
                                 <td>{{ $counter++ }}</td>
                                 <td>{{ $year->name }}</td>
+                                <td>{{ $year->election_date }}</td>
                                 <td>{{ $year->start }}</td>
                                 <td>{{ $year->end }}</td>
                                 <td>{{ $year->status }}</td>

@@ -74,6 +74,13 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="panel" class="col-sm-2 col-form-label">Panel </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="panel" class="form-control" placeholder="" value="{{ $candidate->panel }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="seat" class="col-sm-2 col-form-label">Status</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="status">

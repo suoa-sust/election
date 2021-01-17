@@ -42,6 +42,13 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="start" class="col-sm-2 col-form-label">Election Date</label>
+                                <div class="col-sm-10">
+                                    <input type="date" name="election_date" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="start" class="col-sm-2 col-form-label">Start Date</label>
                                 <div class="col-sm-10">
                                     <input type="date" name="start" class="form-control" required value="{{$year->start}}">

@@ -29,7 +29,7 @@ class YearController extends Controller
     {
 
         try {
-            $data = $yearRequest->only('name', 'start', 'end');
+            $data = $yearRequest->only('name', 'start', 'end', 'election_date');
             Year::create($data);
             return redirect()->route('year.create')->with('success', 'Year Added Successfully');
         } catch (\Exception $exception) {
@@ -52,9 +52,11 @@ class YearController extends Controller
     public function update(YearRequest $yearRequest, $id)
     {
         try {
-            $data = $yearRequest->only('name', 'start', 'end', 'status');
+            $data = $yearRequest->only('name', 'start', 'end', 'status', 'election_date');
             $year = Year::findOrFail($id);
             $year->name = $data['name'];
+            $year->start = $data['election_date'];
+            $year->start = $data['start'];
             $year->start = $data['start'];
             $year->end = $data['end'];
             $year->status = $data['status'];

@@ -73,6 +73,13 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="panel" class="col-sm-2 col-form-label">Panel </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="panel" class="form-control" placeholder="Jack Doe">
+                                </div>
+                            </div>
+
 
                         </div>
                         <div class="card-footer">
