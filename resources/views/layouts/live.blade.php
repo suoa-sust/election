@@ -7,7 +7,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+{{--    <link rel="stylesheet" href="{{ mix('css/app.css') }}">--}}
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 
     <!-- Scripts -->
 {{--    @yield('styles')--}}
@@ -17,7 +18,7 @@
 
 @yield('content')
 
-<script src="{{ mix('js/app.js') }}" defer></script>
+{{--<script src="{{ mix('js/app.js') }}" defer></script>--}}
 {{--@yield('scripts')--}}
 @livewireScripts
 </body>

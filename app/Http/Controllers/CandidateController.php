@@ -6,6 +6,7 @@ use App\Http\Requests\CandidateRequest;
 use App\Models\Candidate;
 use App\Models\Seat;
 use App\Models\Year;
+use App\Settings\StaticData;
 use Illuminate\Http\Request;
 
 class CandidateController extends Controller
@@ -52,9 +53,11 @@ class CandidateController extends Controller
     {
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $years = Year::pluck('name', 'id');
+        $designation = StaticData::$designation;
         $statuses = [ 'INACTIVE', 'ACTIVE'];
         return view('admin.candidate.create')
             ->with('seats', $seats)
+            ->with('designation', $designation)
             ->with('years', $years);
     }
 
@@ -75,11 +78,13 @@ class CandidateController extends Controller
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $years = Year::pluck('name', 'id');
         $statuses = [ 'INACTIVE', 'ACTIVE'];
+        $designation = StaticData::$designation;
         $candidate = Candidate::findOrFail($id);
         return view('admin.candidate.edit')
             ->with('seats', $seats)
             ->with('years', $years)
             ->with('statuses', $statuses)
+            ->with('designation', $designation)
             ->with('candidate', $candidate);
     }
 

@@ -1,5 +1,5 @@
 
-<div wire:poll.keep-alive>
-        Now: {{ now()->format('l jS \\of F Y h:i:s A') }}
-    </div>
+<span wire:poll.keep-alive>
+        <strong style="font-size: 15pt">{{ now()->format('F j, Y h:i:s A') }}</strong>
+</span>
 
