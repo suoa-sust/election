@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('seat/{id}/show', 'SeatController@show')->name('seat.show');
     Route::get('seat/{id}/edit', 'SeatController@edit')->name('seat.edit');
     Route::put('seat/{id}/update', 'SeatController@update')->name('seat.update');
-    Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
+    Route::get('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
 
     //Search Routes
