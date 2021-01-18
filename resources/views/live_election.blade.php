@@ -21,6 +21,7 @@
                         <td>{{ $candidate->designation }}</td>
                         <td>{{ $candidate->seat->name }}</td>
                         <td>{{ $candidate->number_of_votes }}</td>
+                        <td>{{  }}</td>
                     </tr>
                 @endforeach
                 </tbody>

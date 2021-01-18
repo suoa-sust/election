@@ -23,30 +23,32 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-{{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-<!-- Example single danger button -->
+                    {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
+                    <!-- Example single danger button -->
                         <div>
                             <form action="{{ route('candidate.search') }}" method="GET">
                                 <div class="form-inline">
                                     <label for="seat" class="col-sm-1 col-form-label">Seat*</label>
-{{--                                    <div class="col-sm-4">--}}
-                                        <select class="form-control-sm" name="seat_id">
-                                            <option value="">All</option>
-                                            @foreach($seats as $id => $name)
-                                                <option {{ $id == $seat_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
-                                            @endforeach
-                                        </select>
-{{--                                    </div>--}}
+                                    {{--                                    <div class="col-sm-4">--}}
+                                    <select class="form-control-sm" name="seat_id">
+                                        <option value="">All</option>
+                                        @foreach($seats as $id => $name)
+                                            <option
+                                                {{ $id == $seat_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
+                                        @endforeach
+                                    </select>
+                                    {{--                                    </div>--}}
 
                                     <label for="seat" class="col-sm-1 col-form-label">Year*</label>
-{{--                                    <div class="col-sm-4">--}}
-                                        <select class="form-control-sm" name="year_id">
-                                            <option value="">All</option>
-                                            @foreach($years as $id => $name)
-                                                <option {{ $id == $year_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
-                                            @endforeach
-                                        </select>
-{{--                                    </div>--}}
+                                    {{--                                    <div class="col-sm-4">--}}
+                                    <select class="form-control-sm" name="year_id">
+                                        <option value="">All</option>
+                                        @foreach($years as $id => $name)
+                                            <option
+                                                {{ $id == $year_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
+                                        @endforeach
+                                    </select>
+                                    {{--                                    </div>--}}
                                     <div style="padding-left: 15px;">
                                         <button type="submit" class="btn btn-sm btn-info">Submit</button>
                                     </div>
@@ -54,10 +56,10 @@
                                 </div>
 
 
-
                             </form>
                         </div>
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New Candidate</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('candidate.create') }}">Add New
+                            Candidate</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -75,32 +77,35 @@
                             </thead>
                             <tbody>
                             @php
-                            $counter = 1;
+                                $counter = 1;
                             @endphp
                             @foreach($candidates as $candidate)
-                            <tr>
-                                <td>{{ $counter++ }}</td>
-                                <td>{{ $candidate->name }}</td>
-                                <td>{{ $candidate->designation }}</td>
-                                <td>{{ $candidate->seat->name }}</td>
-                                <td>{{ $candidate->year->name }}</td>
-                                <td>{{ $candidate->number_of_votes }}</td>
-                                <td>
-                                    <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $candidate->name }}</td>
+                                    <td>{{ $candidate->designation }}</td>
+                                    <td>{{ $candidate->seat->name }}</td>
+                                    <td>{{ $candidate->year->name }}</td>
+                                    <td>{{ $candidate->number_of_votes }}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-xs"
+                                           href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
+                                        <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal"
+                                           data-target="#delete-modal" href="#"
+                                           deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
-{{--                            <tfoot>--}}
-{{--                            <tr>--}}
-{{--                                <th>Rendering engine</th>--}}
-{{--                                <th>Browser</th>--}}
-{{--                                <th>Platform(s)</th>--}}
-{{--                                <th>Engine version</th>--}}
-{{--                                <th>CSS grade</th>--}}
-{{--                            </tr>--}}
-{{--                            </tfoot>--}}
+                            {{--                            <tfoot>--}}
+                            {{--                            <tr>--}}
+                            {{--                                <th>Rendering engine</th>--}}
+                            {{--                                <th>Browser</th>--}}
+                            {{--                                <th>Platform(s)</th>--}}
+                            {{--                                <th>Engine version</th>--}}
+                            {{--                                <th>CSS grade</th>--}}
+                            {{--                            </tr>--}}
+                            {{--                            </tfoot>--}}
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -112,7 +117,7 @@
         <!-- /.row -->
     </div>
 
-{{--    Modal Area --}}
+    {{--    Modal Area --}}
 
     <div class="modal fade" id="delete-modal">
         <div class="modal-dialog">
@@ -124,7 +129,7 @@
                     </button>
                 </div>
                 <div class="modal-body" id="modalBody">
-{{--                    <p>One fine body&hellip;</p>--}}
+                    {{--                    <p>One fine body&hellip;</p>--}}
 
                 </div>
                 <div class="modal-footer justify-content-between">

@@ -23,10 +23,10 @@
             <div class="col-md-12 col-md-offset-1">
                 <div class="card card-default">
                     <div class="card-header">
-{{--                        <h3 class="card-title">Add New User</h3>--}}
-{{--                        <div class="card-tools">--}}
-{{--                            <button class="btn btn-primary"> Add New User</button>--}}
-{{--                        </div>--}}
+                        {{--                        <h3 class="card-title">Add New User</h3>--}}
+                        {{--                        <div class="card-tools">--}}
+                        {{--                            <button class="btn btn-primary"> Add New User</button>--}}
+                        {{--                        </div>--}}
                     </div>
 
 
@@ -38,25 +38,26 @@
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Name*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control" placeholder="Jack Doe" required value="{{ $seat->name }}">
+                                    <input type="text" name="name" class="form-control" placeholder="Jack Doe" required
+                                           value="{{ $seat->name }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="priority" class="col-sm-2 col-form-label">Priority*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="priority" class="form-control" placeholder="priority" value="{{ $seat->priority }}" required>
+                                    <input type="text" name="priority" class="form-control" placeholder="priority"
+                                           value="{{ $seat->priority }}" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="status" class="col-sm-2 col-form-label">Status*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="status" class="form-control" placeholder="status" value="{{ $seat->status }}" required>
+                                    <input type="text" name="status" class="form-control" placeholder="status"
+                                           value="{{ $seat->status }}" required>
                                 </div>
                             </div>
-
-
 
 
                         </div>

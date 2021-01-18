@@ -27,6 +27,7 @@ class CandidateController extends Controller
         $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
         $years = Year::pluck('name', 'id');
 
+
         if(isset($seatId) && isset($yearId)) {
             $candidates = Candidate::where('seat_id', $seatId)->where('year_id', $yearId)->get();
         } elseif (isset($seatId)) {
