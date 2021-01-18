@@ -71,6 +71,7 @@
                                 <th>Designation</th>
                                 <th>Seat</th>
                                 <th>Year</th>
+                                <th>Panel</th>
                                 <th>Votes</th>
                                 <th>Action</th>
                             </tr>
@@ -80,21 +81,23 @@
                                 $counter = 1;
                             @endphp
                             @foreach($candidates as $candidate)
-                                <tr>
-                                    <td>{{ $counter++ }}</td>
-                                    <td>{{ $candidate->name }}</td>
-                                    <td>{{ $candidate->designation }}</td>
-                                    <td>{{ $candidate->seat->name }}</td>
-                                    <td>{{ $candidate->year->name }}</td>
-                                    <td>{{ $candidate->number_of_votes }}</td>
-                                    <td>
-                                        <a class="btn btn-primary btn-xs"
-                                           href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
-                                        <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal"
-                                           data-target="#delete-modal" href="#"
-                                           deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
-                                    </td>
-                                </tr>
+
+                            <tr>
+                                <td>{{ $counter++ }}</td>
+                                <td>{{ $candidate->name }}</td>
+                                <td>{{ $candidate->designation }}</td>
+                                <td>{{ $candidate->seat->name }}</td>
+                                <td>{{ $candidate->year->name }}</td>
+                                <td>{{ $candidate->panel }}</td>
+                                <td>{{ $candidate->number_of_votes }}</td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>
+                                    @unless($candidate->year->status == 'COMPLETED')
+                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('candidate.delete', $candidate->id) }}">Delete</a>
+                                    @endunless
+                                </td>
+                            </tr>
+
                             @endforeach
                             </tbody>
                             {{--                            <tfoot>--}}

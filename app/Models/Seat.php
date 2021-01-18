@@ -23,8 +23,13 @@ class Seat extends Model
         });
     }
 
-    public function candidate()
+    public function candidates()
     {
         return $this->hasMany(Candidate::class);
+    }
+
+    public function candidatesByYear($yearId)
+    {
+        return $this->hasMany(Candidate::class)->where('year_id', $yearId);
     }
 }

@@ -49,6 +49,7 @@
                                 <th>Designation</th>
                                 <th>Seat</th>
                                 <th>Year</th>
+                                <th>Panel</th>
                                 <th>Votes</th>
                                 <th>Action</th>
                             </tr>
@@ -64,6 +65,7 @@
                                 <td>{{ $candidate->designation }}</td>
                                 <td>{{ $candidate->seat->name }}</td>
                                 <td>{{ $candidate->year->name }}</td>
+                                <td>{{ $candidate->panel }}</td>
                                 <td>{{ $candidate->number_of_votes }}</td>
                                 <td>
                                     <a class="btn btn-primary btn-xs" href="{{ route('candidate.edit', $candidate->id) }}">Edit</a>

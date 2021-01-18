@@ -20,8 +20,12 @@ Route::get('/', function () {
 Route::view('counter','livewire.counter');
 
 
-Route::get('live', 'ResultController@voteCountingPublicDisplay')->name('result');
+Route::get('live2', 'ResultController@voteCountingPublicDisplay')->name('result');
+Route::get('live', 'ResultController@live')->name('live');
+
+
 Route::get('result', 'ResultController@voteResults')->name('past.result');
+Route::get('result2', 'ResultController@voteResults2')->name('past.result2');
 
 
 // Guest Routes

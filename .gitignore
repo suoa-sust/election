@@ -13,3 +13,5 @@ yarn-error.log
 composer.lock
 .idea/
 package-lock
+desktop.ini
+**/desktop.ini

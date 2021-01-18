@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'Add New Year' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'Edit Year' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -38,6 +38,13 @@
                                 <label for="name" class="col-sm-2 col-form-label">Election Year</label>
                                 <div class="col-sm-10">
                                     <input type="number" name="name" class="form-control" placeholder="2021" required value="{{$year->name}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="election_date" class="col-sm-2 col-form-label">Election Date</label>
+                                <div class="col-sm-10">
+                                    <input type="date" name="election_date" class="form-control" required value="{{$year->election_date}}">
                                 </div>
                             </div>
 
