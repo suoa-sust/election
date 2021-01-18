@@ -30,7 +30,7 @@ class VoteController extends Controller
         $candidate->number_of_votes = $candidate->number_of_votes + $vote;
         $candidate->save();
 
-        broadcast(new NumberOfVotesUpdated($candidate));
+//        broadcast(new NumberOfVotesUpdated($candidate));
 
         $msg = $vote . " added to ".$candidate->name. " Successfully";
         return redirect()->route('vote.count')->with('success', $msg);

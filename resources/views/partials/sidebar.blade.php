@@ -132,12 +132,12 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('year.search') }}" class="nav-link {{ ($currentUrl == route('year.search')||($currentUrl == route('details.year.search'))) ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-search"></i>
-                        <p>Year-wise Search</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('year.search') }}" class="nav-link {{ ($currentUrl == route('year.search')||($currentUrl == route('details.year.search'))) ? 'active' : '' }}">--}}
+{{--                        <i class="nav-icon fas fa-search"></i>--}}
+{{--                        <p>Year-wise Search</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
 
                 <li class="nav-header">System Options</li>

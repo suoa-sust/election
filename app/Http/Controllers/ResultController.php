@@ -21,7 +21,12 @@ class ResultController extends Controller
 
     public function live()
     {
-        return view('live');
+        $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
+        if(isset($year) ) {
+            return view('live');
+        }
+        return view('nolive');
+
     }
 
     public function voteResults(Request $request)

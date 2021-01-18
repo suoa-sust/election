@@ -1,4 +1,4 @@
-<div  wire:poll>
+<div wire:poll >
 
     <div class="container">
         <div class="row">
@@ -18,7 +18,7 @@
                             @elseif($seat->name == 'সহ-সাধারণ সম্পাদক')
                                 <table class="table-primary table">
                             @endif
-                                @foreach($seat->candidates->where('year_id', $year->id) as $candidate)
+                                @foreach(collect($seat->candidates->where('year_id', $year->id))->sortByDesc('number_of_votes') as $candidate)
                                     <tr>
                                         <td>{{ $candidate->name }}</td>
                                         <td>{{ $candidate->designation }}</td>

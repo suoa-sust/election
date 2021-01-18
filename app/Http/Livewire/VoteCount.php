@@ -14,9 +14,9 @@ class VoteCount extends Component
     public function mount()
     {
         $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
-        $this->candidates = Candidate::where('year_id', $year->id)
+        $this->candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
-            ->get();
+            ->get() : [];
     }
 
     public function render()

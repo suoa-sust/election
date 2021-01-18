@@ -40,7 +40,7 @@ class DisplayElectionResult extends Component
 //            ->orderBy('seat_id', 'ASC')
 //            ->orderBy('number_of_votes', 'DESC')
 ////            ->get();
-        $this->seats = Seat::where('status', 'ACTIVE')->orderBy('priority', 'ASC')->get();
+        $this->seats = isset($this->year) ? Seat::where('status', 'ACTIVE')->orderBy('priority', 'ASC')->get() : [];
 //        foreach ($seats as $seat) {
 ////            if($seat->name == 'সভাপতি') {
 ////                $this->presidentialCandidates = $seat->candidatesByYear($year->id);
