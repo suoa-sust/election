@@ -3,7 +3,7 @@
 
     <br>
     <div class="container page-top">
-{{--        <h3 class="text-center">Photo Gallery</h3>--}}
+        {{--        <h3 class="text-center">Photo Gallery</h3>--}}
 
         <div class="row">
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
