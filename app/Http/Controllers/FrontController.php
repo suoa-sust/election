@@ -22,4 +22,8 @@ class FrontController extends Controller
     {
         return view('front.commission');
     }
+    public function developers()
+    {
+        return view('front.developers');
+    }
 }

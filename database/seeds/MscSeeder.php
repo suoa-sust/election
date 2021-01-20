@@ -41,7 +41,7 @@ class MscSeeder extends Seeder
             'status' => 'COMPLETED'
         ]);
 
-        $seat = Seat::create(['name' => 'Software Engineer', 'name_bn' => 'স্ফটওয়্যার প্রকৌশলী',  'priority' => 20, 'status' => 'ACTIVE']);
+        $seat = Seat::create(['name_bn' => 'স্ফটওয়্যার প্রকৌশলী', 'name' => 'Software Engineer', 'priority' => 20, 'status' => 'ACTIVE']);
         $president = Seat::create(['name_bn' => 'সভাপতি', 'name' => 'President',  'priority' => 1, 'status' => 'ACTIVE']);
         $vp = Seat::create(['name_bn' => 'সহ-সভাপতি', 'name' => 'Vice President',  'priority' => 2, 'status' => 'ACTIVE']);
         $gs = Seat::create(['name_bn' => 'সাধারণ সম্পাদক', 'name' => 'General Secretary',  'priority' => 3, 'status' => 'ACTIVE']);
@@ -77,7 +77,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '114',
             'status' => 'ACTIVE',
-            'panel' => 'awami',,
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -97,7 +97,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '114',
             'status' => 'ACTIVE',
-            'panel' => 'awami',,
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -118,7 +118,7 @@ class MscSeeder extends Seeder
              'year_id' => $year2->id,
             'number_of_votes' => '110',
              'status' => 'ACTIVE',
-             'panel' => 'awami',,
+             'panel' => 'awami',
              'priority' => '10'
         ]);
         Candidate::create([
@@ -128,7 +128,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '107',
             'status' => 'ACTIVE',
-            'panel' => 'nationalist',,
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -300,7 +300,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '139',
                 'status' => 'ELECTED',
-                'panel' => 'nationalist',,
+                'panel' => 'nationalist',
                 'priority' => '10'
                 ],
             [

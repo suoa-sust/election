@@ -130,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Default to the left -->
 {{--        <strong>Copyright &copy; 2021-{{ Date('Y') }} <a href="#">ICT Cell</a> In Association With <a href="#">Election Commission</a>.</strong> & SUOA--}}
 
-        <strong>Designed, Developed & Maintained By <br><a class="pull-right" href="#">Combined Wing, ICT Cell, SUST</a></strong>
+        <strong>Designed, Developed & Maintained By <br><a class="pull-right" href=" {{route('public.developers')}}">Combined Wing, ICT Cell, SUST</a></strong>
     </footer>
 </div>
 <!-- ./wrapper -->
