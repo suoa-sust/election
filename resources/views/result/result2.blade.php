@@ -17,7 +17,7 @@
                         <table>
                             @foreach($seatIds as $candidate)
                             <tr>
-                                <td> {{ $candidate->name }}</td>
+                                <td> {{ $candidate }}</td>
                                 <td> {{ $candidate->number_of_votes }}</td>
                             </tr>
                             @endforeach

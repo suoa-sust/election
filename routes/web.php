@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'FrontController@home')->name('home');
 
 Route::view('counter','livewire.counter');
 
 
 
-Route::get('live2', 'ResultController@voteCountingPublicDisplay')->name('result');
+//Route::get('live2', 'ResultController@voteCountingPublicDisplay')->name('result');
 Route::get('live', 'ResultController@live')->name('live');
 
 
