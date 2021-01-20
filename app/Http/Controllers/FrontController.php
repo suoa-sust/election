@@ -18,4 +18,8 @@ class FrontController extends Controller
             ->with('seats', $seats)
             ->with('title', 'Seats');
     }
+    public function commission()
+    {
+        return view('front.commission');
+    }
 }
