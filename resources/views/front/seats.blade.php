@@ -4,6 +4,7 @@
     <br>
     <div class="container">
         <h3 class="text-center">আসন - শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন</h3>
+        <h4 class="text-center"> মোট আসন সংখ্যা - ১১ </h4>
         <table  class="table  table-hover table-responsive-sm table-striped">
             <thead>
             <tr>

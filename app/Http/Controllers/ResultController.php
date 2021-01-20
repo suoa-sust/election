@@ -39,10 +39,12 @@ class ResultController extends Controller
         }
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
-            ->orderBy('number_of_votes', 'DESC')
+//            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
-        return view('result.result')
-            ->with('candidates', $candidates);
+        return view('front.result')
+            ->with('candidates', $candidates)
+            ->with('year', $year)
+            ->with('yearName', $yearName);
     }
 
     public function voteResults2(Request $request)
