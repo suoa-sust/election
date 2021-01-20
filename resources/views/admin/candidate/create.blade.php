@@ -42,15 +42,22 @@
                                 </div>
                             </div>
 
+
+
                             <div class="form-group row">
                                 <label for="designation" class="col-sm-2 col-form-label">Designation*</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="designation" class="form-control" placeholder="Deputy Registrar" required>
+                                    <select class="form-control" name="designation">
+                                        <option value="">Please Select Designation</option>
+                                        @foreach($designation as  $one)
+                                            <option value="{{ $one }}">{{ $one }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="seat" class="col-sm-2 col-form-label">Seat*</label>
+                                <label for="seat_id" class="col-sm-2 col-form-label">Seat*</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="seat_id">
                                         <option value="">Please Select a Seat</option>
@@ -62,7 +69,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="seat" class="col-sm-2 col-form-label">Year*</label>
+                                <label for="year_id" class="col-sm-2 col-form-label">Year*</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="year_id">
                                         <option value="">Please Select Election Year</option>
@@ -70,6 +77,13 @@
                                             <option value="{{ $id }}">{{ $name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="panel" class="col-sm-2 col-form-label">Panel </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="panel" class="form-control" placeholder="Jack Doe">
                                 </div>
                             </div>
 

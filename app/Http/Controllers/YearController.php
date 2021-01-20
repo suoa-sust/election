@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\YearRequest;
 use App\Models\Year;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\DocBlock\Description;
 use function PHPUnit\Framework\isEmpty;
@@ -29,7 +30,7 @@ class YearController extends Controller
     {
 
         try {
-            $data = $yearRequest->only('name', 'start', 'end');
+            $data = $yearRequest->only('name', 'start', 'end', 'election_date');
             Year::create($data);
             return redirect()->route('year.index')->with('success', 'Year Added Successfully');
         } catch (\Exception $exception) {
@@ -40,8 +41,8 @@ class YearController extends Controller
 
     public function edit($id)
     {
-        $year = Year::findOrFail($id);
-//        dd($year->status);
+         $year = Year::findOrFail($id);
+        $year->election_date = Carbon::parse($year->election_date)->toDateString();
 
         $statuses = ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE'];
         return view('admin.year.edit')
@@ -52,9 +53,10 @@ class YearController extends Controller
     public function update(YearRequest $yearRequest, $id)
     {
         try {
-            $data = $yearRequest->only('name', 'start', 'end', 'status');
+             $data = $yearRequest->only('name', 'start', 'end', 'status', 'election_date');
             $year = Year::findOrFail($id);
             $year->name = $data['name'];
+            $year->election_date = Carbon::parse($data['election_date'])->toDateString();
             $year->start = $data['start'];
             $year->end = $data['end'];
             $year->status = $data['status'];

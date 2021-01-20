@@ -10,7 +10,10 @@
         </li>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a target="_blank" href="{{ route('result') }}" class="nav-link">Public Results</a>
+            <a target="_blank" href="{{ route('past.result', ['year' => date('Y')]) }}" class="nav-link">Past Results</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a target="_blank" href="{{ route('live',) }}" class="nav-link">LIVE</a>
         </li>
     </ul>
 

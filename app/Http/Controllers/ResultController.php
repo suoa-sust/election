@@ -10,13 +10,23 @@ class ResultController extends Controller
 {
     public function voteCountingPublicDisplay()
     {
-        $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
-        $candidates = Candidate::where('year_id', $year->id)
+//        $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
+        $candidates = Candidate::where('year_id', 5)
             ->orderBy('seat_id', 'ASC')
             ->orderBy('number_of_votes', 'DESC')
             ->get();
         return view('live_election')
             ->with('candidates', $candidates);
+    }
+
+    public function live()
+    {
+        $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
+        if(isset($year) ) {
+            return view('live');
+        }
+        return view('nolive');
+
     }
 
     public function voteResults(Request $request)
