@@ -53,85 +53,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
             @yield('content')
         </div>
 
-        <!-- Main content -->
-{{--        <div class="content">--}}
-{{--            <div class="container">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-lg-6">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
 
-{{--                                <p class="card-text">--}}
-{{--                                    Some quick example text to build on the card title and make up the bulk of the card's--}}
-{{--                                    content.--}}
-{{--                                </p>--}}
-
-{{--                                <a href="#" class="card-link">Card link</a>--}}
-{{--                                <a href="#" class="card-link">Another link</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="card card-primary card-outline">--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h5 class="card-title">Card title</h5>--}}
-
-{{--                                <p class="card-text">--}}
-{{--                                    Some quick example text to build on the card title and make up the bulk of the card's--}}
-{{--                                    content.--}}
-{{--                                </p>--}}
-{{--                                <a href="#" class="card-link">Card link</a>--}}
-{{--                                <a href="#" class="card-link">Another link</a>--}}
-{{--                            </div>--}}
-{{--                        </div><!-- /.card -->--}}
-{{--                    </div>--}}
-{{--                    <!-- /.col-md-6 -->--}}
-{{--                    <div class="col-lg-6">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="card-header">--}}
-{{--                                <h5 class="card-title m-0">Featured</h5>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h6 class="card-title">Special title treatment</h6>--}}
-
-{{--                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-{{--                                <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="card card-primary card-outline">--}}
-{{--                            <div class="card-header">--}}
-{{--                                <h5 class="card-title m-0">Featured</h5>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h6 class="card-title">Special title treatment</h6>--}}
-
-{{--                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-{{--                                <a href="#" class="btn btn-primary">Go somewhere</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- /.col-md-6 -->--}}
-{{--                </div>--}}
-{{--                <!-- /.row -->--}}
-{{--            </div><!-- /.container-fluid -->--}}
-{{--        </div>--}}
-        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right">
-            <strong>Powered By <br><a href=" {{route('public.commission')}}">Election Commission 2021</a> & SUOA<a href="#"></a>.</strong>
-        </div>
-        <!-- Default to the left -->
+{{--    <footer class="main-footer ">--}}
+{{--        <div class="text-dark" style="background-color: #ffffff">--}}
+{{--            <strong class="pull-left">&copy; ICT Cell</strong>--}}
+{{--            <div class="float-right">Election Commission</div>--}}
+
+{{--            <span style="font-size: 8pt">In Association With</span> Shahjalal University Officer Association--}}
+
+{{--            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>--}}
+{{--        </div>--}}
+{{--        <!-- To the right -->--}}
+{{--        <div class="float-right">--}}
+{{--            <strong>Powered By <br><a href=" {{route('public.commission')}}">Election Commission 2021</a> & SUOA<a href="#"></a>.</strong>--}}
+{{--        </div>--}}
+{{--        <!-- Default to the left -->--}}
 {{--        <strong>Copyright &copy; 2021-{{ Date('Y') }} <a href="#">ICT Cell</a> In Association With <a href="#">Election Commission</a>.</strong> & SUOA--}}
 
-        <strong>Designed, Developed & Maintained By <br><a class="pull-right" href=" {{route('public.developers')}}">Combined Wing, ICT Cell, SUST</a></strong>
-    </footer>
+
+{{--        <strong class="text-center">--}}
+{{--            Powered By <a href="#">ICT Cell, SUST</a> &--}}
+{{--            <a href=" {{route('public.commission')}}">Election Commission 2021</a> <br> In Associaton With <a href="#">SUOA</a>--}}
+{{--        </strong>--}}
+{{--    </footer>--}}
+    @include('partials.footer2')
 </div>
 <!-- ./wrapper -->
 
