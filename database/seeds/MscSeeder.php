@@ -41,13 +41,13 @@ class MscSeeder extends Seeder
             'status' => 'COMPLETED'
         ]);
 
-        $seat = Seat::create(['name' => 'Software Engineer', 'priority' => 20, 'status' => 'ACTIVE']);
-        $president = Seat::create(['name' => 'সভাপতি', 'priority' => 1, 'status' => 'ACTIVE']);
-        $vp = Seat::create(['name' => 'সহ-সভাপতি', 'priority' => 2, 'status' => 'ACTIVE']);
-        $gs = Seat::create(['name' => 'সাধারণ সম্পাদক', 'priority' => 3, 'status' => 'ACTIVE']);
-        $ags = Seat::create(['name' => 'সহ-সাধারণ সম্পাদক', 'priority' => 4, 'status' => 'ACTIVE']);
-        $treasurer = Seat::create(['name' => 'কোষাধ্যক্ষ', 'priority' => 5, 'status' => 'ACTIVE']);
-        $exicutive_member = Seat::create(['name' => 'কার্যনির্বাহী সদস্য', 'priority' => 6, 'status' => 'ACTIVE']);
+        $seat = Seat::create(['name' => 'Software Engineer', 'name_bn' => 'স্ফটওয়্যার প্রকৌশলী',  'priority' => 20, 'status' => 'ACTIVE']);
+        $president = Seat::create(['name_bn' => 'সভাপতি', 'name' => 'President',  'priority' => 1, 'status' => 'ACTIVE']);
+        $vp = Seat::create(['name_bn' => 'সহ-সভাপতি', 'name' => 'Vice President',  'priority' => 2, 'status' => 'ACTIVE']);
+        $gs = Seat::create(['name_bn' => 'সাধারণ সম্পাদক', 'name' => 'General Secretary',  'priority' => 3, 'status' => 'ACTIVE']);
+        $ags = Seat::create(['name_bn' => 'সহ-সাধারণ সম্পাদক', 'name' => 'Assistant General Secretary',  'priority' => 4, 'status' => 'ACTIVE']);
+        $treasurer = Seat::create(['name_bn' => 'কোষাধ্যক্ষ', 'name' => 'Treasurer',  'priority' => 5, 'status' => 'ACTIVE']);
+        $exicutive_member = Seat::create(['name_bn' => 'কার্যনির্বাহী সদস্য', 'name' => 'Executive Member',  'priority' => 6, 'status' => 'ACTIVE']);
 
         Candidate::create([
             'name' => 'John Doe',
@@ -66,8 +66,8 @@ class MscSeeder extends Seeder
              'seat_id' => $president->id,
              'year_id' => $year2->id,
              'number_of_votes' => '130',
-             'status' => 'ACTIVE',
-             'panel' => '1',
+             'status' => 'ELECTED',
+             'panel' => 'nationalist',
              'priority' => '10'
         ]);
         Candidate::create([
@@ -77,7 +77,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '114',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',,
             'priority' => '10'
         ]);
         Candidate::create([
@@ -86,8 +86,8 @@ class MscSeeder extends Seeder
             'seat_id' => $vp->id,
             'year_id' => $year2->id,
             'number_of_votes' => '129',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -97,7 +97,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '114',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',,
             'priority' => '10'
         ]);
         Candidate::create([
@@ -106,8 +106,8 @@ class MscSeeder extends Seeder
             'seat_id' => $gs->id,
             'year_id' => $year2->id,
             'number_of_votes' => '135',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
 
@@ -118,7 +118,7 @@ class MscSeeder extends Seeder
              'year_id' => $year2->id,
             'number_of_votes' => '110',
              'status' => 'ACTIVE',
-             'panel' => '2',
+             'panel' => 'awami',,
              'priority' => '10'
         ]);
         Candidate::create([
@@ -128,7 +128,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '107',
             'status' => 'ACTIVE',
-            'panel' => '1',
+            'panel' => 'nationalist',,
             'priority' => '10'
         ]);
         Candidate::create([
@@ -137,8 +137,8 @@ class MscSeeder extends Seeder
             'seat_id' => $ags->id,
             'year_id' => $year2->id,
             'number_of_votes' => '128',
-            'status' => 'ACTIVE',
-            'panel' => '2',
+            'status' => 'ELECTED',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -147,8 +147,8 @@ class MscSeeder extends Seeder
             'seat_id' => $treasurer->id,
             'year_id' => $year2->id,
             'number_of_votes' => '129',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -158,7 +158,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '109',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -167,8 +167,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '134',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -177,8 +177,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '133',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -187,8 +187,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '142',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -197,8 +197,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '146',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -207,8 +207,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '127',
-            'status' => 'ACTIVE',
-            'panel' => '1',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -218,7 +218,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '81',
             'status' => 'ACTIVE',
-            'panel' => '1',
+            'panel' => 'nationalist',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -227,8 +227,8 @@ class MscSeeder extends Seeder
             'seat_id' => $exicutive_member->id,
             'year_id' => $year2->id,
             'number_of_votes' => '136',
-            'status' => 'ACTIVE',
-            'panel' => '2',
+            'status' => 'ELECTED',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -238,7 +238,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '115',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -248,7 +248,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '112',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -258,7 +258,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '91',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -268,7 +268,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '82',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
         Candidate::create([
@@ -278,7 +278,7 @@ class MscSeeder extends Seeder
             'year_id' => $year2->id,
             'number_of_votes' => '119',
             'status' => 'ACTIVE',
-            'panel' => '2',
+            'panel' => 'awami',
             'priority' => '10'
         ]);
 
@@ -290,7 +290,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '91',
                 'status' => 'ACTIVE',
-                'panel' => '2',
+                'panel' => 'awami',
                 'priority' => '10'
                 ],
             [
@@ -300,7 +300,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '139',
                 'status' => 'ELECTED',
-                'panel' => '1',
+                'panel' => 'nationalist',,
                 'priority' => '10'
                 ],
             [
@@ -310,7 +310,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '97',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'আবু জাফর মোঃ তামরিনুল হাঁসান',
@@ -319,7 +319,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মোঃ ফখর উদ্দিন',
@@ -328,7 +328,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার' ,
@@ -337,7 +337,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মোঃ সিরাজুল ইসলাম',
@@ -346,7 +346,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'মোঃ মাহফুজুর রহমান',
@@ -355,7 +355,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মোঃ রবিউল ইসলাম',
@@ -364,7 +364,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '128',
                 'status' => 'ELECTED',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'আবুল বাশার মোঃ এনায়েত হোসেন',
@@ -373,7 +373,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '101',
                 'status' => 'ACTIVE',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'আ.ন.ম. জয়নাল আবেদীন',
@@ -382,7 +382,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '131',
                 'status' => 'ELECTED',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'সৈয়দ হাবিবুর রহমান',
@@ -391,7 +391,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '98',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'এ.এস.এম. খয়রুল আক্তার চৌধুরী',
@@ -400,7 +400,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '117',
                 'status' => 'ELECTED',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'শাহীন আহম্মদ চৌধুরী',
@@ -409,7 +409,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '114',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'সেবিকা সুলতানা',
@@ -418,7 +418,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '91',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'মোঃ জয়নাল আবেদীন',
@@ -427,7 +427,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '95',
                 'status' => 'ACTIVE',
-                'panel' => '2'
+                'panel' => 'awami',
                 ],
             [
                 'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
@@ -436,7 +436,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মোঃ নঈমুল হক চৌধুরী',
@@ -445,7 +445,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '93',
                 'status' => 'ACTIVE',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
@@ -454,7 +454,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '121',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'আহমদ মাহবুব ফেরদৌসী',
@@ -463,7 +463,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '123',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মখলিছুর রহমান',
@@ -472,7 +472,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ],
             [
                 'name' => 'মোঃ জয়নুল ইসলাম চৌধুরী',
@@ -481,7 +481,7 @@ class MscSeeder extends Seeder
                 'year_id' => $year2019->id,
                 'number_of_votes' => '75',
                 'status' => 'ACTIVE',
-                'panel' => '1'
+                'panel' => 'nationalist',
                 ]
         ];
 
