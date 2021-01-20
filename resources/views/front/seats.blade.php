@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-
+    
     <br>
     <div class="container">
         <h3 class="text-center">আসন - শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন</h3>

@@ -28,7 +28,10 @@ Route::get('result2', 'ResultController@voteResults2')->name('past.result2');
 
 
 Route::get('seats', 'FrontController@seats')->name('public.seats');
-Route::get('commission', 'FrontController@commission')->name('public.commission');
+
+
+Route::get('ec', 'FrontController@commission')->name('public.commission');
+Route::get('developers', 'FrontController@developers')->name('public.developers');
 Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
 

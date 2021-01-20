@@ -64,7 +64,7 @@ class CandidateController extends Controller
     public function store(CandidateRequest $candidateRequest)
     {
         try {
-            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id', '');
+            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id', 'panel');
             Candidate::create($data);
             return redirect()->route('candidate.index')->with('success', 'Candidate Added Successfully');
         } catch (\Exception $exception) {
@@ -91,12 +91,13 @@ class CandidateController extends Controller
     public function update(CandidateRequest $candidateRequest, $id)
     {
         try {
-            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id', 'status');
+            $data = $candidateRequest->only('name', 'designation', 'seat_id', 'year_id', 'panel', 'status');
             $candidate = Candidate::findOrFail($id);
             $candidate->name = $data['name'];
             $candidate->designation = $data['designation'];
             $candidate->seat_id = $data['seat_id'];
             $candidate->year_id = $data['year_id'];
+            $candidate->panel = $data['panel'];
             $candidate->status = $data['status'];
             $candidate->save();
             return redirect()->route('candidate.index')->with('success', 'Candidate Updated Successfully');

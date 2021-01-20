@@ -3,7 +3,7 @@
 
     <br>
     <div class="container">
-        <h3 class="text-center">এক নজরে নির্বাচন কমিশন ২০২১</h3>
+        <h3 class="text-center">নির্বাচন কমিশন ২০২১</h3>
 
         <div class="row mt-10">
             <div class="col-sm-4 mx-auto">
