@@ -31,6 +31,7 @@ Route::get('seats', 'FrontController@seats')->name('public.seats');
 
 Route::get('ec', 'FrontController@commission')->name('public.commission');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
+Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
 
 
