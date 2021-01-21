@@ -40,7 +40,7 @@
                         <div>
                             <h4> {{ $seat->name }}</h4>
                             <table class="table-active table">
-                                @foreach($seat->candidates->where('year_id', $year->id) as $candidate)
+                                @foreach(collect($seat->candidates->where('year_id', $year->id))->sortByDesc('number_of_votes') as $candidate)
                                     <tr>
                                         <td>{{ $candidate->name }}</td>
                                         <td>{{ $candidate->designation  }}</td>
