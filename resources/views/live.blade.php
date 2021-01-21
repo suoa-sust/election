@@ -10,5 +10,4 @@
     <br>
     <livewire:display-election-result />
 
-
 @endsection
