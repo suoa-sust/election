@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
                 @foreach($seats as $seat)
-                    @unless($seat->name == 'President')
+                    @unless($seat->name == 'Executive Member')
                         <div>
                             <h4> {{ $seat->name_bn }}</h4>
                             @if($seat->name == 'President')
@@ -49,7 +49,7 @@
                                 @endforeach
                             </table>
                         </div>
-                    @endunless
+                    @endif
                 @endforeach
             </div>
 
