@@ -25,6 +25,14 @@ class MscSeeder extends Seeder
             'status' => 'COMPLETED'
         ]);
 
+        $year2021 = Year::create([
+            'name' => '2021',
+            'start' => '2021-02-01',
+            'end' => '2022-01-30',
+            'election_date' => '2021-01-31',
+            'status' => 'ACTIVE'
+        ]);
+
         $year = Year::create([
             'name' => '2025',
             'start' => '2024-01-26',
@@ -42,12 +50,12 @@ class MscSeeder extends Seeder
         ]);
 
         $seat = Seat::create(['name_bn' => 'স্ফটওয়্যার প্রকৌশলী', 'name' => 'Software Engineer', 'priority' => 20, 'status' => 'ACTIVE']);
-        $president = Seat::create(['name_bn' => 'সভাপতি', 'name' => 'President',  'priority' => 1, 'status' => 'ACTIVE']);
-        $vp = Seat::create(['name_bn' => 'সহ-সভাপতি', 'name' => 'Vice President',  'priority' => 2, 'status' => 'ACTIVE']);
-        $gs = Seat::create(['name_bn' => 'সাধারণ সম্পাদক', 'name' => 'General Secretary',  'priority' => 3, 'status' => 'ACTIVE']);
-        $ags = Seat::create(['name_bn' => 'সহ-সাধারণ সম্পাদক', 'name' => 'Assistant General Secretary',  'priority' => 4, 'status' => 'ACTIVE']);
-        $treasurer = Seat::create(['name_bn' => 'কোষাধ্যক্ষ', 'name' => 'Treasurer',  'priority' => 5, 'status' => 'ACTIVE']);
-        $exicutive_member = Seat::create(['name_bn' => 'কার্যনির্বাহী সদস্য', 'name' => 'Executive Member',  'priority' => 6, 'status' => 'ACTIVE']);
+        $president = Seat::create(['name_bn' => 'সভাপতি', 'name' => 'President', 'priority' => 1, 'status' => 'ACTIVE']);
+        $vp = Seat::create(['name_bn' => 'সহ-সভাপতি', 'name' => 'Vice President', 'priority' => 2, 'status' => 'ACTIVE']);
+        $gs = Seat::create(['name_bn' => 'সাধারণ সম্পাদক', 'name' => 'General Secretary', 'priority' => 3, 'status' => 'ACTIVE']);
+        $ags = Seat::create(['name_bn' => 'সহ-সাধারণ সম্পাদক', 'name' => 'Assistant General Secretary', 'priority' => 4, 'status' => 'ACTIVE']);
+        $treasurer = Seat::create(['name_bn' => 'কোষাধ্যক্ষ', 'name' => 'Treasurer', 'priority' => 5, 'status' => 'ACTIVE']);
+        $exicutive_member = Seat::create(['name_bn' => 'কার্যনির্বাহী সদস্য', 'name' => 'Executive Member', 'priority' => 6, 'status' => 'ACTIVE']);
 
         Candidate::create([
             'name' => 'John Doe',
@@ -61,14 +69,14 @@ class MscSeeder extends Seeder
         ]);
 
         Candidate::create([
-             'name' => 'মোহাম্মাদ মুর্শেদ আহমদ',
-             'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
-             'seat_id' => $president->id,
-             'year_id' => $year2->id,
-             'number_of_votes' => '130',
-             'status' => 'ELECTED',
-             'panel' => 'nationalist',
-             'priority' => '10'
+            'name' => 'মোহাম্মাদ মুর্শেদ আহমদ',
+            'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
+            'seat_id' => $president->id,
+            'year_id' => $year2->id,
+            'number_of_votes' => '130',
+            'status' => 'ELECTED',
+            'panel' => 'nationalist',
+            'priority' => '10'
         ]);
         Candidate::create([
             'name' => 'আ.ন.ম জয়নাল আবেদীন',
@@ -115,11 +123,11 @@ class MscSeeder extends Seeder
             'name' => 'মোঃ সিরাজুল ইসলাম',
             'designation' => 'প্রশাসনিক কর্মকর্তা',
             'seat_id' => $gs->id,
-             'year_id' => $year2->id,
+            'year_id' => $year2->id,
             'number_of_votes' => '110',
-             'status' => 'ACTIVE',
-             'panel' => 'awami',
-             'priority' => '10'
+            'status' => 'ACTIVE',
+            'panel' => 'awami',
+            'priority' => '10'
         ]);
         Candidate::create([
             'name' => 'মোঃ ফারুক আহমদ',
@@ -292,7 +300,7 @@ class MscSeeder extends Seeder
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
                 'priority' => '10'
-                ],
+            ],
             [
                 'name' => 'মোহাম্মদ মুর্শেদ আহমদ',
                 'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
@@ -302,7 +310,7 @@ class MscSeeder extends Seeder
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
                 'priority' => '10'
-                ],
+            ],
             [
                 'name' => 'জাকারিয়া বিশ্বাস',
                 'designation' => 'উপ গ্রন্থাগারিক',
@@ -311,7 +319,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '97',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'আবু জাফর মোঃ তামরিনুল হাঁসান',
                 'designation' => 'সহকারী রেজিস্ট্রার',
@@ -320,7 +328,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মোঃ ফখর উদ্দিন',
                 'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
@@ -329,16 +337,16 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
-                'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার' ,
+                'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার',
                 'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
                 'seat_id' => $gs->id,
                 'year_id' => $year2019->id,
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মোঃ সিরাজুল ইসলাম',
                 'designation' => 'সহকারী প্রশাসনিক কর্মকর্তা',
@@ -347,7 +355,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '111',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'মোঃ মাহফুজুর রহমান',
                 'designation' => 'প্রশাসনিক কর্মকর্তা',
@@ -356,7 +364,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মোঃ রবিউল ইসলাম',
                 'designation' => 'প্রশাসনিক কর্মকর্তা',
@@ -365,7 +373,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '128',
                 'status' => 'ELECTED',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'আবুল বাশার মোঃ এনায়েত হোসেন',
                 'designation' => 'স্টোর অফিসার',
@@ -374,7 +382,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '101',
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'আ.ন.ম. জয়নাল আবেদীন',
                 'designation' => 'হিসাব পরিচালক',
@@ -383,7 +391,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '131',
                 'status' => 'ELECTED',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'সৈয়দ হাবিবুর রহমান',
                 'designation' => 'প্রধান প্রকৌশলী',
@@ -392,7 +400,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '98',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'এ.এস.এম. খয়রুল আক্তার চৌধুরী',
                 'designation' => 'আই টি ম্যানেজার',
@@ -401,7 +409,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '117',
                 'status' => 'ELECTED',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'শাহীন আহম্মদ চৌধুরী',
                 'designation' => 'উপ রেজিস্ট্রার',
@@ -410,7 +418,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '114',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'সেবিকা সুলতানা',
                 'designation' => 'উপ গ্রন্থাগারিক',
@@ -419,7 +427,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '91',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'মোঃ জয়নাল আবেদীন',
                 'designation' => 'সহকারী রেজিস্ট্রার (স্টোর)',
@@ -428,7 +436,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '95',
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
-                ],
+            ],
             [
                 'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
                 'designation' => 'তত্তাবধায়ক প্রকৌশলী',
@@ -437,7 +445,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '118',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মোঃ নঈমুল হক চৌধুরী',
                 'designation' => 'অতিরিক্ত হিসাব পরিচালক',
@@ -446,7 +454,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '93',
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
                 'designation' => 'অতিরিক্ত রেজিস্ট্রার',
@@ -455,7 +463,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '121',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'আহমদ মাহবুব ফেরদৌসী',
                 'designation' => 'উপ রেজিস্ট্রার',
@@ -464,7 +472,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '123',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মখলিছুর রহমান',
                 'designation' => 'সহকারী পরীক্ষা নিয়ন্ত্রক',
@@ -473,7 +481,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '129',
                 'status' => 'ELECTED',
                 'panel' => 'nationalist',
-                ],
+            ],
             [
                 'name' => 'মোঃ জয়নুল ইসলাম চৌধুরী',
                 'designation' => 'সহকারী টেকনিক্যাল অফিসার',
@@ -482,10 +490,211 @@ class MscSeeder extends Seeder
                 'number_of_votes' => '75',
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
-                ]
+            ]
         ];
 
-        foreach ($candidates2019 as $candidate)
+        foreach ($candidates2019 as $candidate) {
             Candidate::create($candidate);
+        }
+
+        $candidates2021 = [
+            [
+                'name' => 'মোঃ তাজিম উদ্দিন',
+                'designation' => 'উপ মহাবিদ্যালয় পরিদর্শক',
+                'seat_id' => $president->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+                'priority' => '10'
+            ],
+            [
+                'name' => 'মোহাম্মদ মুর্শেদ আহমদ',
+                'designation' => 'উপ পরিচালক (অর্থ ও হিসাব)',
+                'seat_id' => $president->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+                'priority' => '10'
+            ],
+            [
+                'name' => 'মোহাম্মদ হেলাল হোসেন দেওয়ান',
+                'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
+                'seat_id' => $vp->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'এমরান আহমদ চৌধুরী',
+                'designation' => 'নির্বাহী পরিবহন প্রকৌশলী',
+                'seat_id' => $vp->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'মোঃ সিরাজুল ইসলাম',
+                'designation' => 'প্রশাসনিক কর্মকর্তা',
+                'seat_id' => $gs->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মখলিছুর রহমান',
+                'designation' => 'সহকারী পরীক্ষা নিয়ন্ত্রক',
+                'seat_id' => $gs->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+
+            [
+                'name' => 'মোঅশোক বর্মন অসীম',
+                'designation' => 'একাউন্টস অফিসার',
+                'seat_id' => $ags->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'সাহেদ আহমদ',
+                'designation' => 'সিনিয়র সুপারভাইজার',
+                'seat_id' => $ags->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মোঃ রবিউল ইসলাম',
+                'designation' => 'প্রশাসনিক কর্মকর্তা',
+                'seat_id' => $treasurer->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মোঃ নাজমুল হক',
+                'designation' => 'সহকারী রেজিস্ট্রার',
+                'seat_id' => $treasurer->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'মোঃ মুজিবুর রহমান',
+                'designation' => 'পরীক্ষা নিয়ন্ত্রক',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'সৈয়দ হাবিবুর রহমান',
+                'designation' => 'প্রধান প্রকৌশলী',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'এ.এস.এম. খয়রুল আক্তার চৌধুরী',
+                'designation' => 'আই টি ম্যানেজার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ELECTED',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মোঃ ফখর উদ্দিন',
+                'designation' => 'সহকারী পরিচালক (অ: ও হি:)',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মোঃ জয়নাল আবেদীন',
+                'designation' => 'সহকারী রেজিস্ট্রার (স্টোর)',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+            ],
+            [
+                'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
+                'designation' => 'তত্তাবধায়ক প্রকৌশলী',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
+                'designation' => 'অতিরিক্ত রেজিস্ট্রার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'আহমদ মাহবুব ফেরদৌসী',
+                'designation' => 'উপ রেজিস্ট্রার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'মোঃ ইউনুস আলী',
+                'designation' => 'উপ রেজিস্ট্রার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার',
+                'designation' => 'সহকারী পরিচালক (অর্থ ও হিসাব)',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ],
+            [
+                'name' => 'নঈম উদ্দিন আহমেদ',
+                'designation' => 'সহকারী রেজিস্ট্রার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'nationalist',
+            ]
+        ];
+
+        foreach ($candidates2021 as $candidate) {
+            Candidate::create($candidate);
+        }
     }
+
 }

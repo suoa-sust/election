@@ -83,7 +83,7 @@
                                 <td>{{ $counter++ }}</td>
                                 <td>{{ $candidate->name }}</td>
                                 <td>{{ $candidate->designation }}</td>
-                                <td>{{ $candidate->seat->name }}</td>
+                                <td>{{ $candidate->seat->name_bn }}</td>
                                 <td>{{ $candidate->year->name }}</td>
                                 <td>{{ $candidate->panel }}</td>
                                 <td>{{ $candidate->number_of_votes }}</td>

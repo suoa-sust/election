@@ -33,6 +33,9 @@ Route::get('ec', 'FrontController@commission')->name('public.commission');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
 Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
+Route::get('candidates', 'FrontController@candidates')->name('public.candidates');
+Route::get('notices', 'FrontController@notices')->name('public.notices');
+
 
 
 
@@ -53,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     // Candidate CRUD Routes
-    Route::get('candidates', 'CandidateController@index')->name('candidate.index');
+//    Route::get('candidates', 'CandidateController@index')->name('candidate.index');
     Route::get('candidate', 'CandidateController@indexByYearBySeat')->name('candidate.search');
     Route::get('candidate/create', 'CandidateController@create')->name('candidate.create');
     Route::post('candidate/store', 'CandidateController@store')->name('candidate.store');

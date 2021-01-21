@@ -27,9 +27,13 @@
                     <a href=" {{ route('public.seats') }}" class="nav-link">Seats</a>
                 </li>
 
-{{--                <li class="nav-item">--}}
-{{--                    <a href="#" class="nav-link">Notices</a>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a href="{{ route('public.candidates') }}" class="nav-link">Candidates</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('public.notices') }}" class="nav-link">Notice</a>
+                </li>
 
                 <li class="nav-item">
                     <a href=" {{ route('public.commission') }}" class="nav-link">Election Commission</a>
