@@ -1,9 +1,9 @@
 @extends('layouts.front')
 @section('content')
-    
+
     <br>
     <div class="container">
-        <h3 class="text-center">আসন - শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন</h3>
+        <h3 class="text-center">শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচনের আসনসমূহ</h3>
         <h4 class="text-center"> মোট আসন সংখ্যা - ১১ </h4>
         <table  class="table  table-hover table-responsive-sm table-striped">
             <thead>
@@ -15,9 +15,9 @@
             <tbody>
             @foreach($seats as $seat)
                 <tr>
-                    <td>{{ $seat->name }}</td>
+                    <td>{{ $seat->name_bn }}</td>
                     <td>
-                    @if($seat->name == "কার্যনির্বাহী সদস্য")
+                    @if($seat->name_bn == "কার্যনির্বাহী সদস্য")
                         ৬
                         @else
                         ১
