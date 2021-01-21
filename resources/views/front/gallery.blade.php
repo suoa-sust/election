@@ -3,64 +3,17 @@
 
     <br>
     <div class="container page-top">
-        {{--        <h3 class="text-center">Photo Gallery</h3>--}}
+                <h3 class="text-center">Photo Gallery</h3>
 
         <div class="row">
+            @for($i=1; $i<9; $i++)
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery1.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery1.jpg')}}" class="zoom img-fluid "  alt="">
+                <a href="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="fancybox" rel="ligthbox">
+                    <img  src="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="zoom img-fluid "  alt="">
 
                 </a>
             </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery2.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery2.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery3.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery3.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery4.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery4.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery5.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery5.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery6.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery6.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery7.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery7.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('images/gallery/gallery8.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img  src="{{asset('images/gallery/gallery8.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
+                @endfor
 
         </div>
     </div>
