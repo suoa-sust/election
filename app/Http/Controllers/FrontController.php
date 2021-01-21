@@ -46,7 +46,7 @@ class FrontController extends Controller
         $yearName = $request->year ?? null;
         $year = Year::where('name', $yearName)->first();
         if(!isset($year)) {
-            $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
+            $year = Year::where('status', '=', 'ACTIVE')->first();
         }
 //        $seatId = $request->seat_id;
 //        $yearId = $request->year_id;
