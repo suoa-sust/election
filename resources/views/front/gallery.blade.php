@@ -6,7 +6,7 @@
                 <h3 class="text-center">Photo Gallery</h3>
 
         <div class="row">
-            @for($i=1; $i<9; $i++)
+            @for($i=1; $i<11; $i++)
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a href="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="fancybox" rel="ligthbox">
                         <img  src="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="zoom img-fluid "  alt="">
