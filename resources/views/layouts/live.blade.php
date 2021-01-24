@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ isset($title) ? $title.' -' : '' }} Vote Counting System</title>
+    <title> {{ isset($title) ? $title.' -' : '' }} Vote Counting System</title>
 
 {{--    <link rel="stylesheet" href="{{ mix('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
@@ -13,6 +13,12 @@
     <!-- Scripts -->
 {{--    @yield('styles')--}}
     @livewireStyles
+    <style>
+        table tr {
+            line-height: .9em !important;
+        }
+
+    </style>
 </head>
 <body>
 

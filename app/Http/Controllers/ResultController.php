@@ -23,7 +23,7 @@ class ResultController extends Controller
     {
         $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
         if(isset($year) ) {
-            return view('live');
+            return view('live')->with('title', 'Live');
         }
         return view('nolive');
 

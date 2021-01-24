@@ -77,7 +77,7 @@
                 </li>
 
 
-                <li class="nav-item has-treeview {{ (($currentUrl == route('candidate.create'))||($currentUrl == route('candidate.index'))) ? 'menu-open' : '' }}">
+                <li class="nav-item has-treeview {{ (($currentUrl == route('candidate.create'))||($currentUrl == route('candidate.search'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -86,11 +86,11 @@
                         </p>
                     </a>
 
-                    <ul class="nav nav-treeview {{ (($currentUrl == route('candidate.create')) || ($currentUrl == route('candidate.search')) || ($currentUrl == route('candidate.index'))) ? 'menu-open' : '' }}">
+                    <ul class="nav nav-treeview {{ (($currentUrl == route('candidate.create')) || ($currentUrl == route('candidate.search'))) ? 'menu-open' : '' }}">
                         <li class="nav-item">
                             <a href="{{ route('candidate.search') }}" class="nav-link {{ $currentUrl == route('candidate.search') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Filter Candidate</p>
+                                <p>All Candidate</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -99,12 +99,12 @@
                                 <p>Add Candidate</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('candidate.index') }}" class="nav-link {{ $currentUrl == route('candidate.index') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Candidates</p>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('candidate.index') }}" class="nav-link {{ $currentUrl == route('candidate.index') ? 'active' : '' }}">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>All Candidates</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </li>
 
