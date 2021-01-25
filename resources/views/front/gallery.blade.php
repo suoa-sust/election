@@ -30,57 +30,57 @@
                                                 alt=""><span class="icon-focus"></span></div>
                                     </div>
                                 @endforeach
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2021" style="position: absolute; left: 24.955%; top: 0px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="1" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery2.jpg"--}}
-{{--                                            alt=""><i class="icon-plus"></i></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2020" style="position: absolute; left: 50%; top: 0px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="2" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery3.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="General" style="position: absolute; left: 50%; top: 0px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="2" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery3.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2020" style="position: absolute; left: 74.955%; top: 0px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="3" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery4.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2019"--}}
-{{--                                     style="position: absolute; left: 24.955%; top: 180px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="4" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery5.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2018" style="position: absolute; left: 74.955%; top: 195px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="5" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery6.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2019"--}}
-{{--                                     style="position: absolute; left: 0%; top: 195px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="6" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery7.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
-{{--                                     data-tags="2019"--}}
-{{--                                     style="position: absolute; left: 50%; top: 195px;">--}}
-{{--                                    <div href="#lb-gallery2-69" data-slide-to="7" data-toggle="modal"><img--}}
-{{--                                            src="images/gallery/gallery8.jpg"--}}
-{{--                                            alt=""><span class="icon-focus"></span></div>--}}
-{{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2021" style="position: absolute; left: 24.955%; top: 0px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="1" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery2.jpg"--}}
+                                {{--                                            alt=""><i class="icon-plus"></i></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2020" style="position: absolute; left: 50%; top: 0px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="2" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery3.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="General" style="position: absolute; left: 50%; top: 0px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="2" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery3.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2020" style="position: absolute; left: 74.955%; top: 0px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="3" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery4.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2019"--}}
+                                {{--                                     style="position: absolute; left: 24.955%; top: 180px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="4" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery5.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2018" style="position: absolute; left: 74.955%; top: 195px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="5" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery6.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2019"--}}
+                                {{--                                     style="position: absolute; left: 0%; top: 195px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="6" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery7.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
+                                {{--                                     data-tags="2019"--}}
+                                {{--                                     style="position: absolute; left: 50%; top: 195px;">--}}
+                                {{--                                    <div href="#lb-gallery2-69" data-slide-to="7" data-toggle="modal"><img--}}
+                                {{--                                            src="images/gallery/gallery8.jpg"--}}
+                                {{--                                            alt=""><span class="icon-focus"></span></div>--}}
+                                {{--                                </div>--}}
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -96,24 +96,24 @@
 
                                     @foreach($galleries as $gallery)
                                         <div class="carousel-item {{$gallery->id==1?'active':''}}"><img
-                                            src="{{ $gallery->url }}" alt=""></div>
+                                                src="{{ $gallery->url }}" alt=""></div>
                                     @endforeach
-{{--                                    <div class="carousel-item active"><img--}}
-{{--                                            src="images/gallery/gallery1.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery2.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery3.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery4.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery5.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery6.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery7.jpg" alt=""></div>--}}
-{{--                                    <div class="carousel-item"><img--}}
-{{--                                            src="images/gallery/gallery8.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item active"><img--}}
+                                    {{--                                            src="images/gallery/gallery1.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery2.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery3.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery4.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery5.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery6.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery7.jpg" alt=""></div>--}}
+                                    {{--                                    <div class="carousel-item"><img--}}
+                                    {{--                                            src="images/gallery/gallery8.jpg" alt=""></div>--}}
                                 </div>
                                 <a class="carousel-control carousel-control-prev" role="button" data-slide="prev"
                                    href="#lb-gallery2-69"><span class="mbri-left mbr-iconfont"
@@ -141,10 +141,10 @@
 
 @push('styles')
 
-{{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/web/assets/mobirise-icons/mobirise-icons.css">--}}
+    {{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/web/assets/mobirise-icons/mobirise-icons.css">--}}
     <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/tether/tether.min.css">
-{{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/soundcloud-plugin/style.css">--}}
-{{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/css/bootstrap.min.css">--}}
+    {{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/soundcloud-plugin/style.css">--}}
+    {{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/dropdown/css/style.css">
@@ -160,7 +160,7 @@
     <script src="https://mobirise.com/bootstrap-gallery/assets1/web/assets/jquery/jquery.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/popper/popper.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/tether/tether.min.js"></script>
-{{--    <script src="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/js/bootstrap.min.js"></script>--}}
+    {{--    <script src="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/js/bootstrap.min.js"></script>--}}
     <script src="https://mobirise.com/bootstrap-gallery/assets1/touch-swipe/jquery.touch-swipe.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/dropdown/js/script.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/jarallax/jarallax.min.js"></script>
@@ -172,6 +172,6 @@
     <script src="https://mobirise.com/bootstrap-gallery/assets1/theme/js/script.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/mobirise-gallery/player.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/mobirise-gallery/script.js"></script>
-{{--    <script src="https://mobirise.com/bootstrap-gallery/assets1/mobirise-slider-video/script.js"></script>--}}
+        <script src="https://mobirise.com/bootstrap-gallery/assets1/mobirise-slider-video/script.js"></script>
 
 @endpush
