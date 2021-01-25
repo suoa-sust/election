@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Candidate;
+use App\Models\Gallery;
 use App\Models\Seat;
 use App\Models\Year;
 use Illuminate\Database\Seeder;
@@ -694,6 +695,61 @@ class MscSeeder extends Seeder
 
         foreach ($candidates2021 as $candidate) {
             Candidate::create($candidate);
+        }
+
+        $galleries = [
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2021',
+                'url' => 'images/gallery/gallery1.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2020',
+                'url' => 'images/gallery/gallery2.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2019',
+                'url' => 'images/gallery/gallery3.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2018',
+                'url' => 'images/gallery/gallery4.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2021',
+                'url' => 'images/gallery/gallery5.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2020',
+                'url' => 'images/gallery/gallery6.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => '2019',
+                'url' => 'images/gallery/gallery7.jpg',
+                'status' => 1
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => 'General',
+                'url' => 'images/gallery/gallery8.jpg',
+                'status' => 1
+            ]
+        ];
+
+        foreach ($galleries as $gallery) {
+            Gallery::create($gallery);
         }
     }
 

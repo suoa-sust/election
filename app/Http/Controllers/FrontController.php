@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Candidate;
 use App\Models\Seat;
 use App\Models\Year;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -34,7 +35,9 @@ class FrontController extends Controller
 
     public function gallery()
     {
-        return view('front.gallery');
+        $gallery = Gallery::where('status', '=', '1')->get();
+        return view('front.gallery')
+            ->with('galleries', $gallery);
     }
     public function notices()
     {
