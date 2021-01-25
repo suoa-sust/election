@@ -39,7 +39,7 @@ class MscSeeder extends Seeder
             'start' => '2024-01-26',
             'end' => '2025-01-25',
             'election_date' => null,
-            'status' => 'ACTIVE'
+            'status' => 'INACTIVE'
         ]);
 
         $year2 = Year::create([
@@ -50,7 +50,7 @@ class MscSeeder extends Seeder
             'status' => 'COMPLETED'
         ]);
 
-        $seat = Seat::create(['name_bn' => 'স্ফটওয়্যার প্রকৌশলী', 'name' => 'Software Engineer', 'priority' => 20, 'status' => 'ACTIVE']);
+        $seat = Seat::create(['name_bn' => 'স্ফটওয়্যার প্রকৌশলী', 'name' => 'Software Engineer', 'priority' => 20, 'status' => 'INACTIVE']);
         $president = Seat::create(['name_bn' => 'সভাপতি', 'name' => 'President', 'priority' => 1, 'status' => 'ACTIVE']);
         $vp = Seat::create(['name_bn' => 'সহ-সভাপতি', 'name' => 'Vice President', 'priority' => 2, 'status' => 'ACTIVE']);
         $gs = Seat::create(['name_bn' => 'সাধারণ সম্পাদক', 'name' => 'General Secretary', 'priority' => 3, 'status' => 'ACTIVE']);
@@ -65,7 +65,7 @@ class MscSeeder extends Seeder
             'panel' => 'Admin',
             'year_id' => $year->id,
             'number_of_votes' => '1',
-            'status' => 'ACTIVE',
+            'status' => 'INACTIVE',
             'priority' => '100'
         ]);
 
