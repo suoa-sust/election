@@ -34,8 +34,8 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = days + " দিন " + hours + " ঘন্টা "
-                + minutes + " মিনিট " + seconds + " সেকেন্ড ";
+            document.getElementById("countdown").innerHTML = "আর মাত্র<br>"+ days + " দিন " + hours + " ঘন্টা "
+                + minutes + " মিনিট " + seconds + " সেকেন্ড <br> বাকী";
 
             // If the count down is over, write some text
             if (distance < 0) {
