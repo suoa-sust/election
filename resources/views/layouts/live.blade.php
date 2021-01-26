@@ -7,8 +7,10 @@
 
     <title> {{ isset($title) ? $title.' -' : '' }} Vote Counting System</title>
 
-{{--    <link rel="stylesheet" href="{{ mix('css/app.css') }}">--}}
+    <link rel="shortcut icon" href="{{ asset('live.png') }}" type="image/x-icon"/>
+
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 
     <!-- Scripts -->
 {{--    @yield('styles')--}}
