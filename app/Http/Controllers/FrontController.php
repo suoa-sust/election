@@ -68,6 +68,7 @@ class FrontController extends Controller
 //        }
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
+            ->where('status', '=', 'ACTIVE')
 //            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
         return view('front.candidates')
