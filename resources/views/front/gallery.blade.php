@@ -27,7 +27,7 @@
                                          data-tags="{{$gallery->tag}}" style="position: absolute; left: 0%; top: 0px;">
                                         <div href="#lb-gallery2-69" data-slide-to="0" data-toggle="modal"><img
                                                 src="{{$gallery->url}}"
-                                                alt=""><span class="icon-focus"></span></div>
+                                                alt=""><span class="icon ui-icon-zoomin"></span></div>
                                     </div>
                                 @endforeach
                                 {{--                                <div class="mbr-gallery-item mbr-gallery-item--p2" data-video-url="false"--}}
@@ -116,16 +116,21 @@
                                     {{--                                            src="images/gallery/gallery8.jpg" alt=""></div>--}}
                                 </div>
                                 <a class="carousel-control carousel-control-prev" role="button" data-slide="prev"
-                                   href="#lb-gallery2-69"><span class="mbri-left mbr-iconfont"
-                                                                aria-hidden="true"></span><span
-                                        class="sr-only">Previous</span></a><a
-                                    class="carousel-control carousel-control-next"
+                                   href="#lb-gallery2-69">
+                                    <i class="fa fa-arrow-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control carousel-control-next"
                                     role="button" data-slide="next"
-                                    href="#lb-gallery2-69"><span
-                                        class="mbri-right mbr-iconfont" aria-hidden="true"></span><span
-                                        class="sr-only">Next</span></a><a class="close" href="#" role="button"
-                                                                          data-dismiss="modal"><span
-                                        class="sr-only">Close</span></a></div>
+                                    href="#lb-gallery2-69">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <a class="close" href="#" role="button" data-dismiss="modal">
+                                    <i class="fa fa-times"></i>
+                                    <span class="sr-only">Close</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,6 +145,11 @@
 @endsection
 
 @push('styles')
+    <style >
+        .mbr-gallery .modal .close::before {
+            content: none !important;
+        }
+    </style>
 
     {{--    <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/web/assets/mobirise-icons/mobirise-icons.css">--}}
     <link rel="stylesheet" href="https://mobirise.com/bootstrap-gallery/assets1/tether/tether.min.css">
@@ -157,7 +167,7 @@
 
 @push('scripts')
 
-    <script src="https://mobirise.com/bootstrap-gallery/assets1/web/assets/jquery/jquery.min.js"></script>
+{{--    <script src="https://mobirise.com/bootstrap-gallery/assets1/web/assets/jquery/jquery.min.js"></script>--}}
     <script src="https://mobirise.com/bootstrap-gallery/assets1/popper/popper.min.js"></script>
     <script src="https://mobirise.com/bootstrap-gallery/assets1/tether/tether.min.js"></script>
     {{--    <script src="https://mobirise.com/bootstrap-gallery/assets1/bootstrap/js/bootstrap.min.js"></script>--}}

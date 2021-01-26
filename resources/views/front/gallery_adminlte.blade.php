@@ -19,15 +19,15 @@
 
                         <div class="btn-group w-100 mb-2">
                             <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> All items </a>
-                            <a class="btn btn-info" href="javascript:void(0)" data-filter="2019"> Category 1 (WHITE) </a>
+                            <a class="btn btn-info" href="javascript:void(0)" data-lightbox="2021" data-gallery="2021"> Category 1 (WHITE) </a>
                             <a class="btn btn-info" href="javascript:void(0)" data-filter="2018"> Category 2 (BLACK) </a>
                             <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (COLORED) </a>
                         </div>
 
                         <div class="row">
                             @foreach($galleries as $gallery)
-                                <div class="filtr-item col-sm-2">
-                                    <a href="{{ asset($gallery->url) }}" data-toggle="lightbox" data-lightbox="{{ $gallery->tag }}" data-sort="{{ $gallery->tag }}" data-category="{{ $gallery->id }}" data-title="{{ $gallery->caption }}" data-gallery="gallery">
+                                <div class="filtr-item col-sm-2" tag="{{ $gallery->tag }}">
+                                    <a href="{{ asset($gallery->url) }}" rel="{{ $gallery->tag }}" data-toggle="lightbox" data-filter="{{ $gallery->tag }}" data-lightbox="{{ $gallery->tag }}" data-category="{{ $gallery->id }}" data-title="{{ $gallery->caption }}" data-gallery="{{ $gallery->tag }}">
                                         <img src="{{ asset($gallery->url) }}" class="img-fluid mb-2" alt="white sample">
                                     </a>
                                 </div>
@@ -125,8 +125,10 @@
                 });
             });
 
-            $('.filter-container').filterizr({gutterPixels: 3});
+            // $('.filter-container').filterizr({gutterPixels: 3});
             $('.btn[data-filter]').on('click', function() {
+                // let tag = $(this).attr('data-filter');
+                // $('.filtr-item').attr('tag', tag).hide();
                 $('.btn[data-filter]').removeClass('active');
                 $(this).addClass('active');
             });

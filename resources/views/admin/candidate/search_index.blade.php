@@ -26,7 +26,7 @@
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
 <!-- Example single danger button -->
                         <div>
-                            <form action="{{ route('candidate.search') }}" method="GET">
+                            <form action="{{ route('candidate.index') }}" method="GET">
                                 <div class="form-inline">
                                     <label for="seat" class="col-sm-1 col-form-label">Seat*</label>
 {{--                                    <div class="col-sm-4">--}}

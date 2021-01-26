@@ -37,6 +37,7 @@ class FrontController extends Controller
     {
         $gallery = Gallery::where('status', '=', '1')->get();
         return view('front.gallery')
+            ->with('title', 'Gallery')
             ->with('galleries', $gallery);
     }
     public function notices()
@@ -54,7 +55,7 @@ class FrontController extends Controller
 //        $seatId = $request->seat_id;
 //        $yearId = $request->year_id;
 //        $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
-//        $years = Year::pluck('name', 'id');
+        $years = Year::pluck('name', 'id');
 
 //        if (isset($seatId) && isset($yearId)) {
 //            $candidates = Candidate::where('seat_id', $seatId)->where('year_id', $yearId)->get();
@@ -72,9 +73,9 @@ class FrontController extends Controller
         return view('front.candidates')
             ->with('candidates', $candidates)
             ->with('year', $year)
-            ->with('yearName', $yearName);
+            ->with('yearName', $yearName)
 //            ->with('seats', $seats)
-//            ->with('years', $years)
+            ->with('years', $years);
 //            ->with('seat_id', $seatId)
 //            ->with('year_id', $yearId);
 
