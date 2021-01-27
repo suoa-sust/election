@@ -26,12 +26,12 @@ class FrontController extends Controller
 
     public function commission()
     {
-        return view('front.commission');
+        return view('front.commission')->with('title', 'Election Commission');
     }
 
     public function developers()
     {
-        return view('front.developers');
+        return view('front.developers')->with('title', 'Developers');
     }
 
     public function gallery()
@@ -43,7 +43,7 @@ class FrontController extends Controller
     }
     public function notices()
     {
-        return view('front.notice');
+        return view('front.notice')->with('title', 'Notices');
     }
 
     public function candidates(Request $request)
@@ -78,7 +78,8 @@ class FrontController extends Controller
             ->with('year', $year)
             ->with('yearName', $yearName)
 //            ->with('seats', $seats)
-            ->with('years', $years);
+            ->with('years', $years)
+            ->with('title', 'Candidates');
 //            ->with('seat_id', $seatId)
 //            ->with('year_id', $yearId);
 

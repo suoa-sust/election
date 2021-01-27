@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> {{ isset($title) ? $title.' -' : '' }} Vote Counting System</title>
+    <title> {{ isset($title) ? $title.' -' : '' }} Officers' Election Portal</title>
 
     <link rel="shortcut icon" href="{{ asset('live.png') }}" type="image/x-icon"/>
 

@@ -3,7 +3,7 @@
     <br>
     <div class="container">
 
-            <h3 class="text-center">শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচন {{ $yearName }}</h3>
+            <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচন {{ $yearName }}</h3>
             @if(isset($year))
 
                 <h5 class="text-center">নির্বাচনের তারিখঃ {{ \Carbon\Carbon::parse($year->election_date)->format('M d, Y') }}</h5>

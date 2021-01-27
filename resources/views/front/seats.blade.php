@@ -3,7 +3,7 @@
 
     <br>
     <div class="container">
-        <h3 class="text-center">শাহজালাল ইউনিভার্সিটি অফিসার এসোসিয়েশন নির্বাচনের আসনসমূহ</h3>
+        <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচনের আসনসমূহ</h3>
         <h4 class="text-center"> মোট আসন সংখ্যা - ১১ </h4>
         <table  class="table  table-hover table-striped">
             <thead>
