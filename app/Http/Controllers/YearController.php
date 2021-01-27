@@ -42,7 +42,7 @@ class YearController extends Controller
     public function edit($id)
     {
          $year = Year::findOrFail($id);
-        $year->election_date = Carbon::parse($year->election_date)->toDateString();
+//        $year->election_date = Carbon::parse($year->election_date)->toDateString();
 
         $statuses = ['VOTE_FREEZE', 'COMPLETED', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE'];
         return view('admin.year.edit')
@@ -56,7 +56,7 @@ class YearController extends Controller
              $data = $yearRequest->only('name', 'start', 'end', 'status', 'election_date');
             $year = Year::findOrFail($id);
             $year->name = $data['name'];
-            $year->election_date = Carbon::parse($data['election_date'])->toDateString();
+            $year->election_date = $data['election_date'];
             $year->start = $data['start'];
             $year->end = $data['end'];
             $year->status = $data['status'];

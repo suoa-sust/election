@@ -18,6 +18,7 @@ class CreateGalleriesTable extends Migration
             $table->string('caption')->nullable();
             $table->string('tag');
             $table->string('url');
+            $table->unsignedInteger('priority')->default(50);
             $table->boolean('status')->nullable();
             $table->timestamps();
         });

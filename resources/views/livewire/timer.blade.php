@@ -40,7 +40,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+                document.getElementById("countdown").innerHTML = "ভোট গ্রহণ চলছে";
             }
         }, 1000);
     </script>

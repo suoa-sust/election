@@ -42,9 +42,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="election_date" class="col-sm-2 col-form-label">Election Date</label>
+                                <label for="election_date" class="col-sm-2 col-form-label">Election Date & Time</label>
                                 <div class="col-sm-10">
-                                    <input type="date" name="election_date" class="form-control" required value="{{$year->election_date}}">
+                                    <input type="datetime-local" name="election_date" class="form-control"  value="{{$year->election_date}}">
+                                    <span>Current Value: {{ $year->election_date }}</span>
                                 </div>
                             </div>
 

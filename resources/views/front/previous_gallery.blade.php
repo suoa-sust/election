@@ -3,18 +3,16 @@
 
     <br>
     <div class="container page-top">
-                <h3 class="text-center">Photo Gallery</h3>
-
+                <h3 class="text-center">Photos of Officers Election</h3>
+                <br>
         <div class="row">
-            @for($i=1; $i<9; $i++)
+            @foreach($galleries as $gallery)
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="fancybox" rel="ligthbox">
-                        <img  src="{{asset('images/gallery/gallery'.$i.'.jpg')}}" class="zoom img-fluid "  alt="">
-
-                </a>
-            </div>
-
-            @endfor
+                    <a href="{{asset($gallery->url)}}" class="fancybox" rel="ligthbox">
+                        <img  src="{{asset($gallery->url)}}" class="zoom img-fluid "  alt="">
+                    </a>
+                </div>
+            @endforeach
 
         </div>
     </div>
@@ -27,7 +25,7 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <link rel="stylesheet" href="../../dist/css/gallery.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/gallery.css') }}">
 
 @endpush
 

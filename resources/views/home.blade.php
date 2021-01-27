@@ -15,7 +15,7 @@
             <br><br>
 
 {{--            <h1>আর মাত্র</h1>--}}
-            <livewire:timer />
+            <livewire:timer :year="$year"/>
 {{--            <h1>বাকী</h1>--}}
             <br>
             <br>

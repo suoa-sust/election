@@ -12,7 +12,8 @@ class FrontController extends Controller
 {
     public function home()
     {
-        return view('home')->with('title', 'Home');
+        $year = Year::where('status', 'ACTIVE')->first();
+        return view('home')->with('title', 'Home')->with('year', $year);
     }
 
     public function seats()
@@ -35,8 +36,8 @@ class FrontController extends Controller
 
     public function gallery()
     {
-        $gallery = Gallery::where('status', '=', '1')->get();
-        return view('front.gallery')
+        $gallery = Gallery::where('status', '=', '1')->orderBy('priority', 'ASC')->get();
+        return view('front.previous_gallery')
             ->with('title', 'Gallery')
             ->with('galleries', $gallery);
     }
@@ -55,7 +56,7 @@ class FrontController extends Controller
 //        $seatId = $request->seat_id;
 //        $yearId = $request->year_id;
 //        $seats = Seat::orderBy('priority', 'ASC')->pluck('name', 'id');
-        $years = Year::pluck('name', 'id');
+        $years = Year::where('status', '!=', 'INACTIVE')->orderBy('name', 'DESC')->pluck('name', 'id');
 
 //        if (isset($seatId) && isset($yearId)) {
 //            $candidates = Candidate::where('seat_id', $seatId)->where('year_id', $yearId)->get();
@@ -68,7 +69,8 @@ class FrontController extends Controller
 //        }
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
-            ->where('status', '=', 'ACTIVE')
+            ->orderBy('priority', 'ASC')
+            ->where('status', '!=', 'INACTIVE')
 //            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
         return view('front.candidates')

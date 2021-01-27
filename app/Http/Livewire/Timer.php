@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Timer extends Component
 {
-//    public $now;
+    public $year;
 //    public function mount($now)
 //    {
 //        $this->now = Carbon::now();

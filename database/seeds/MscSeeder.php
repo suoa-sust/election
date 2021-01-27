@@ -517,7 +517,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
-                'priority' => '10'
+                'priority' => '11'
             ],
             [
                 'name' => 'মোহাম্মদ হেলাল হোসেন দেওয়ান',
@@ -527,6 +527,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '10'
             ],
             [
                 'name' => 'এমরান আহমদ চৌধুরী',
@@ -536,6 +537,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '11'
             ],
             [
                 'name' => 'মোঃ সিরাজুল ইসলাম',
@@ -545,6 +547,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '10'
             ],
             [
                 'name' => 'মখলিছুর রহমান',
@@ -554,16 +557,18 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '11'
             ],
 
             [
-                'name' => 'মোঅশোক বর্মন অসীম',
+                'name' => 'অশোক বর্মন অসীম',
                 'designation' => 'একাউন্টস অফিসার',
                 'seat_id' => $ags->id,
                 'year_id' => $year2021->id,
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '10'
             ],
             [
                 'name' => 'সাহেদ আহমদ',
@@ -573,6 +578,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '11'
             ],
             [
                 'name' => 'মোঃ রবিউল ইসলাম',
@@ -582,6 +588,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '10'
             ],
             [
                 'name' => 'মোঃ নাজমুল হক',
@@ -591,6 +598,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '11'
             ],
             [
                 'name' => 'মোঃ মুজিবুর রহমান',
@@ -600,6 +608,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '15'
             ],
             [
                 'name' => 'সৈয়দ হাবিবুর রহমান',
@@ -609,6 +618,17 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '16'
+            ],
+            [
+                'name' => 'ড. খন্দকার মোঃ মমিনুল হক',
+                'designation' => 'প্রিন্সিপাল ইন্সট্রুমেন্ট ইঞ্জিনিয়ার',
+                'seat_id' => $exicutive_member->id,
+                'year_id' => $year2021->id,
+                'number_of_votes' => 0,
+                'status' => 'ACTIVE',
+                'panel' => 'awami',
+                'priority' => '17'
             ],
             [
                 'name' => 'এ.এস.এম. খয়রুল আক্তার চৌধুরী',
@@ -616,8 +636,9 @@ class MscSeeder extends Seeder
                 'seat_id' => $exicutive_member->id,
                 'year_id' => $year2021->id,
                 'number_of_votes' => 0,
-                'status' => 'ELECTED',
+                'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '18'
             ],
             [
                 'name' => 'মোঃ ফখর উদ্দিন',
@@ -627,6 +648,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '19'
             ],
             [
                 'name' => 'মোঃ জয়নাল আবেদীন',
@@ -636,6 +658,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'awami',
+                'priority' => '20'
             ],
             [
                 'name' => 'মোঃ জয়নাল ইসলাম চৌধুরী',
@@ -645,6 +668,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '21'
             ],
             [
                 'name' => 'সৈয়দ ছলিম মোহাম্মদ আব্দুল কাদির',
@@ -654,6 +678,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '22'
             ],
             [
                 'name' => 'আহমদ মাহবুব ফেরদৌসী',
@@ -663,6 +688,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '24'
             ],
             [
                 'name' => 'মোঃ ইউনুস আলী',
@@ -672,6 +698,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '23'
             ],
             [
                 'name' => 'আবু সাদাৎ মোহাম্মদ সায়েম তালুকদার',
@@ -681,6 +708,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '25'
             ],
             [
                 'name' => 'নঈম উদ্দিন আহমেদ',
@@ -690,6 +718,7 @@ class MscSeeder extends Seeder
                 'number_of_votes' => 0,
                 'status' => 'ACTIVE',
                 'panel' => 'nationalist',
+                'priority' => '26'
             ]
         ];
 
@@ -702,49 +731,85 @@ class MscSeeder extends Seeder
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2021',
                 'url' => 'images/gallery/gallery1.jpg',
-                'status' => 1
+                'status' => 1,
+                'priority' => 10 // here 10 gets more priority than 11
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2020',
                 'url' => 'images/gallery/gallery2.jpg',
-                'status' => 1
+                'status' => 1,
+                'priority' => 15
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2019',
-                'url' => 'images/gallery/gallery3.jpg',
-                'status' => 1
+                'url' => 'images/gallery/gallery10.jpg',
+                'status' => 1,
+                'priority' => 50
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2018',
                 'url' => 'images/gallery/gallery4.jpg',
-                'status' => 1
+                'status' => 1,
+                'priority' => 50
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2021',
-                'url' => 'images/gallery/gallery5.jpg',
-                'status' => 1
+                'url' => 'images/gallery/gallery13.jpg',
+                'status' => 1,
+                'priority' => 50
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2020',
                 'url' => 'images/gallery/gallery6.jpg',
-                'status' => 1
+                'status' => 1,
+                'priority' => 50
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => '2019',
                 'url' => 'images/gallery/gallery7.jpg',
-                'status' => 1
+                'status' => 1,
+                'priority' => 50
             ],
             [
                 'caption' => 'Officers Election Photo Gallery',
                 'tag' => 'General',
-                'url' => 'images/gallery/gallery8.jpg',
-                'status' => 1
+                'url' => 'images/gallery/gallery9.jpg',
+                'status' => 1,
+                'priority' => 50
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => 'General',
+                'url' => 'images/gallery/gallery11.jpg',
+                'status' => 1,
+                'priority' => 50
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => 'General',
+                'url' => 'images/gallery/gallery12.jpg',
+                'status' => 1,
+                'priority' => 50
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => 'General',
+                'url' => 'images/gallery/gallery14.jpg',
+                'status' => 1,
+                'priority' => 50
+            ],
+            [
+                'caption' => 'Officers Election Photo Gallery',
+                'tag' => 'General',
+                'url' => 'images/gallery/gallery15.jpg',
+                'status' => 1,
+                'priority' => 12
             ]
         ];
 
