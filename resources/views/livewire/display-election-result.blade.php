@@ -1,4 +1,13 @@
-<div wire:poll.keep>
+<div wire:poll>
+    @if($year->status != 'VOTE_FREEZE')
+        <div class="making-it-scroll">
+            <span style="color: #90130a;font-weight: bold">ফলাফল ফ্রিজ করা হয়েছে। চুড়ান্ত ফলাফল নির্বাচন কমিশন এর ঘোষনার পর হালনাগাদ করা হবে</span>
+        </div>
+    @elseif($year->status == 'VOTE_DONE')
+        <div class="making-it-scroll">
+            <span style="color: #90130a;font-weight: bold">নিম্নে প্রদর্শিত ফলাফল নির্বাচন কমিশন কর্তৃক চুড়ান্ত হয়েছে</span>
+        </div>
+    @endif
 
     <div class="container">
         <div class="row">

@@ -12,7 +12,7 @@ class FrontController extends Controller
 {
     public function home()
     {
-        $year = Year::where('status', 'ACTIVE')->first();
+        $year = Year::whereIn('status', ['ACTIVE', 'VOTE_RUNNING', 'VOTE_FREEZE', 'VOTE_DONE'])->first() ?? [];
         return view('home')->with('title', 'Home')->with('year', $year);
     }
 

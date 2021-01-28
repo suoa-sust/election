@@ -28,7 +28,7 @@ class DisplayElectionResult extends Component
 
     public function mount()
     {
-        $this->year = Year::where('status', '=', 'VOTE_RUNNING')->first();
+        $this->year = Year::whereIn('status', ['VOTE_RUNNING', 'VOTE_FREEZE', 'VOTE_DONE'])->first();
 //        $this->candidates = Candidate::where('year_id', $year->id)
 //            ->orderBy('seat_id', 'ASC')
 //            ->orderBy('number_of_votes', 'DESC')
@@ -55,21 +55,21 @@ class DisplayElectionResult extends Component
 
     private function bindingData()
     {
-        $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
-//        $candidates =  Candidate::where('year_id', $year->id)
-//            ->orderBy('seat_id', 'ASC')
-//            ->orderBy('number_of_votes', 'DESC')
-//            ->get();
-        $seats = Seat::where('status', 'ACTIVE')->orderBy('priority', 'ASC')->get();
-        foreach ($seats as $seat) {
-            if($seat->name == 'সভাপতি') {
-                $this->presidentialCandidates = $seat->candidatesByYear($year->id);
-            }
-            if($seat->name == 'সাধারণ সম্পাদক') {
-                $this->secretaryCandidates = $seat->candidatesByYear($year->id);
-            }
-
-        }
+//        $year = Year::where('status', '=', 'VOTE_RUNNING')->first();
+////        $candidates =  Candidate::where('year_id', $year->id)
+////            ->orderBy('seat_id', 'ASC')
+////            ->orderBy('number_of_votes', 'DESC')
+////            ->get();
+//        $seats = Seat::where('status', 'ACTIVE')->orderBy('priority', 'ASC')->get();
+//        foreach ($seats as $seat) {
+//            if($seat->name == 'সভাপতি') {
+//                $this->presidentialCandidates = $seat->candidatesByYear($year->id);
+//            }
+//            if($seat->name == 'সাধারণ সম্পাদক') {
+//                $this->secretaryCandidates = $seat->candidatesByYear($year->id);
+//            }
+//
+//        }
 
     }
 

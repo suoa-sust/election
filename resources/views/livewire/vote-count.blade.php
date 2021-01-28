@@ -2,7 +2,6 @@
     <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
-
             <th>Name</th>
             <th>Action</th>
             <th>Seat</th>
