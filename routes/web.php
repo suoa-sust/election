@@ -100,7 +100,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('vote', 'VoteController@voteCountPage')->name('vote.count');
     Route::get('vote/{id}/update', 'VoteController@voteUpdate')->name('vote.update');
 
-    Route::get('admin-gallery', 'GalleryController@uploadPhoto')->name('gallery.store');
+    Route::get('admin-gallery', 'GalleryController@uploadPhoto')->name('gallery.create');
 });
 
 

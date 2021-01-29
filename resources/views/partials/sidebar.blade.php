@@ -140,7 +140,7 @@
 {{--                </li>--}}
 
                 <li class="nav-item">
-                    <a href="{{ route('gallery.store') }}" class="nav-link {{ $currentUrl == route('gallery.store') ? 'active' : '' }}">
+                    <a href="{{ route('gallery.create') }}" class="nav-link {{ $currentUrl == route('gallery.create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-plus"></i>
                         <p>Add Photo to Gallery</p>
                     </a>

@@ -21,7 +21,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="card card-default">
                     <div class="card-header">
                         <div class="card-title">Add Photo to Gallery</div>
                     </div>
