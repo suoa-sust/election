@@ -6,8 +6,8 @@
         {{--        <div class="container">--}}
         <div class="row">
 
-            <div class="col-md-12">
-                <div class="card card-default">
+            <div class="col-12">
+                <div class="caard card-default5">
                     {{--                        <div class="card-header">--}}
                     {{--                            <div class="card-title" style="text-align: center">--}}
                     {{--                                Officers Election Photo Gallery--}}
@@ -17,17 +17,17 @@
                     <h3 class="text-center">Officers Election Photo Gallery</h3>
                     <div class="card-body">
 
-                        <div class="btn-group w-100 mb-2">
-                            <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> All items </a>
-                            <a class="btn btn-info" href="javascript:void(0)" data-lightbox="2021" data-gallery="2021"> Category 1 (WHITE) </a>
-                            <a class="btn btn-info" href="javascript:void(0)" data-filter="2018"> Category 2 (BLACK) </a>
-                            <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (COLORED) </a>
-                        </div>
+{{--                        <div class="btn-group w-100 mb-2">--}}
+{{--                            <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> All items </a>--}}
+{{--                            <a class="btn btn-info" href="javascript:void(0)" data-lightbox="2021" data-gallery="2021"> Category 1 (WHITE) </a>--}}
+{{--                            <a class="btn btn-info" href="javascript:void(0)" data-filter="2018"> Category 2 (BLACK) </a>--}}
+{{--                            <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (COLORED) </a>--}}
+{{--                        </div>--}}
 
                         <div class="row">
                             @foreach($galleries as $gallery)
                                 <div class="filtr-item col-sm-2" tag="{{ $gallery->tag }}">
-                                    <a href="{{ asset($gallery->url) }}" rel="{{ $gallery->tag }}" data-toggle="lightbox" data-filter="{{ $gallery->tag }}" data-lightbox="{{ $gallery->tag }}" data-category="{{ $gallery->id }}" data-title="{{ $gallery->caption }}" data-gallery="{{ $gallery->tag }}">
+                                    <a href="{{ asset($gallery->url) }}" rel="{{ $gallery->tag }}" data-toggle="lightbox"  data-category="{{ $gallery->id }}" data-title="{{ $gallery->caption }}" data-gallery="gallery">
                                         <img src="{{ asset($gallery->url) }}" class="img-fluid mb-2" alt="white sample">
                                     </a>
                                 </div>
