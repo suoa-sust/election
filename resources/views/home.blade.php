@@ -15,7 +15,17 @@
             <br><br>
 
 {{--            <h1>আর মাত্র</h1>--}}
+            @if($year->status == 'ACTIVE')
             <livewire:timer :year="$year"/>
+            @elseif($year->status == 'VOTE_RUNNING')
+                <p class="status">ভোট গ্রহণfdf চলছে</p>
+            @elseif($year->status == 'VOTE_COUNT_RUNNING')
+                    <p class="status" ></p>
+            @elseif($year->status == 'VOTE_COUNT_DONE')
+                    <p class="status" ></p>
+            @elseif($year->status == 'VOTE_COUNT_FREEZE')
+                <p class="status" ></p>
+            @endif
 {{--            <h1>বাকী</h1>--}}
             <br>
             <br>
@@ -37,3 +47,14 @@
 
 
 @endsection
+
+@push('styles')
+    <style>
+        .status {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            color: darkorange;
+        }
+    </style>
+@endpush

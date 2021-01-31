@@ -13,7 +13,7 @@ class VoteCount extends Component
 
     public function mount()
     {
-        $year = Year::whereIn('status', ['VOTE_RUNNING', 'VOTE_FREEZE', 'VOTE_DONE'])->first();
+        $year = Year::whereIn('status', ['VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING'])->first();
         $this->candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
             ->orderBy('priority', 'ASC')

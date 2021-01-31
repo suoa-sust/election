@@ -28,7 +28,7 @@ class DisplayElectionResult extends Component
 
     public function mount()
     {
-        $this->year = Year::whereIn('status', ['VOTE_RUNNING', 'VOTE_FREEZE', 'VOTE_DONE'])->first();
+        $this->year = Year::whereIn('status', [ 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE', 'VOTE_COUNT_RUNNING'])->first();
 //        $this->candidates = Candidate::where('year_id', $year->id)
 //            ->orderBy('seat_id', 'ASC')
 //            ->orderBy('number_of_votes', 'DESC')

@@ -21,7 +21,8 @@ class ResultController extends Controller
 
     public function live()
     {
-        $year = Year::whereIn('status',  ['VOTE_RUNNING', 'VOTE_FREEZE', 'VOTE_DONE'])->first();
+        $year = Year::whereIn('status',  ['VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING'])->first();
+
         if(isset($year) ) {
             return view('live')->with('title', 'Live');
         }

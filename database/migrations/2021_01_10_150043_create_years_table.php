@@ -20,7 +20,7 @@ class CreateYearsTable extends Migration
             $table->date('end')->nullable();
             $table->timestamp('election_date')->nullable();
             $table->enum('status',
-                ['VOTE_FREEZE', 'COMPLETED', 'VOTE_DONE', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE']
+                ['VOTE_COUNT_FREEZE', 'COMPLETED', 'VOTE_COUNT_DONE', 'VOTE_RUNNING', 'VOTE_COUNT_RUNNING', 'INACTIVE', 'ACTIVE']
             )->default('ACTIVE');
             $table->softDeletes();
             $table->timestamps();
