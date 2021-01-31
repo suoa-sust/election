@@ -40,7 +40,7 @@ class ResultController extends Controller
             $year = Year::orderBy('election_date', 'DESC')->first();
         }
         $years = Year::where('status', '!=', 'INACTIVE')->orderBy('name', 'DESC')->pluck('name', 'id');
-        return $candidates = isset($year) ? Candidate::where('year_id', $year->id)
+        $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
 //            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
