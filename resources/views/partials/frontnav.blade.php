@@ -19,8 +19,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"  href=" {{ route('live') }}">
-                        <img src="{{ asset('live2.gif') }}" width="35px" style="padding-bottom: 5px"> Results
+                        <img src="{{ asset('live2.gif') }}" width="35px" style="padding-bottom: 5px">
                     </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href=" {{ route('past.result') }}" class="nav-link">Results</a>
                 </li>
 
                 <li class="nav-item">

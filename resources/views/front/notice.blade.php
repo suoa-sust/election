@@ -31,6 +31,17 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td> ৪.</td>
+                        <td>৩১/০১/২০২১</td>
+                        <td>
+                            শাবিঅএ নির্বাচন ২০২১ এর চূড়ান্ত ফলাফল প্রকাশ
+                        </td>
+                        <td>
+                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/Final-Result-Sheet-SUOA-Election-2021.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td> ৩.</td>
                         <td>২১/০১/২০২১</td>
                         <td>
