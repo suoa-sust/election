@@ -162,7 +162,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link ">
+                    <a href="{{ route('change.password') }}" class="nav-link {{ $currentUrl == route('change.password') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-cog"></i>
                         <p>Password Reset</p>
                     </a>

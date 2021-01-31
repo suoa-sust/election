@@ -79,6 +79,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     // User CRUD
     Route::get('user', 'UserController@index')->name('user.index');
+    Route::get('change-password', 'UserController@changePasswordForm')->name('change.password');
+    Route::post('change-password', 'UserController@changePassword')->name('post.change.password');
 
 
 

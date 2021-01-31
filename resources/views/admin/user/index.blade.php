@@ -50,7 +50,8 @@
                                 <td>{{ $user->status }}</td>
                                 <td>
                                     <a class="btn btn-primary btn-xs" href="#">Cahnge Password</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="#">Delete</a>
+{{--                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="#">Delete</a>--}}
+                                    <a class="btn btn-danger btn-xs deleteBtn"  data-target="#delete-modal" href="#" deleteUrl="#">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
