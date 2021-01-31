@@ -11,7 +11,7 @@
                     <div class="form-inline">
 
 
-                        <label for="seat" class="col-sm-1 col-form-label">Year*</label>
+                        <label for="seat" class="col-sm-1 col-form-label">Year</label>
                         {{--                                    <div class="col-sm-4">--}}
                         <select class="form-control-sm" name="year">
                             {{--                            <option value="">All</option>--}}
@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{ $candidate->name }}</td>
                             <td>{{ $candidate->designation }}</td>
-                            <td>{{ $candidate->seat->name }}</td>
+                            <td>{{ $candidate->seat->name_bn }}</td>
                             <td>{{ $candidate->number_of_votes }}</td>
                             <td>
                                 @if($candidate->status == 'ELECTED')
