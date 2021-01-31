@@ -3,7 +3,9 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th>Action</th>
+            <th>+</th>
+            <th>+</th>
+            <th>-</th>
             <th>Seat</th>
             <th>Votes</th>
             <th>Designation</th>

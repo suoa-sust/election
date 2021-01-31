@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Vote;
 
 use App\Events\NumberOfVotesUpdated;
 use App\Models\Candidate;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class CandidateRow extends Component
@@ -19,11 +20,12 @@ class CandidateRow extends Component
 
     public function updateVote($vote)
     {
-        if($this->candidate->year->status != 'COMPLETED') {
+        if($this->candidate->year->status == 'VOTE_COUNT_RUNNING') {
 //            return redirect()->back()->with('warning', 'Cannot modify vote of Completed election');
             $this->candidate->number_of_votes = $this->candidate->number_of_votes + $vote;
             $this->candidate->save();
             $this->updateNotification();
+            Storage::prepend('vote_count.log', now().' -- '. auth()->user()->email. ' added '.$vote.' vote of Candidate Name '.$this->candidate->name.', Candidate Id:'.$this->candidate->id);
         }
 
 

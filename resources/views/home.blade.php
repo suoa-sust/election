@@ -15,18 +15,25 @@
             <br><br>
 
 {{--            <h1>আর মাত্র</h1>--}}
-            @if($year->status == 'ACTIVE')
-            <livewire:timer :year="$year"/>
-            @elseif($year->status == 'VOTE_RUNNING')
-                <p class="status">ভোট গ্রহণfdf চলছে</p>
-            @elseif($year->status == 'VOTE_COUNT_RUNNING')
-                    <p class="status" ></p>
-            @elseif($year->status == 'VOTE_COUNT_DONE')
-                    <p class="status" ></p>
-            @elseif($year->status == 'VOTE_COUNT_FREEZE')
-                <p class="status" ></p>
+            @if(isset($year->status))
+                @if($year->status == 'ACTIVE')
+                <livewire:timer :year="$year"/>
+                @elseif($year->status == 'VOTE_RUNNING')
+                    <p class="status">ভোট গ্রহণ চলছে</p>
+                @elseif($year->status == 'VOTE_COUNT_RUNNING')
+                        <p class="status" >ভোট গণনা চলছে</p>
+                        <a class="btn btn-success btn-lg" href="{{ route('live') }}">সর্বশেষ প্রাপ্ত ফলাফল এর জন্য ক্লিক করুন</a>
+                @elseif($year->status == 'VOTE_COUNT_DONE')
+                    <p class="status" >ভোট গণনা সম্পন্ন হয়েছে</p>
+                    <a class="btn btn-success btn-lg" href="{{ route('live') }}">ফলাফল দেখুন</a>
+                @elseif($year->status == 'VOTE_COUNT_FREEZE')
+                    <p class="status" >ভোট গণনা চলছে</p>
+                    <a class="btn btn-success btn-lg" href="{{ route('live') }}">সর্বশেষ প্রাপ্ত ফলাফল এর জন্য ক্লিক করুন</a>
+                @elseif($year->status == 'COMPLETED')
+                    <p class="status" >ফলাফল চূড়ান্ত হয়েছে</p>
+                @endif
             @endif
-{{--            <h1>বাকী</h1>--}}
+
             <br>
             <br>
 

@@ -43,8 +43,7 @@ class YearController extends Controller
     {
          $year = Year::findOrFail($id);
 //        $year->election_date = Carbon::parse($year->election_date)->toDateString();
-
-        $statuses = ['VOTE_FREEZE', 'COMPLETED', 'VOTE_DONE', 'VOTE_RUNNING', 'INACTIVE', 'ACTIVE'];
+        $statuses = [ 'COMPLETED', 'ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING', 'INACTIVE'];
         return view('admin.year.edit')
             ->with('statuses', $statuses)
             ->with('year', $year);
