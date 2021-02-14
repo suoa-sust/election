@@ -48,7 +48,24 @@ class ResultController extends Controller
             ->with('yearName', $yearName);
     }
 
-    public function voteResults2(Request $request)
+//    public function voteResults2(Request $request)
+//    {
+//        $yearName = $request->year ?? null;
+//        if(isset($yearName)) {
+//            $year = Year::where('name', $yearName)->first();
+//        } else {
+//            $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
+//        }
+//        $candidates = isset($year) ? Candidate::where('year_id', $year->id)
+//            ->orderBy('seat_id', 'ASC')
+//            ->orderBy('number_of_votes', 'DESC')
+//            ->get() : [];
+//         $candidates = collect($candidates)->groupBy('seat_id');
+//        return view('result.result2')
+//            ->with('seatIds', $candidates);
+//    }
+
+    public function committee(Request $request)
     {
         $yearName = $request->year ?? null;
         if(isset($yearName)) {
@@ -57,11 +74,12 @@ class ResultController extends Controller
             $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
         }
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
+            ->where('status', 'ELECTED')
             ->orderBy('seat_id', 'ASC')
-            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
-         $candidates = collect($candidates)->groupBy('seat_id');
-        return view('result.result2')
-            ->with('seatIds', $candidates);
+        return view('front.result')
+            ->with('candidates', $candidates)
+            ->with('year', $year)
+            ->with('yearName', $yearName);
     }
 }

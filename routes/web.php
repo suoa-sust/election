@@ -24,10 +24,12 @@ Route::get('live', 'ResultController@live')->name('live');
 
 
 Route::get('result', 'ResultController@voteResults')->name('past.result');
-Route::get('result2', 'ResultController@voteResults2')->name('past.result2');
+//Route::get('result2', 'ResultController@voteResults2')->name('past.result2');
 
 
 Route::get('seats', 'FrontController@seats')->name('public.seats');
+
+Route::get('committee', 'ResultController@committee')->name('public.committee');
 
 Route::get('ec', 'FrontController@commission')->name('public.commission');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
