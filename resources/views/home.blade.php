@@ -8,7 +8,10 @@
             <br>
             <br>
 
-            <h4> নির্বাচনের তারিখ: <span style="color: #904201"><strong>31 জানুয়ারি, 2021 রোজঃ রবিবার</strong></span></h4>
+{{--            <h4> নির্বাচনের তারিখ: <span style="color: #904201"><strong>31 জানুয়ারি, 2021 রোজঃ রবিবার</strong></span></h4>--}}
+{{--            <h4> ভোটগ্রহণের সময়: <span style="color: #904201"><strong>সকাল ১০ টা থেকে বিকাল ৪ টা পর্যন্ত</strong></span></h4>--}}
+
+            <h4>সর্বশেষ নির্বাচনের তারিখ: <span style="color: #904201"><strong>31 জানুয়ারি, 2021 রোজঃ রবিবার</strong></span></h4>
             <h4> ভোটগ্রহণের সময়: <span style="color: #904201"><strong>সকাল ১০ টা থেকে বিকাল ৪ টা পর্যন্ত</strong></span></h4>
 
 
@@ -32,6 +35,9 @@
                 @elseif($year->status == 'COMPLETED')
                     <p class="status" >ফলাফল চূড়ান্ত হয়েছে</p>
                 @endif
+            @else
+                <p class="status" >সর্বশেষ নির্বাচন এর ফলাফল চূড়ান্ত হয়েছে</p>
+                <a class="btn btn-success btn-lg" href="{{ route('past.result') }}">সকল ফলাফল দেখুন</a>
             @endif
 
             <br>

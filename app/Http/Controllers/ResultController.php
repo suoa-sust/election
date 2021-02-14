@@ -71,20 +71,28 @@ class ResultController extends Controller
 //    }
 
     public function committee(Request $request)
+        // Now I think that committee is not necessary in election portal , it will be in main website sustofficers.com
+        // results page is okay for this portal.
+        /*
+         * Considered by Masiur Rahman Siddiki , Assistant Network Engineer 2021 - 02 - 14  .
+         */
     {
-        $yearName = $request->year ?? null;
-        if(isset($yearName)) {
-            $year = Year::where('name', $yearName)->first();
-        } else {
-            $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
-        }
-        $candidates = isset($year) ? Candidate::where('year_id', $year->id)
-            ->where('status', 'ELECTED')
-            ->orderBy('seat_id', 'ASC')
-            ->get() : [];
-        return view('front.result')
-            ->with('candidates', $candidates)
-            ->with('year', $year)
-            ->with('yearName', $yearName);
+//        $yearName = $request->year ?? null;
+//        if(isset($yearName)) {
+//            $year = Year::where('name', $yearName)->first();
+//        } else {
+//            $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
+//        }
+//        $years = Year::where('status', '!=', 'INACTIVE')->orderBy('name', 'DESC')->pluck('name', 'id');
+//        $candidates = isset($year) ? Candidate::where('year_id', $year->id)
+//            ->where('status', 'ELECTED')
+//            ->orderBy('seat_id', 'ASC')
+//            ->get() : [];
+//        return view('front.committee')
+//            ->with('candidates', $candidates)
+//            ->with('year', $year)
+//            ->with('years', $years)
+//            ->with('title', 'Results')
+//            ->with('yearName', $yearName);
     }
 }

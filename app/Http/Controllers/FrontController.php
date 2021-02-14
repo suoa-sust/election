@@ -12,7 +12,7 @@ class FrontController extends Controller
 {
     public function home()
     {
-         $year = Year::whereIn('status', [ 'ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING'])->first() ?? null;
+        $year = Year::whereIn('status', [ 'ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING'])->first() ?? null;
         return view('home')->with('title', 'Home')->with('year', $year);
     }
 
@@ -49,7 +49,7 @@ class FrontController extends Controller
     public function candidates(Request $request)
     {
         $yearName = $request->year ?? null;
-        $year = Year::where('name', $yearName)->first();
+        $year = Year::where('name', $yearName)->first() ?? Year::orderBy('election_date', 'DESC')->first();
         if(!isset($year)) {
             $year = Year::whereIn('status', ['ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE', 'VOTE_COUNT_RUNNING'])->first();
         }

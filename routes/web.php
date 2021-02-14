@@ -29,7 +29,7 @@ Route::get('result', 'ResultController@voteResults')->name('past.result');
 
 Route::get('seats', 'FrontController@seats')->name('public.seats');
 
-Route::get('committee', 'ResultController@committee')->name('public.committee');
+//Route::get('committee', 'ResultController@committee')->name('public.committee'); // will be in main website
 
 Route::get('ec', 'FrontController@commission')->name('public.commission');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
