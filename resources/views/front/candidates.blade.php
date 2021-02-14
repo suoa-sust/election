@@ -11,15 +11,7 @@
             <div class="">
                 <form action="{{ route('public.candidates') }}" method="GET">
                     <div class="form-inline">
-{{--                        <label for="seat" class="col-sm-1 col-form-label">Seat*</label>--}}
-{{--                        --}}{{--                                    <div class="col-sm-4">--}}
-{{--                        <select class="form-control-sm" name="seat_id">--}}
-{{--                            <option value="">All</option>--}}
-{{--                            @foreach($seats as $id => $name)--}}
-{{--                                <option {{ $id == $seat_id ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>--}}
-{{--                            @endforeach--}}
-{{--                        </select>--}}
-                        {{--                                    </div>--}}
+
 
                         <label for="seat" class="col-sm-1 col-form-label">Year*</label>
                         {{--                                    <div class="col-sm-4">--}}

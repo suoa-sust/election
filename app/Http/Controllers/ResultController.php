@@ -36,15 +36,20 @@ class ResultController extends Controller
         if(isset($yearName)) {
             $year = Year::where('name', $yearName)->first();
         } else {
-            $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
+//            $year = Year::whereDate('election_date', '<', now()->toDate())->orderBy('election_date', 'DESC')->first();
+            $year = Year::orderBy('election_date', 'DESC')->first();
         }
+        $years = Year::where('status', '!=', 'INACTIVE')->orderBy('name', 'DESC')->pluck('name', 'id');
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
+            ->orderBy('priority', 'ASC')
 //            ->orderBy('number_of_votes', 'DESC')
             ->get() : [];
         return view('front.result')
             ->with('candidates', $candidates)
             ->with('year', $year)
+            ->with('years', $years)
+            ->with('title', 'Results')
             ->with('yearName', $yearName);
     }
 
