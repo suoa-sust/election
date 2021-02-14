@@ -7,6 +7,9 @@
 {{--        <img src="{{ asset('live.gif') }}" width="70px"><livewire:current-time />--}}
 
         <a class="btn btn-success" href="{{ route('home') }}">Go Back To Home</a>
+        <br>
+        <br>
+        <a class="btn btn-warning btn-lg" href="{{ route('past.result') }}">Click for Results</a>
     </div>
 
     <br>
