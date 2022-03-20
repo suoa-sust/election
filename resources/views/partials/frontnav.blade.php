@@ -40,7 +40,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href=" {{ route('public.commission') }}" class="nav-link">Election Commission</a>
+                    <a href=" {{ route('public.commission2022') }}" class="nav-link">Election Commission</a>
                 </li>
 
                 <li class="nav-item">

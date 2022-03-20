@@ -26,7 +26,12 @@ class FrontController extends Controller
 
     public function commission()
     {
-        return view('front.commission')->with('title', 'Election Commission');
+        return view('front.commission')->with('title', 'Election Commission 2021');
+    }
+
+    public function commission2022()
+    {
+        return view('front.commission2022')->with('title', 'Election Commission');
     }
 
     public function developers()
