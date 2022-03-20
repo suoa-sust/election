@@ -5,7 +5,7 @@
     <div class="container">
         <p class="text-center">
             <span class="h3">Behind The Development</span>
-            <span class="h4 font-weight-bold"><br>Officers of ICT Cell</span>
+            <span class="h4 font-weight-bold"><br>Officers of ICT Cell </span>
         </p>
 
         <div class="row mt-10">
@@ -15,7 +15,8 @@
                 </div>
                 <p class="text-center">
                     <span class="h4 font-weight-bold">Masiur Rahman Siddiki</span>
-                    <span><br>Assistant Network Engineer</span>
+                    <span><br>Former Assistant Network Engineer</span>
+                    <span><br>Team Leader</span>
                 </p>
             </div>
 
@@ -30,6 +31,7 @@
                 <p class="text-center">
                     <span class="h4 font-weight-bold">Md. Asrafuzzaman Mollah</span>
                     <span><br>Assistant Computer Programmer</span>
+                    <span><br>Maintainer</span>
                 </p>
             </div>
 
@@ -40,6 +42,7 @@
                 <p class="text-center">
                     <span class="h4 font-weight-bold">Munem Shahriyar</span>
                     <span><br>Assistant Hardware Engineer</span>
+                    <span><br>Team Member</span>
                 </p>
             </div>
 
@@ -51,6 +54,7 @@
                 <p class="text-center">
                     <span class="h4 font-weight-bold">Md Abu Shahriar Ratul</span>
                     <span><br>Assistant Computer Programmer</span>
+                    <span><br>Team Member</span>
                 </p>
             </div>
 
