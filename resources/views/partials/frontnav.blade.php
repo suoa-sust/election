@@ -2,8 +2,7 @@
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
         <a href="{{  url('/') }}" class="navbar-brand">
-            <img src="{{ asset('dist/img/sust_logo.png') }}" alt="SUST Logo" class="brand-image img-circle elevation-1"
-                 style="opacity: .8">
+            <img src="{{ asset('dist/img/suoa_logo_v.svg') }}" alt="SUST Logo" class="brand-image">
             <span class="brand-text font-weight-bolder">SUOA Election</span>
         </a>
 
