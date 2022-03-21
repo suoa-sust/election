@@ -10,7 +10,7 @@
 
 <footer class="main-footer ">
     <div class="text-dark" style="background-color: #ffffff">
-        <strong class="pull-left">&copy; <a href="{{ route('public.developers') }}">ICT Cell</a></strong>
+        <strong class="pull-left">&copy; <a href="{{ route('public.developers') }}">ICT Cell</a>, SUST.</strong>
         <div class="float-right"><a href="{{ route('public.commission') }}"><b>Election Commission 2021</b></a> </div>
     </div>
 
