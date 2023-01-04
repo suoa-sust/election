@@ -6,7 +6,7 @@
     <style>
         .countdown {
             text-align: center;
-            font-size: 60px;
+            font-size: 50px;
             margin-top: 0px;
             color: darkorange;
         }
@@ -14,10 +14,20 @@
 @endpush
 @push('scripts-first')
     <script>
+        var finalEnglishToBanglaNumber={'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
+
+        //Converting english numbers into bangla
+        String.prototype.getDigitBanglaFromEnglish = function() {
+            var retStr = this;
+            for (var x in finalEnglishToBanglaNumber) {
+                retStr = retStr.replace(new RegExp(x, 'g'), finalEnglishToBanglaNumber[x]);
+            }
+            return retStr;
+        };
         // Set the date we're counting down to
         let datetime = '{{ $year->election_date }}';
         var countDownDate = new Date(datetime).getTime();
-        // Update the count down every 1 second
+        // Update the count-down every 1 second
         var x = setInterval(function() {
 
             // Get today's date and time
@@ -33,13 +43,13 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = "আর মাত্র<br>"+ days + " দিন " + hours + " ঘন্টা "
-                + minutes + " মিনিট " + seconds + " সেকেন্ড <br> বাকী";
+            document.getElementById("countdown").innerHTML = "আর মাত্র<br>"+days.toString().getDigitBanglaFromEnglish()+ " দিন " + hours.toString().getDigitBanglaFromEnglish() + " ঘন্টা "
+                + minutes.toString().getDigitBanglaFromEnglish() + " মিনিট " + seconds.toString().getDigitBanglaFromEnglish() + " সেকেন্ড <br> বাকী";
 
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "ভোট গ্রহণ চলছে";
+                document.getElementById("countdown").innerHTML = "ভোট গ্রহণ শুরু হয়েছে";
             }
         }, 1000);
     </script>

@@ -31,7 +31,7 @@
                 </form>
             </div>
 
-                <h5 class="text-center">নির্বাচনের তারিখঃ {{ \Carbon\Carbon::parse($year->election_date)->format('M d, Y') }}</h5>
+                <h5 class="text-center">নির্বাচনের তারিখঃ {{ \App\Services\UnicodeConversionService::bn_date(\Carbon\Carbon::parse($year->election_date)->format('M d, Y')) }}</h5>
 
                 <table class="table table-responsive-xs table-striped">
                     <thead>
