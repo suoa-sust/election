@@ -3,10 +3,10 @@
     <br>
     <div class="container">
 
-            <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচন {{ $yearName?? $year->name }}</h3>
-            @if(isset($year))
+        <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচন {{ \App\Services\UnicodeConversionService::bn_number($yearName??$year->name) }}</h3>
+        @if(isset($year))
 
-                <h5 class="text-center"> চূড়ান্ত প্রার্থী তালিকা </h5>
+            <h5 class="text-center"> চূড়ান্ত প্রার্থী তালিকা </h5>
 
             <div class="">
                 <form action="{{ route('public.candidates') }}" method="GET">
@@ -33,37 +33,37 @@
                 </form>
             </div>
 
-                <table class="table table-responsive-xs table-striped">
-                    <thead>
+            <table class="table table-responsive-xs table-striped">
+                <thead>
+                <tr>
+                    <th>পদের নাম</th>
+                    <th>প্রার্থীর নাম</th>
+                    <th>পদবী</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                @php
+                    $tempSeatName = null;
+                @endphp
+                @foreach($candidates as $candidate)
                     <tr>
-                        <th>পদের নাম</th>
-                        <th>প্রার্থীর নাম</th>
-                        <th>পদবী</th>
+
+                        <td>{{ $tempSeatName == $candidate->seat->name_bn ? '' : $candidate->seat->name_bn }}</td>
+                        <td>{{ $candidate->name }}</td>
+                        <td>{{ $candidate->designation }}</td>
+
+                        @php
+                            $tempSeatName = $candidate->seat->name_bn;
+                        @endphp
 
                     </tr>
-                    </thead>
-                    <tbody>
-                    @php
-                        $tempSeatName = null;
-                    @endphp
-                    @foreach($candidates as $candidate)
-                        <tr>
-
-                            <td>{{ $tempSeatName == $candidate->seat->name_bn ? '' : $candidate->seat->name_bn }}</td>
-                            <td>{{ $candidate->name }}</td>
-                            <td>{{ $candidate->designation }}</td>
-
-                            @php
-                                $tempSeatName = $candidate->seat->name_bn;
-                            @endphp
-
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                @endforeach
+                </tbody>
+            </table>
             @else
                 <br>
-                <h3 class="text-center" style="color: #bf9108;"> তথ্য পাওয়া যায় নি</h3>
+                <h3 class="text-center" style="color: #bf9108;">তথ্য পাওয়া যায় নি</h3>
             @endif
     </div>
 

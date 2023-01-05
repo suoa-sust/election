@@ -54,9 +54,10 @@ class FrontController extends Controller
     public function candidates(Request $request)
     {
         $yearName = $request->year ?? null;
-        $year = Year::where('name', $yearName)->first() ?? Year::orderBy('election_date', 'DESC')->first();
-        if(!isset($year)) {
-            $year = Year::whereIn('status', ['ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE', 'VOTE_COUNT_RUNNING'])->first();
+        if(isset($yearName)) {
+            $year = Year::where('name', $yearName)->first();
+        } else {
+            $year = Year::orderBy('election_date', 'DESC')->first();
         }
 //        $seatId = $request->seat_id;
 //        $yearId = $request->year_id;

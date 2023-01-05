@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidate;
 use App\Models\Year;
+use App\Services\UnicodeConversionService;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
@@ -50,7 +51,7 @@ class ResultController extends Controller
             ->with('year', $year)
             ->with('years', $years)
             ->with('title', 'Results')
-            ->with('yearName', $yearName);
+            ->with('yearName', UnicodeConversionService::bn_number($yearName));
     }
 
 //    public function voteResults2(Request $request)

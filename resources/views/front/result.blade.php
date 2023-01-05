@@ -3,8 +3,8 @@
     <br>
     <div class="container">
 
-            <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচন {{ $yearName }}</h3>
-            @if(isset($year))
+        <h3 class="text-center">শাহজালাল বিশ্ববিদ্যালয় অফিসার্স এসোসিয়েশন নির্বাচন {{ \App\Services\UnicodeConversionService::bn_number($year->name??$yearName) }}</h3>
+        @if(isset($year))
 
             <div class="">
                 <form action="{{ route('past.result') }}" method="GET">
@@ -31,43 +31,41 @@
                 </form>
             </div>
 
-                <h5 class="text-center">নির্বাচনের তারিখঃ {{ \App\Services\UnicodeConversionService::bn_date(\Carbon\Carbon::parse($year->election_date)->format('M d, Y')) }}</h5>
+            <h5 class="text-center">নির্বাচনের তারিখঃ {{ \App\Services\UnicodeConversionService::bn_date(\Carbon\Carbon::parse($year->election_date)->format('M d, Y')) }}</h5>
 
-                <table class="table table-responsive-xs table-striped">
-                    <thead>
+            <table class="table table-responsive-xs table-striped">
+                <thead>
+                <tr>
+                    <th>প্রার্থির নাম</th>
+                    <th>পদবি</th>
+                    <th>পদের নাম</th>
+                    <th>প্রাপ্ত ভোট</th>
+                    <th>ফলাফল</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($candidates as $candidate)
                     <tr>
-                        <th>Candidate</th>
-                        <th>Designation</th>
-                        <th>Seat</th>
-                        <th>Votes</th>
-                        <th>Result</th>
+                        <td>{{ $candidate->name }}</td>
+                        <td>{{ $candidate->designation }}</td>
+                        <td>{{ $candidate->seat->name_bn }}</td>
+                        <td>{{ \App\Services\UnicodeConversionService::bn_number($candidate->number_of_votes) }}</td>
+                        <td>
+                            @if($candidate->status == 'ELECTED')
+                                নির্বাচিত
+                            @else
+                            --
+                            @endif
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($candidates as $candidate)
-                        <tr>
-                            <td>{{ $candidate->name }}</td>
-                            <td>{{ $candidate->designation }}</td>
-                            <td>{{ $candidate->seat->name_bn }}</td>
-                            <td>{{ $candidate->number_of_votes }}</td>
-                            <td>
-                                @if($candidate->status == 'ELECTED')
-                                    নির্বাচিত
-                                @else
-                                --
-                                @endif
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            @else
-                <br>
-                <h3 class="text-center" style="color: #bf9108;"> তথ্য পাওয়া যায় নি</h3>
-            @endif
+                @endforeach
+                </tbody>
+            </table>
+        @else
+            <br>
+            <h3 class="text-center" style="color: #bf9108;">তথ্য পাওয়া যায় নি</h3>
+        @endif
     </div>
-
-
 
 @endsection()
 
