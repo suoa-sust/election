@@ -17,7 +17,7 @@ Route::get('/', 'FrontController@home')->name('home');
 
 Route::view('counter','livewire.counter');
 
-
+Route::resource('notice', NoticeController::class);
 
 //Route::get('live2', 'ResultController@voteCountingPublicDisplay')->name('result');
 Route::get('live', 'ResultController@live')->name('live');
@@ -91,6 +91,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('seat/{id}/update', 'SeatController@update')->name('seat.update');
     Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
+    // Notice CRUD Routes
+    Route::resource('notice', NoticeController::class);
 
     //Search Routes
     Route::get('seat/find/{seat_name}', 'SeatController@findBySeat')->name('seat.find');
