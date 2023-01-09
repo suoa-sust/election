@@ -49,6 +49,34 @@
                 </li>
 
 
+                <li class="nav-item has-treeview {{ (($currentUrl == route('ec.create'))||($currentUrl == route('ec.index'))) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ (($currentUrl == route('ec.create'))||($currentUrl == route('ec.index'))) ? 'active' : '' }}">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            EC
+                            <i class="fas fa-angle-left right"></i>
+                            {{--                            <span class="badge badge-info right">6</span>--}}
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('ec.index') }}" class="nav-link {{ $currentUrl == route('ec.index') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All ECs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('ec.create') }}" class="nav-link {{ $currentUrl == route('ec.create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add EC</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
                 <li class="nav-item has-treeview {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'active' : '' }}">
                         <i class="nav-icon far fa-calendar-alt"></i>
