@@ -131,6 +131,32 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item has-treeview {{ (($currentUrl == route('notice.create'))||($currentUrl == route('notice.index'))) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ (($currentUrl == route('notice.create'))||($currentUrl == route('notice.index'))) ? 'active' : '' }}">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <p>
+                            Notice
+                            <i class="fas fa-angle-left right"></i>
+                            {{--                            <span class="badge badge-info right">6</span>--}}
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('notice.index') }}" class="nav-link {{ $currentUrl == route('notice.index') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Notices</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('notice.create') }}" class="nav-link {{ $currentUrl == route('notice.create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Notice</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
 
 {{--                <li class="nav-item">--}}
 {{--                    <a href="{{ route('year.search') }}" class="nav-link {{ ($currentUrl == route('year.search')||($currentUrl == route('details.year.search'))) ? 'active' : '' }}">--}}
