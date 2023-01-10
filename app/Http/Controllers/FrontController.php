@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\Notice;
 use App\Models\Seat;
 use App\Models\Year;
 use App\Models\Gallery;
@@ -48,7 +49,8 @@ class FrontController extends Controller
     }
     public function notices()
     {
-        return view('front.notice')->with('title', 'Notices');
+        $notices = Notice::all();
+        return view('front.notice')->with('notices', $notices);
     }
 
     public function candidates(Request $request)

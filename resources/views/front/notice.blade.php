@@ -30,51 +30,70 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> ৪.</td>
-                        <td>৩১/০১/২০২১</td>
-                        <td>
-                            শাবিঅএ নির্বাচন ২০২১ এর চূড়ান্ত ফলাফল প্রকাশ
-                        </td>
-                        <td>
-                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/Final-Result-Sheet-SUOA-Election-2021.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>
-                        </td>
-                    </tr>
+                @php
+                $i=1
+                @endphp
+                @foreach($notices as $notice )
+                                        <tr>
+                                            <td> {{$i++}}</td>
+                                            <td>{{$notice->start_date}}</td>
+                                            <td>
+                                                {{$notice->title}}
+                                            </td>
+                                            <td>
+                                                @php
+                                                $file_link = 'files/notices/'.$notice->file_name;
+                                                @endphp
+                                                <a style="color: darkred" target="_blank" href="{{ asset($file_link) }}"><i class="fa fa-2x fa-file-pdf"></i></a>
+                                            </td>
+                                        </tr>
+                @endforeach
 
-                    <tr>
-                        <td> ৩.</td>
-                        <td>২১/০১/২০২১</td>
-                        <td>
-                            শাবিঅএ নির্বাচন এর প্রাথমিক প্রার্থী তালিকা
-                        </td>
-                        <td>
-                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/11-Primary-Candidates-List.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>
-                        </td>
-                    </tr>
+{{--                    <tr>--}}
+{{--                        <td> ৪.</td>--}}
+{{--                        <td>৩১/০১/২০২১</td>--}}
+{{--                        <td>--}}
+{{--                            শাবিঅএ নির্বাচন ২০২১ এর চূড়ান্ত ফলাফল প্রকাশ--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/Final-Result-Sheet-SUOA-Election-2021.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
 
-                    <tr>
-                        <td> ২.</td>
-                        <td>১২/০১/২০২১</td>
-                        <td>
-                            শাবিঅএ নির্বাচনের পদ সমুহের নোটিশ
-                        </td>
-                        <td>
-                            <a target="_blank" style="color: darkred" href="{{ asset('files/notices/10-Notice-for-Post.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>
-                        </td>
-                    </tr>
+{{--                    <tr>--}}
+{{--                        <td> ৩.</td>--}}
+{{--                        <td>২১/০১/২০২১</td>--}}
+{{--                        <td>--}}
+{{--                            শাবিঅএ নির্বাচন এর প্রাথমিক প্রার্থী তালিকা--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/11-Primary-Candidates-List.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
 
-                    <tr>
-                        <td> ১.</td>
-                        <td>১২/০১/২০২১</td>
-                        <td>
-                            শাবিঅএ নির্বাচন ২০২১ এর চুড়ান্ত ভোটার তালিকা
-                        </td>
-                        <td>
-                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/9-Final-Voter-List.pdf') }}">
-                                <i class="fa fa-2x fa-file-pdf"></i>
-                            </a>
-                        </td>
-                    </tr>
+{{--                    <tr>--}}
+{{--                        <td> ২.</td>--}}
+{{--                        <td>১২/০১/২০২১</td>--}}
+{{--                        <td>--}}
+{{--                            শাবিঅএ নির্বাচনের পদ সমুহের নোটিশ--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <a target="_blank" style="color: darkred" href="{{ asset('files/notices/10-Notice-for-Post.pdf') }}"><i class="fa fa-2x fa-file-pdf"></i></a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+
+{{--                    <tr>--}}
+{{--                        <td> ১.</td>--}}
+{{--                        <td>১২/০১/২০২১</td>--}}
+{{--                        <td>--}}
+{{--                            শাবিঅএ নির্বাচন ২০২১ এর চুড়ান্ত ভোটার তালিকা--}}
+{{--                        </td>--}}
+{{--                        <td>--}}
+{{--                            <a style="color: darkred" target="_blank" href="{{ asset('files/notices/9-Final-Voter-List.pdf') }}">--}}
+{{--                                <i class="fa fa-2x fa-file-pdf"></i>--}}
+{{--                            </a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
 
                 </tbody>
             </table>
