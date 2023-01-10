@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'All Election Years' }}</h1>
-                </div><!-- /.col -->
+                    <h1 class="m-0 text-dark">All Notice</h1>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Year</li>
+                        <li class="breadcrumb-item active"><a href="#">Notice</a></li>
 
                     </ol>
                 </div>
@@ -23,8 +23,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-{{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('year.create') }}">Add New Year</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('notice.create') }}">Add New Notice</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -32,42 +31,28 @@
                             <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Name</th>
-                                <th>Election Date</th>
+                                <th>Notice Title</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
-                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @php
-                              $counter = 1;
+                                $counter = 1;
                             @endphp
-                            @foreach($years as $year)
-                            <tr>
-                                <td>{{ $counter++ }}</td>
-                                <td>{{ $year->name }}</td>
-                                <td>{{ $year->election_date }}</td>
-                                <td>{{ $year->start }}</td>
-                                <td>{{ $year->end }}</td>
-                                <td>{{ $year->status }}</td>
-                                <td>
-                                    <a class="btn btn-primary btn-xs" href="{{ route('year.edit', $year->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('year.delete', $year->id) }}">Delete</a>
-                                </td>
-                            </tr>
+                            @foreach($notices as $notice)
+                                <tr>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $notice->title }}</td>
+                                    <td>{{ $notice->start_date }}</td>
+                                    <td>{{ $notice->end_date }}</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('notice.destroy',[$notice->id, $notice->file_name]) }}">Delete</a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
-{{--                            <tfoot>--}}
-{{--                            <tr>--}}
-{{--                                <th>Rendering engine</th>--}}
-{{--                                <th>Browser</th>--}}
-{{--                                <th>Platform(s)</th>--}}
-{{--                                <th>Engine version</th>--}}
-{{--                                <th>CSS grade</th>--}}
-{{--                            </tr>--}}
-{{--                            </tfoot>--}}
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -79,35 +64,34 @@
         <!-- /.row -->
     </div>
 
-{{--    Modal Area --}}
+    {{--    Modal Area --}}
 
-
-        <div class="modal fade" id="delete-modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Are you sure to delete ?</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="modalBody">
-                        {{--                    <p>One fine body&hellip;</p>--}}
-
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <form id="deleteYearForm" action="#" method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger">Yes, Confirm</button>
-                        </form>
-                    </div>
+    <div class="modal fade" id="delete-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure to delete ?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <!-- /.modal-content -->
+                <div class="modal-body" id="modalBody">
+                    {{--                    <p>One fine body&hellip;</p>--}}
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <form id="deleteNoticeForm" action="#" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">Yes, Confirm</button>
+                    </form>
+                </div>
             </div>
-            <!-- /.modal-dialog -->
+            <!-- /.modal-content -->
         </div>
+        <!-- /.modal-dialog -->
+    </div>
 @endsection
 
 @section('styles')
@@ -138,7 +122,7 @@
             });
             $(".deleteBtn").on("click", function () {
                 let deleteUrl = $(this).attr('deleteUrl');
-                $('#deleteYearForm').attr('action', deleteUrl);
+                $('#deleteNoticeForm').attr('action', deleteUrl);
                 console.log(deleteUrl);
             });
         });

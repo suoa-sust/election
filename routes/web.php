@@ -109,7 +109,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('seat/{id}/delete', 'SeatController@destroy')->name('seat.delete');
 
     // Notice CRUD Routes
-    Route::resource('notice', NoticeController::class);
+    Route::get('notice', 'NoticeController@index')->name('notice.index');
+    Route::get('notice/create', 'NoticeController@create')->name('notice.create');
+    Route::post('notice/store', 'NoticeController@store')->name('notice.store');
+    Route::get('notice/{id}/show', 'NoticeController@show')->name('notice.show');
+    Route::get('notice/{id}/edit', 'NoticeController@edit')->name('notice.edit');
+    Route::put('notice/{id}/update', 'NoticeController@update')->name('notice.update');
+    Route::delete('notice/{id}/{file}/delete', 'NoticeController@destroy')->name('notice.destroy');
 
     //Search Routes
     Route::get('seat/find/{seat_name}', 'SeatController@findBySeat')->name('seat.find');

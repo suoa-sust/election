@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Notice;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 class NoticeController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class NoticeController extends Controller
     public function index()
     {
         //
-        return "<h1>index</h1>";
+        $notices = Notice::all();
+        return view('admin.notice.index')->with('notices',$notices);
     }
 
     /**
@@ -38,9 +39,15 @@ class NoticeController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+           'title' => 'required|unique:notices|max:255',
+            'start_date'=> 'required',
+            'end_date' => 'required',
+            'notice_file' => 'required|mimes:pdf|max:10000'
+        ]);
+
         try {
             $data = $request->only('title', 'start_date', 'end_date');
-
             $file_name = str_replace(' ', '', $data['title']);
             $file_name = $file_name.'.'.'pdf';
 
@@ -98,8 +105,17 @@ class NoticeController extends Controller
      * @param  \App\Models\Notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notice $notice)
+    public function destroy(Notice $notice , $id, $file)
     {
-        //
+        $notice->destroy($id);
+        $file_link = public_path('/files/notices/'.$file);
+        try {
+            if (File::exists($file_link)) {
+                File::delete($file_link);
+            }
+            return redirect()->route('notice.index')->with('success', 'Candidate Deleted Successfully');
+        } catch (\Exception $exception) {
+            return redirect()->route('notice.index')->with('error', 'Something went wrong.'.$exception->getMessage());
+        }
     }
 }
