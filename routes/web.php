@@ -31,8 +31,8 @@ Route::get('seats', 'FrontController@seats')->name('public.seats');
 
 //Route::get('committee', 'ResultController@committee')->name('public.committee'); // will be in main website
 
-Route::get('ec', 'FrontController@commission')->name('public.commission');
-Route::get('ec2022', 'FrontController@commission2022')->name('public.commission2022');
+Route::get('ec_temp', 'FrontController@commission')->name('public.commission');
+Route::get('ec2022_temp', 'FrontController@commission2022')->name('public.commission2022');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
 Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
@@ -67,6 +67,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('candidate/{id}/edit', 'CandidateController@edit')->name('candidate.edit');
     Route::put('candidate/{id}/update', 'CandidateController@update')->name('candidate.update');
     Route::delete('candidate/{id}/delete', 'CandidateController@destroy')->name('candidate.delete');
+
+    // EC CRUD Routes
+    Route::get('ec', 'ElectionCommissionController@index')->name('ec.index');
+    Route::get('ec/create', 'ElectionCommissionController@create')->name('ec.create');
+    Route::post('ec/store', 'ElectionCommissionController@store')->name('ec.store');
+    Route::get('ec/{id}/edit', 'ElectionCommissionController@edit')->name('ec.edit');
+    Route::put('ec/{id}/update', 'ElectionCommissionController@update')->name('ec.update');
+    Route::delete('ec/{id}/delete', 'ElectionCommissionController@destroy')->name('ec.delete');
+    Route::get('ec/search', 'ElectionCommissionController@search')->name('ec.search');
+    Route::post('search/ec', 'ElectionCommissionController@searchYear')->name('details.ec.search');
+    //Route::get('ec/search/result', 'ElectionCommissionController@searchResult')->name('ec.search.result');
+    //Route::get('ec/{id}/show', 'ElectionCommissionController@show')->name('ec.show');
 
     // Year CRUD Routes
     Route::get('year', 'YearController@index')->name('year.index');

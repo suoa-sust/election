@@ -6,20 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Year extends Model
+class ElectionCommission extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
 
-    public function election()
+    public function year()
     {
-        return $this->hasMany(Candidate::class);
+        return $this->belongsTo(Year::class);
     }
-
-    public function electionCommission()
-    {
-        return $this->hasMany(ElectionCommission::class);
-    }
-
 }
