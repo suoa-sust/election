@@ -29,7 +29,7 @@
                     </div>
 
                 <!-- form start -->
-                    <form class="form-horizontal" action="{{route('notice.store')}}" method="post">
+                    <form enctype="multipart/form-data" class="form-horizontal" action="{{route('notice.store')}}" method="post">
                         @csrf
                         <div class="card-body">
 
@@ -53,12 +53,12 @@
                                     <input type="date" name="end_date" class="form-control"required>
                                 </div>
                             </div>
-{{--                            <div class="form-group row">--}}
-{{--                                <label for="start" class="col-sm-2 col-form-label">Upload</label>--}}
-{{--                                <div class="col-sm-10">--}}
-{{--                                    <input type="file" name="notice_file" class="form-control" required>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            <div class="form-group row">
+                                <label for="start" class="col-sm-2 col-form-label">Upload</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="notice_file" class="form-control" required>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">

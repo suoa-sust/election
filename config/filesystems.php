@@ -58,6 +58,10 @@ return [
             'driver' => 'local',
             'root'   => public_path() . '/images/gallery',
         ],
+        'public_uploads' => [
+            'driver' => 'local',
+            'root'   => public_path(),
+        ],
 
         's3' => [
             'driver' => 's3',

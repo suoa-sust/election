@@ -40,7 +40,16 @@ class NoticeController extends Controller
         //
         try {
             $data = $request->only('title', 'start_date', 'end_date');
-           // dd($data);
+
+            $file_name = str_replace(' ', '', $data['title']);
+            $file_name = $file_name.'.'.'pdf';
+
+            $file = $request->file("notice_file");
+            $file->storeAs('/files/notices/', $file_name,['disk' => 'public_uploads']);
+
+
+            $data['file_name'] = $file_name;
+         //  dd($data);
             Notice::create($data);
             return redirect()->route('notice.index')->with('success', 'Year Added Successfully');
         } catch (\Exception $exception) {

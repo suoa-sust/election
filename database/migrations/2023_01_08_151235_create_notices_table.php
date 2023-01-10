@@ -18,6 +18,7 @@ class CreateNoticesTable extends Migration
             $table->string('title');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
+            $table->string('file_name')->unique();
             $table->enum('status',
                 ['INACTIVE', 'ACTIVE']
             )->default('ACTIVE');

@@ -37,7 +37,7 @@ Route::get('developers', 'FrontController@developers')->name('public.developers'
 Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
 Route::get('candidates', 'FrontController@candidates')->name('public.candidates');
-Route::get('notices', 'FrontController@notices')->name('public.notices');
+Route::get('all-notice', 'FrontController@notices')->name('public.notices');
 
 
 

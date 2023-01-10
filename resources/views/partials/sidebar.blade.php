@@ -133,7 +133,7 @@
                 </li>
                 <li class="nav-item has-treeview {{ (($currentUrl == route('notice.create'))||($currentUrl == route('notice.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ (($currentUrl == route('notice.create'))||($currentUrl == route('notice.index'))) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <i class="nav-icon fa fa-bell"></i>
                         <p>
                             Notice
                             <i class="fas fa-angle-left right"></i>
