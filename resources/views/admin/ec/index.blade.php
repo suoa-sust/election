@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('ec.create') }}">Add New EC</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('ec.create') }}">Add New EC Member</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -84,8 +84,6 @@
     </div>
 
 {{--    Modal Area --}}
-
-
         <div class="modal fade" id="delete-modal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -101,7 +99,7 @@
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <form id="deleteYearForm" action="#" method="post">
+                        <form id="deleteEcForm" action="#" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger">Yes, Confirm</button>
@@ -142,8 +140,8 @@
             });
             $(".deleteBtn").on("click", function () {
                 let deleteUrl = $(this).attr('deleteUrl');
-                $('#deleteYearForm').attr('action', deleteUrl);
-                console.log(deleteUrl);
+                $('#deleteEcForm').attr('action', deleteUrl);
+                // console.log(deleteUrl);
             });
         });
     </script>
