@@ -68,6 +68,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('candidate/{id}/update', 'CandidateController@update')->name('candidate.update');
     Route::delete('candidate/{id}/delete', 'CandidateController@destroy')->name('candidate.delete');
 
+    // Voter Crud
+
+    Route::get('/voter', 'VoterController@index')->name('voter.index');
+    Route::get('/voter/create', 'VoterController@create')->name('voter.create');
+    Route::post('/voter', 'VoterController@store')->name('voter.store');
+    Route::get('/voter/{id}', 'VoterController@show')->name('voter.show');
+    Route::get('/voter/{id}/edit', 'VoterController@edit')->name('voter.edit');
+    Route::put('/voter/{id}', 'VoterController@update')->name('voter.update');
+    Route::delete('/voter/{id}', 'VoterController@destroy')->name('voter.delete');
+
     // EC CRUD Routes
     Route::get('ec', 'ElectionCommissionController@index')->name('ec.index');
     Route::get('ec/create', 'ElectionCommissionController@create')->name('ec.create');
@@ -128,6 +138,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('admin-gallery', 'GalleryController@uploadPhoto')->name('gallery.create');
 });
 
+
+    Route::get('/votestatus', 'VoterController@votestatus')->name('votestatus');
+    Route::post('/votestatus/update', 'VoterController@updatevotestatus')->name('updatevotestatus');
 
 
 

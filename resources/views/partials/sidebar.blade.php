@@ -9,6 +9,7 @@
 
     @php
     $authUser = auth()->user();
+    $userType = Auth::user()->type;
     $currentUrl = url()->current();
     @endphp
     <!-- Sidebar -->
@@ -39,15 +40,13 @@
                         </p>
                     </a>
                 </li>
-
-
+                @if($userType == 'superuser' || $userType == 'ec')
                 <li class="nav-item">
                     <a href="{{ route('vote.count') }}" class="nav-link {{ $currentUrl == route('vote.count') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-plus-circle"></i>
                         <p>Vote Count</p>
                     </a>
                 </li>
-
 
                 <li class="nav-item has-treeview {{ (($currentUrl == route('ec.create'))||($currentUrl == route('ec.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ (($currentUrl == route('ec.create'))||($currentUrl == route('ec.index'))) ? 'active' : '' }}">
@@ -75,8 +74,9 @@
 
                     </ul>
                 </li>
+                @endif
 
-
+                @if($userType == 'superuser')
                 <li class="nav-item has-treeview {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ (($currentUrl == route('year.create'))||($currentUrl == route('year.index'))) ? 'active' : '' }}">
                         <i class="nav-icon far fa-calendar-alt"></i>
@@ -103,8 +103,10 @@
 
                     </ul>
                 </li>
+                @endif
 
 
+                @if($userType == 'superuser')
                 <li class="nav-item has-treeview {{ (($currentUrl == route('candidate.create'))||($currentUrl == route('candidate.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
@@ -135,6 +137,47 @@
 {{--                        </li>--}}
                     </ul>
                 </li>
+                @endif
+
+                @if($userType == 'superuser' || $userType == 'ec')
+                <li class="nav-item has-treeview {{ (($currentUrl == route('voter.create'))||($currentUrl == route('voter.index')) || ($currentUrl == route('votestatus'))) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Voters
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview {{ (($currentUrl == route('voter.create')) || ($currentUrl == route('voter.index')) || ($currentUrl == route('votestatus'))) ? 'menu-open' : '' }}">
+                        <li class="nav-item">
+                            <a href="{{ route('voter.index') }}" class="nav-link {{ $currentUrl == route('voter.index') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Candidate</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('voter.create') }}" class="nav-link {{ $currentUrl == route('voter.create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Voter</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('votestatus') }}" class="nav-link {{ $currentUrl == route('votestatus') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vote Status</p>
+                            </a>
+                        </li>
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a href="{{ route('candidate.index') }}" class="nav-link {{ $currentUrl == route('candidate.index') ? 'active' : '' }}">--}}
+                        {{--                                <i class="far fa-circle nav-icon"></i>--}}
+                        {{--                                <p>All Candidates</p>--}}
+                        {{--                            </a>--}}
+                        {{--                        </li>--}}
+                    </ul>
+                    @endif
+                </li>
+                    @if($userType == 'superuser')
 
                 <li class="nav-item has-treeview {{ (($currentUrl == route('seat.create')) || ($currentUrl == route('seat.index'))) ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
@@ -222,8 +265,11 @@
                     </a>
                 </li>
 
+                    @endif
+
             </ul>
         </nav>
+
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
