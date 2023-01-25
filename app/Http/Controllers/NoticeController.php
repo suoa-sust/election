@@ -48,7 +48,7 @@ class NoticeController extends Controller
 
         try {
             $data = $request->only('title', 'start_date', 'end_date');
-            $file_name = str_replace(' ', '', $data['title']);
+            $file_name = str_replace(' ', '_', $data['title']);
             $file_name = $file_name.'.'.'pdf';
 
             $file = $request->file("notice_file");
