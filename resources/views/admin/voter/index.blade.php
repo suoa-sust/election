@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'All Candidates' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'All Voters' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Candidates</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Voters</a></li>
 
                     </ol>
                 </div>
@@ -26,7 +26,7 @@
 {{--                        <h3 class="card-title">DataTable with minimal features & hover style</h3>--}}
 <!-- Example single danger button -->
 
-                        <a class="card-tools btn btn-info btn-sm" href="{{ route('voter.create') }}">Add New Candidate</a>
+                        <a class="card-tools btn btn-info btn-sm" href="{{ route('voter.create') }}">Add New Voter</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

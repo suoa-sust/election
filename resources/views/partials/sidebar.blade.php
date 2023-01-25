@@ -153,7 +153,7 @@
                         <li class="nav-item">
                             <a href="{{ route('voter.index') }}" class="nav-link {{ $currentUrl == route('voter.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>All Candidate</p>
+                                <p>All Voters</p>
                             </a>
                         </li>
                         <li class="nav-item">

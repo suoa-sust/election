@@ -136,11 +136,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('vote/{id}/update', 'VoteController@voteUpdate')->name('vote.update');
 
     Route::get('admin-gallery', 'GalleryController@uploadPhoto')->name('gallery.create');
-});
-
 
     Route::get('/votestatus', 'VoterController@votestatus')->name('votestatus');
     Route::post('/votestatus/update', 'VoterController@updatevotestatus')->name('updatevotestatus');
+});
+
+
+
 
 
 
