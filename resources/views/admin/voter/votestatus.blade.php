@@ -55,7 +55,7 @@
                                         <input type="hidden" class="user-id" value="{{ $voter->id }}">
                                         <input class="form-check-input updatecheckbox" type="checkbox" {{$voter->vote_status == 'Voted' ? 'checked' : ''}} id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Vote Completed
+                                            Vote Completed {{ $voter->vote_status }}
                                         </label>
                                     </div>
                                 </td>
