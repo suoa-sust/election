@@ -117,12 +117,6 @@ class VoterController extends Controller
         return redirect('/voter')->with('success', 'Voter is successfully deleted');
     }
 
-    public function voteStatus()
-    {
-        //
-        $voters = Voter::all();
-        return view('admin.voter.votestatus', compact('voters'));
-    }
     public function updatevotestatus(Request $request)
     {
         $data = $request->all();
