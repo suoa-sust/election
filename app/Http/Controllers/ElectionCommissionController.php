@@ -50,6 +50,20 @@ class ElectionCommissionController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        $ec = ElectionCommission::findOrFail($id);
+        $years = Year::all()->pluck('name');
+//        $ec->election_date = Carbon::parse($ec->election_date)->toDateString();
+        $ec_roles = ['ELECTION_COMMISSIONER', 'CHIEF_ELECTION_COMMISSIONER'];
+        $statuses = ['ACTIVE', 'INACTIVE'];
+        return view('admin.ec.edit')
+            ->with('ec', $ec)
+            ->with('years', $years)
+            ->with('ec_roles', $ec_roles)
+            ->with('statuses', $statuses);
+    }
+
     public function destroy($id)
     {
         try {

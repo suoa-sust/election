@@ -69,7 +69,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('candidate/{id}/delete', 'CandidateController@destroy')->name('candidate.delete');
 
     // Voter Crud
-
     Route::get('/voter', 'VoterController@index')->name('voter.index');
     Route::get('/voter/create', 'VoterController@create')->name('voter.create');
     Route::post('/voter', 'VoterController@store')->name('voter.store');
@@ -85,8 +84,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('ec/{id}/edit', 'ElectionCommissionController@edit')->name('ec.edit');
     Route::put('ec/{id}/update', 'ElectionCommissionController@update')->name('ec.update');
     Route::delete('ec/{id}/delete', 'ElectionCommissionController@destroy')->name('ec.delete');
-    Route::get('ec/search', 'ElectionCommissionController@search')->name('ec.search');
-    Route::post('search/ec', 'ElectionCommissionController@searchYear')->name('details.ec.search');
+//    Route::get('ec/search', 'ElectionCommissionController@search')->name('ec.search');
+//    Route::post('search/ec', 'ElectionCommissionController@searchYear')->name('details.ec.search');
     //Route::get('ec/search/result', 'ElectionCommissionController@searchResult')->name('ec.search.result');
     //Route::get('ec/{id}/show', 'ElectionCommissionController@show')->name('ec.show');
 
