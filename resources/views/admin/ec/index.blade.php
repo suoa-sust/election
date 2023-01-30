@@ -141,7 +141,7 @@
             $(".deleteBtn").on("click", function () {
                 let deleteUrl = $(this).attr('deleteUrl');
                 $('#deleteEcForm').attr('action', deleteUrl);
-                // console.log(deleteUrl);
+                console.log(deleteUrl);
             });
         });
     </script>
