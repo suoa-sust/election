@@ -18,10 +18,10 @@ class CreateVotersTable extends Migration
             $table->string('name')->nullable();
             $table->string('designation')->nullable();
             $table->string('office')->nullable();
-            $table->integer('serial')->unique();
+            $table->integer('voter_no')->nullable()->unique();
             $table->string('status')->nullable();
             $table->text('comment')->nullable();
-            $table->enum('vote_status', ['Voted', 'Pending'])->default('Pending');
+            $table->enum('vote_status', ['NO', 'YES'])->default('NO');
             $table->string('priority')->default(10);
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Candidate;
 use App\Models\Notice;
 use App\Models\Seat;
+use App\Models\Voter;
 use App\Models\Year;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
@@ -14,7 +15,10 @@ class FrontController extends Controller
     public function home()
     {
         $year = Year::whereIn('status', [ 'ACTIVE', 'VOTE_RUNNING', 'VOTE_COUNT_FREEZE',  'VOTE_COUNT_DONE',  'VOTE_COUNT_RUNNING'])->first() ?? null;
-        return view('home')->with('title', 'Home')->with('year', $year);
+        $voters = Voter::whereStatus('ACTIVE')->orderBy('vote_status')->orderBy('voter_no')->get();
+        $total_voters = count($voters);
+        $total_voted = Voter::whereVoteStatus('YES')->count();
+        return view('home', compact('year','voters', 'total_voters', 'total_voted'))->with('title', 'Home');
     }
 
     public function seats()
