@@ -38,8 +38,8 @@
             <br>
 
             <h4> পদসংখ্যাঃ <span style="color: #065632"><strong>১১ টি</strong></span></h4>
-            <h4> মোট প্রার্থী: <span style="color: #065632"><strong>২২ জন</strong></span></h4>
-            <h4> মোট ভোটার: <span style="color: #065632"><strong>২৬৪ জন</strong></span></h4>
+            <h4> মোট প্রার্থী: <span style="color: #065632"><strong>২৬ জন</strong></span></h4>
+            <h4> মোট ভোটার: <span style="color: #065632"><strong>২৭৩ জন</strong></span></h4>
 
             <br>
             <br>

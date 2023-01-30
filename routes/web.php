@@ -31,8 +31,9 @@ Route::get('seats', 'FrontController@seats')->name('public.seats');
 
 //Route::get('committee', 'ResultController@committee')->name('public.committee'); // will be in main website
 
-Route::get('ec_temp', 'FrontController@commission')->name('public.commission');
-Route::get('ec2022_temp', 'FrontController@commission2022')->name('public.commission2022');
+Route::get('ec2021', 'FrontController@commission')->name('public.commission');
+Route::get('ec2022', 'FrontController@commission2022')->name('public.commission2022');
+Route::get('ec2023', 'FrontController@commission2023')->name('public.commission2023');
 Route::get('developers', 'FrontController@developers')->name('public.developers');
 Route::get('gallery', 'FrontController@gallery')->name('public.gallery');
 
