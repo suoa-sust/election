@@ -37,6 +37,7 @@
                                 <th>Name</th>
                                 <th>Designation</th>
                                 <th>Office</th>
+                                <th>Vote Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -51,8 +52,17 @@
                                 <td>{{ $voter->designation }}</td>
                                 <td>{{ $voter->office }}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-xs" href="{{ route('voter.edit', $voter->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-xs deleteBtn" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('voter.delete', $voter->id) }}">Delete</a>
+                                    <div class="form-check">
+                                        <input type="hidden" class="user-id" value="{{ $voter->id }}">
+                                        <input class="form-check-input updatecheckbox cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'Voted' ? 'checked' : ''}} >
+                                        <label class="form-check-label" for="cb-{{$counter}}">
+                                            {{$voter->vote_status}}
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs disabled" href="{{ route('voter.edit', $voter->id) }}">Edit</a>
+                                    <a class="btn btn-danger btn-xs deleteBtn disabled" data-toggle="modal" data-target="#delete-modal" href="#" deleteUrl="{{ route('voter.delete', $voter->id) }}">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -134,6 +144,41 @@
 
                 console.log(deleteUrl);
             });
+        });
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        //-------------CheckBox AJAX----------------------------
+        $(document).ready(function() {
+            for (let i = 1; i <= {{$counter}}; i++) {
+                $(`.cb-${i}`).change(function () {
+                    if($(this).is(':checked')){
+                        let checkboxValue = true;
+                        $(this).next().text('Voted');
+                    } else {
+                        let checkboxValue = false;
+                        $(this).next().text('Pending');
+                    }
+                    let checkboxValue = $(this).is(":checked") ? true : false;
+                    let userId = $(this).closest('tr').find('.user-id').val();
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route('updatevotestatus') }}",
+                        data: {'checkboxValue': checkboxValue, 'userId': userId, '_token': "{{ csrf_token() }}"},
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                });
+            };
         });
     </script>
 
