@@ -6,13 +6,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{ $title ?? 'Edit Year' }}</h1>
+                    <h1 class="m-0 text-dark">{{ $title ?? 'Edit EC Member' }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('year.index') }}">Year</a></li>
-                        <li class="breadcrumb-item active">Edit Year</li>
+                        <li class="breadcrumb-item"><a href="{{ route('ec.index') }}">EC</a></li>
+                        <li class="breadcrumb-item active">Edit EC Member</li>
                     </ol>
                 </div>
             </div>
@@ -25,41 +25,66 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        {{--                        <h3 class="card-title">Add New Year</h3>--}}
+                        {{--                        <h3 class="card-title">Add New EC</h3>--}}
                     </div>
 
                     <!-- form start -->
-                    <form class="form-horizontal" action="{{route('year.update', $year->id)}}" method="post">
+                    <form class="form-horizontal" action="{{route('ec.update', $ec->id)}}" method="post">
                         @method('put')
                         @csrf
                         <div class="card-body">
 
                             <div class="form-group row">
-                                <label for="name" class="col-sm-2 col-form-label">Election Year</label>
+                                <label for="name" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="number" name="name" class="form-control" placeholder="2021" required value="{{$year->name}}">
+                                    <input type="text" name="name" class="form-control" placeholder="EC member name" required value="{{ $ec->name }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="election_date" class="col-sm-2 col-form-label">Election Date & Time</label>
+                                <label for="designation" class="col-sm-2 col-form-label">Designation</label>
                                 <div class="col-sm-10">
-                                    <input type="datetime-local" name="election_date" class="form-control"  value="{{$year->election_date}}">
-                                    <span>Current Value: {{ $year->election_date }}</span>
+                                    <input type="text" name="designation" class="form-control" placeholder="EC member designation" required value="{{ $ec->designation }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="start" class="col-sm-2 col-form-label">Start Date</label>
+                                <label for="office" class="col-sm-2 col-form-label">Office</label>
                                 <div class="col-sm-10">
-                                    <input type="date" name="start" class="form-control" required value="{{$year->start}}">
+                                    <input type="text" name="office" class="form-control" placeholder="EC member office name" required value="{{ $ec->office }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="end" class="col-sm-2 col-form-label">End Date</label>
+                                <label for="year" class="col-sm-2 col-form-label">Year</label>
                                 <div class="col-sm-10">
-                                    <input type="date" name="end" class="form-control"required value="{{$year->end}}">
+                                    <select type="text" name="year" class="form-control" required>
+                                        @foreach($years as $year)
+                                            <option value="{{ $year }}" {{ $year==$ec->year?'selected':'' }}>{{ $year }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="ec_role" class="col-sm-2 col-form-label">EC Role</label>
+                                <div class="col-sm-10">
+                                    <select type="text" name="ec_role" class="form-control" required>
+                                        @foreach($ec_roles as $ec_role)
+                                            <option value="{{ $ec_role }}" {{ $ec_role==$ec->ec_role?'selected':'' }}>{{ $ec_role=='CHIEF_ELECTION_COMMISSIONER'?'Chief Election Commissioner':'Election Commissioner' }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="photo" class="col-sm-2 col-form-label">Photo</label>
+                                <div class="col-sm-10">
+{{--                                    @if ($ec->photo)--}}
+{{--                                        Photo Preview:--}}
+{{--                                        <img src="{{ $ec->photo->temporaryUrl() }}" width="300px">--}}
+{{--                                    @endif--}}
+                                    <input type="file" name="photo" class="form-control" placeholder="Upload photo">
                                 </div>
                             </div>
 
@@ -69,7 +94,7 @@
                                     <select class="form-control" name="status">
                                         <option value="">Please Select Status</option>
                                         @foreach($statuses as $status)
-                                            <option {{ $status == $year->status ? 'selected' : '' }} value="{{ $status }}">{{ $status }}</option>
+                                            <option {{ $status == $ec->status ? 'selected' : '' }} value="{{ $status }}">{{ $status }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -79,7 +104,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
 
-                            <button type="submit" class="btn btn-info float-right">Update Year</button>
+                            <button type="submit" class="btn btn-info float-right">Update EC</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>
