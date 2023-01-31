@@ -162,12 +162,6 @@
                                 <p>Add Voter</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('votestatus') }}" class="nav-link {{ $currentUrl == route('votestatus') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Vote Status</p>
-                            </a>
-                        </li>
                         {{--                        <li class="nav-item">--}}
                         {{--                            <a href="{{ route('candidate.index') }}" class="nav-link {{ $currentUrl == route('candidate.index') ? 'active' : '' }}">--}}
                         {{--                                <i class="far fa-circle nav-icon"></i>--}}
