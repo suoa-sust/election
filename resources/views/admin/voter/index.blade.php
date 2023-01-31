@@ -54,7 +54,7 @@
                                 <td>
                                     <div class="form-check">
                                         <input type="hidden" class="user-id" value="{{ $voter->id }}">
-                                        <input class="form-check-input updatecheckbox cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'Voted' ? 'checked' : ''}} >
+                                        <input class="form-check-input updatecheckbox cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'YES' ? 'checked' : ''}} >
                                         <label class="form-check-label" for="cb-{{$counter}}">
                                             {{$voter->vote_status}}
                                         </label>
