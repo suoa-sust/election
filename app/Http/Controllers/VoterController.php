@@ -47,7 +47,7 @@ class VoterController extends Controller
             'name' => 'required|max:255',
             'designation' => 'required|max:255',
             'office' => 'required|max:255',
-            'serial' => 'required|numeric|unique:voters',
+            'voter_no' => 'required|numeric|unique:voters',
         ]);
         $voter = Voter::create($validatedData);
         return redirect('/voter')->with('success', 'New Voter is successfully saved');
@@ -93,7 +93,7 @@ class VoterController extends Controller
             'name' => 'required|max:255',
             'designation' => 'required|max:255',
             'office' => 'required|max:255',
-            'serial' => 'required|numeric|unique:voters',
+            'voter_no' => 'required|numeric|unique:voters',
         ]);
 
         $voter = Voter::findOrFail($id);

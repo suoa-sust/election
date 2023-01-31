@@ -61,7 +61,7 @@
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Voter No/Serial</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="serial" class="form-control" placeholder="Jack Doe" required>
+                                    <input type="text" name="voter_no" class="form-control" placeholder="Jack Doe" required>
                                 </div>
                             </div>
 

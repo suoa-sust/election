@@ -47,7 +47,7 @@
                             @endphp
                             @foreach($voters as $voter)
                             <tr>
-                                <td>{{ $counter++ }}</td>
+                                <td>{{ $voter->voter_no }}</td>
                                 <td>{{ $voter->name }}</td>
                                 <td>{{ $voter->designation }}</td>
                                 <td>{{ $voter->office }}</td>
