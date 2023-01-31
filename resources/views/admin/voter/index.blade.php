@@ -56,7 +56,7 @@
                                         <input type="hidden" class="user-id" value="{{ $voter->id }}">
                                         <input class="form-check-input updatecheckbox cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'YES' ? 'checked' : ''}} >
                                         <label class="form-check-label" for="cb-{{$counter}}">
-                                            {{$voter->vote_status}}
+                                            {{$voter->vote_status=='YES' ? "Voted" : "Not Voted"}}
                                         </label>
                                     </div>
                                 </td>
@@ -159,10 +159,10 @@
                 $(`.cb-${i}`).change(function () {
                     if($(this).is(':checked')){
                         let checkboxValue = true;
-                        $(this).next().text('YES');
+                        $(this).next().text('Voted');
                     } else {
                         let checkboxValue = false;
-                        $(this).next().text('NO');
+                        $(this).next().text('Not Voted');
                     }
                     let checkboxValue = $(this).is(":checked") ? true : false;
                     let userId = $(this).closest('tr').find('.user-id').val();
