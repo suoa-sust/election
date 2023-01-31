@@ -8,7 +8,6 @@
         <livewire:current-time /><img src="{{ asset('live.gif') }}" width="70px" style="padding-bottom: 6px;">
     </div>
 
-    <br>
     <livewire:display-election-result />
     @include('partials.footer4')
 @endsection
