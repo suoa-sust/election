@@ -122,10 +122,10 @@ class VoterController extends Controller
         $data = $request->all();
         $id = $data['userId'];
         if($data['checkboxValue'] == 'false'){
-            $votestatus = 'Pending';
+            $votestatus = 'NO';
         }
         else {
-            $votestatus = 'Voted';
+            $votestatus = 'YES';
         }
         $voter = Voter::findOrFail($id);
         $voter->vote_status = $votestatus;

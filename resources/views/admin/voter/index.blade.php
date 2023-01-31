@@ -159,10 +159,10 @@
                 $(`.cb-${i}`).change(function () {
                     if($(this).is(':checked')){
                         let checkboxValue = true;
-                        $(this).next().text('Voted');
+                        $(this).next().text('YES');
                     } else {
                         let checkboxValue = false;
-                        $(this).next().text('Pending');
+                        $(this).next().text('NO');
                     }
                     let checkboxValue = $(this).is(":checked") ? true : false;
                     let userId = $(this).closest('tr').find('.user-id').val();
