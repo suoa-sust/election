@@ -43,8 +43,8 @@ class ResultController extends Controller
         $years = Year::where('status', '!=', 'INACTIVE')->orderBy('name', 'DESC')->pluck('name', 'id');
         $candidates = isset($year) ? Candidate::where('year_id', $year->id)
             ->orderBy('seat_id', 'ASC')
-            ->orderBy('priority', 'ASC')
-//            ->orderBy('number_of_votes', 'DESC')
+            ->orderBy('number_of_votes', 'DESC')
+            ->orderBy('priority', 'DESC')
             ->get() : [];
         return view('front.result')
             ->with('candidates', $candidates)
