@@ -154,65 +154,37 @@
         });
 
         //-------------CheckBox AJAX----------------------------
-        $('#datatable').on('draw.dt', function () {
-            // Your code here
-            $(document).ready(function() {
+        $(document).ready(function() {
+            function updateVoteStatus(event) {
+                event.stopPropagation();
+                let checkboxValue = $(this).is(":checked") ? true : false;
+                let userId = $(this).closest('tr').find('.user-id').val();
+                $(this).next().text(checkboxValue ? 'Voted' : 'Not Voted');
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('updatevotestatus') }}",
+                    data: {'checkboxValue': checkboxValue, 'userId': userId, '_token': "{{ csrf_token() }}"},
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+
+            for (let i = 1; i <= {{$counter}}; i++) {
+                $(document).on("click", `.cb-${i}`, updateVoteStatus);
+            }
+
+            $('#datatable').on('draw.dt', function () {
                 for (let i = 1; i <= {{$counter}}; i++) {
-                    $(document).on("click", `.cb-${i}`, function(event) {
-                        event.stopPropagation();
-                        if($(this).is(':checked')){
-                            let checkboxValue = true;
-                            $(this).next().text('Voted');
-                        } else {
-                            let checkboxValue = false;
-                            $(this).next().text('Not Voted');
-                        }
-                        let checkboxValue = $(this).is(":checked") ? true : false;
-                        let userId = $(this).closest('tr').find('.user-id').val();
-                        $.ajax({
-                            type: "POST",
-                            url: "{{ route('updatevotestatus') }}",
-                            data: {'checkboxValue': checkboxValue, 'userId': userId, '_token': "{{ csrf_token() }}"},
-                            success: function (response) {
-                                console.log(response);
-                            },
-                            error: function (xhr, status, error) {
-                                console.log(xhr.responseText);
-                            }
-                        });
-                    });
-                };
+                    $(document).off("click", `.cb-${i}`, updateVoteStatus);
+                    $(document).on("click", `.cb-${i}`, updateVoteStatus);
+                }
             });
         });
 
-
-        $(document).ready(function() {
-            for (let i = 1; i <= {{$counter}}; i++) {
-                $(document).on("click", `.cb-${i}`, function(event) {
-                    event.stopPropagation();
-                    if($(this).is(':checked')){
-                        let checkboxValue = true;
-                        $(this).next().text('Voted');
-                    } else {
-                        let checkboxValue = false;
-                        $(this).next().text('Not Voted');
-                    }
-                    let checkboxValue = $(this).is(":checked") ? true : false;
-                    let userId = $(this).closest('tr').find('.user-id').val();
-                    $.ajax({
-                        type: "POST",
-                        url: "{{ route('updatevotestatus') }}",
-                        data: {'checkboxValue': checkboxValue, 'userId': userId, '_token': "{{ csrf_token() }}"},
-                        success: function (response) {
-                            console.log(response);
-                        },
-                        error: function (xhr, status, error) {
-                            console.log(xhr.responseText);
-                        }
-                    });
-                });
-            };
-        });
     </script>
 
 @endsection
