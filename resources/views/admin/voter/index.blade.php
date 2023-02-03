@@ -54,8 +54,8 @@
                                 <td>
                                     <div class="form-check">
                                         <input type="hidden" class="user-id" value="{{ $voter->id }}">
-                                        <input class="form-check-input updatecheckbox cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'YES' ? 'checked' : ''}} >
-                                        <label class="form-check-label" for="cb-{{$counter}}">
+                                        <input class="form-check-input cb-{{$counter}}" type="checkbox" {{$voter->vote_status == 'YES' ? 'checked' : ''}} >
+                                        <label class="form-check-label" for="cb-{{$counter++}}">
                                             {{$voter->vote_status=='YES' ? "Voted" : "Not Voted"}}
                                         </label>
                                     </div>
@@ -154,9 +154,42 @@
         });
 
         //-------------CheckBox AJAX----------------------------
+        $('#datatable').on('draw.dt', function () {
+            // Your code here
+            $(document).ready(function() {
+                for (let i = 1; i <= {{$counter}}; i++) {
+                    $(document).on("click", `.cb-${i}`, function(event) {
+                        event.stopPropagation();
+                        if($(this).is(':checked')){
+                            let checkboxValue = true;
+                            $(this).next().text('Voted');
+                        } else {
+                            let checkboxValue = false;
+                            $(this).next().text('Not Voted');
+                        }
+                        let checkboxValue = $(this).is(":checked") ? true : false;
+                        let userId = $(this).closest('tr').find('.user-id').val();
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ route('updatevotestatus') }}",
+                            data: {'checkboxValue': checkboxValue, 'userId': userId, '_token': "{{ csrf_token() }}"},
+                            success: function (response) {
+                                console.log(response);
+                            },
+                            error: function (xhr, status, error) {
+                                console.log(xhr.responseText);
+                            }
+                        });
+                    });
+                };
+            });
+        });
+
+
         $(document).ready(function() {
             for (let i = 1; i <= {{$counter}}; i++) {
-                $(`.cb-${i}`).change(function () {
+                $(document).on("click", `.cb-${i}`, function(event) {
+                    event.stopPropagation();
                     if($(this).is(':checked')){
                         let checkboxValue = true;
                         $(this).next().text('Voted');
