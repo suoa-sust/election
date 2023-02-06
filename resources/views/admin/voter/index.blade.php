@@ -173,12 +173,12 @@
                 });
             }
 
-            for (let i = 1; i <= {{$counter}}; i++) {
+            for (let i = 1; i < {{$counter}}; i++) {
                 $(document).on("click", `.cb-${i}`, updateVoteStatus);
             }
 
             $('#datatable').on('draw.dt', function () {
-                for (let i = 1; i <= {{$counter}}; i++) {
+                for (let i = 1; i < {{$counter}}; i++) {
                     $(document).off("click", `.cb-${i}`, updateVoteStatus);
                     $(document).on("click", `.cb-${i}`, updateVoteStatus);
                 }
